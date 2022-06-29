@@ -8,4 +8,4 @@ To install Sanity on your machine, run `npm install -g @sanity/cli` to install t
 
 Navigate to the `studio` folder and run `sanity login` if you have not logged in and then run `sanity start`. 
 
-Go to `localhost:3000` to see the local build of the Sanity Studio
+Go to `localhost:3333` to see the local build of the Sanity Studio
