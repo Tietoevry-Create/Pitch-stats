@@ -7,7 +7,8 @@ export default () =>
       S.listItem()
         .title("Front Page")
         .child(S.document().schemaType("frontPage").documentId("frontPage")),
+      S.listItem().title("Sites").child(S.documentTypeList("site")),
       ...S.documentTypeListItems().filter(
-        (listItem) => !["frontPage"].includes(listItem.getId())
+        (listItem) => !["frontPage", "site"].includes(listItem.getId())
       ),
     ]);
