@@ -5,6 +5,7 @@ export default {
   fields: [
     { type: "title", name: "title" },
     { type: "webSiteUrl", name: "webSiteUrl" },
+    { type: "blockContent", name: "blockContent", title: "Block Content" },
   ],
   preview: {
     select: {
