@@ -6,9 +6,10 @@ import frontPage from "./documents/frontPage";
 import site from "./documents/site";
 //fields
 import title from "./fields/title";
+import webSiteUrl from "./fields/webSiteUrl";
 
 export default createSchema({
   name: "default",
 
-  types: schemaTypes.concat([frontPage, site, title]),
+  types: schemaTypes.concat([frontPage, site, title, webSiteUrl]),
 });

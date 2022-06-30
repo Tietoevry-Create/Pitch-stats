@@ -2,7 +2,10 @@ export default {
   name: "site",
   title: "Site",
   type: "document",
-  fields: [{ type: "title", name: "title" }],
+  fields: [
+    { type: "title", name: "title" },
+    { type: "webSiteUrl", name: "webSiteUrl" },
+  ],
   preview: {
     select: {
       title: "title",
