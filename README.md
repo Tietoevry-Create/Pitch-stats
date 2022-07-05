@@ -14,6 +14,8 @@ Go to `localhost:3333` to see the local build of the Sanity Studio
 
 To deploy your changes to the hosted Sanity Studio, run `sanity deploy` from the `studio` directory. 
 
+Go to [https://www.sanity.io/manage](https://www.sanity.io/manage) to manage project.
+
 For now, the hosted Studio lives in  [https://stats.sanity.studio/](https://stats.sanity.studio/)
 
 
