@@ -14,6 +14,7 @@ export default {
       type: "slug",
       description:
         "No need to change this beyond generate, as this is a data point",
+      validation: (Rule) => Rule.required(),
       options: {
         source: "title",
         slugify: (input) =>
@@ -21,7 +22,6 @@ export default {
             .toLowerCase()
             .replace(/\s+/g, "-")
             .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
-        validation: (Rule) => Rule.required(),
       },
     },
   ],
