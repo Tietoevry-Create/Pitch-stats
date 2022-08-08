@@ -12,6 +12,8 @@ export default {
       name: "slug",
       title: "Slug",
       type: "slug",
+      description:
+        "No need to change this beyond generate, as this is a data point",
       options: {
         source: "title",
         slugify: (input) =>
