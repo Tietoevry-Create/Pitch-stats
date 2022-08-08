@@ -4,6 +4,22 @@ export default {
   type: "document",
   fields: [
     { type: "title", name: "title" },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      description:
+        "No need to change this beyond generate, as this is a data point",
+      options: {
+        source: "title",
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
+        validation: (Rule) => Rule.required(),
+      },
+    },
     { type: "webSiteUrl", name: "webSiteUrl" },
     { type: "blockContent", name: "blockContent", title: "Block Content" },
   ],
