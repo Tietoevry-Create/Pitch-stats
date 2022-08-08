@@ -21,6 +21,13 @@ export default {
       },
     },
     { type: "webSiteUrl", name: "webSiteUrl" },
+    {
+      title: "Category",
+      name: "categoryReference",
+      type: "reference",
+      to: [{ type: "category" }],
+      validation: (Rule) => Rule.required(),
+    },
     { type: "blockContent", name: "blockContent", title: "Block Content" },
   ],
   preview: {
