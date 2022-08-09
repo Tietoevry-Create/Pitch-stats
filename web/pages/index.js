@@ -1,8 +1,10 @@
 import Head from "next/head";
 
-import Footer from "../components/footer";
+import Footer from "../components/footer.jsx";
+import client from "../util/client.js";
 
-export default function Home() {
+export default function Home({ data, preview = false }) {
+  const { title } = data;
   return (
     <div>
       <Head>
@@ -11,9 +13,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="bg-green-400">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <h1 className="text-3xl font-bold underline">{title}</h1>
       </div>
       <Footer />
     </div>
   );
+}
+
+export async function getStaticProps({ params, preview = false }) {
+  const query = "*[_type == 'frontPage' && _id == 'frontPage'][0]{title, ...}";
+  const data = await client.fetch(query);
+  return {
+    props: {
+      data,
+    },
+  };
 }
