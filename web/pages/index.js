@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import groq from "groq";
 import Footer from "../components/footer.jsx";
 import client from "../util/client.js";
 
@@ -21,7 +21,7 @@ export default function Home({ data, preview = false }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const query = "*[_type == 'frontPage' && _id == 'frontPage'][0]{title, ...}";
+  const query = groq`*[_type == 'frontPage' && _id == 'frontPage'][0]{title, ...}`;
   const data = await client.fetch(query);
   return {
     props: {
