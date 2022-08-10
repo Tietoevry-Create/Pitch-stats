@@ -1,5 +1,5 @@
 import Head from "next/head";
-import groq from "groq";
+import { groq } from "next-sanity";
 import { PortableText } from "@portabletext/react";
 import client from "util/client.js";
 import Layout from "components/layout.jsx";
@@ -29,12 +29,8 @@ export default function Site({ data, preview = false }) {
 
 export async function getStaticProps(context) {
   const { slug = "" } = context.params;
-  const data = await client.fetch(
-    `
-      *[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, blockContent,  ...}
-    `,
-    { slug }
-  );
+  const siteQuery = groq`*[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, blockContent,  ...}`;
+  const data = await client.fetch(siteQuery, { slug });
   return {
     props: {
       data,
@@ -43,9 +39,8 @@ export async function getStaticProps(context) {
   };
 }
 export async function getStaticPaths() {
-  const paths = await client.fetch(
-    `*[_type == "site" && defined(slug.current)][].slug.current`
-  );
+  const allSitePathsQuery = groq`*[_type == "site" && defined(slug.current)][].slug.current`;
+  const paths = await client.fetch(allSitePathsQuery);
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
