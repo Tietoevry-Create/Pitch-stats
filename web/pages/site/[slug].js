@@ -3,6 +3,7 @@ import { groq } from "next-sanity";
 import { PortableText } from "@portabletext/react";
 import client from "util/client.js";
 import Layout from "components/layout.jsx";
+import { blockContentQuery } from "util/queries";
 
 export default function Site({ data, preview = false }) {
   const { title, webSiteUrl = "", blockContent = [] } = data;
@@ -30,7 +31,7 @@ export default function Site({ data, preview = false }) {
 
 export async function getStaticProps(context) {
   const { slug = "" } = context.params;
-  const siteQuery = groq`*[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, blockContent,  ...}`;
+  const siteQuery = groq`*[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, ${blockContentQuery},  ...}`;
   const data = await client.fetch(siteQuery, { slug });
   return {
     props: {
