@@ -1,11 +1,11 @@
 import Head from "next/head";
 import groq from "groq";
-
+import { PortableText } from "@portabletext/react";
 import client from "util/client.js";
 import Layout from "components/layout.jsx";
 
 export default function Site({ data, preview = false }) {
-  const { title } = data;
+  const { title, webSiteUrl = "", blockContent = [] } = data;
   return (
     <div>
       <Head>
@@ -20,6 +20,7 @@ export default function Site({ data, preview = false }) {
             {" "}
             Statistikk for {title}
           </h1>
+          <PortableText value={blockContent} />
         </div>
       </Layout>
     </div>
@@ -30,7 +31,7 @@ export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const data = await client.fetch(
     `
-      *[_type == "site" && slug.current == $slug][0]{title, webSiteUrl,  ...}
+      *[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, blockContent,  ...}
     `,
     { slug }
   );
