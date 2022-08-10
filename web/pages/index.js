@@ -22,7 +22,7 @@ export default function Home({ data, preview = false }) {
   );
 }
 
-export async function getStaticProps({ params, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const query = groq`*[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ...}`;
   const data = await client.fetch(query);
   return {
