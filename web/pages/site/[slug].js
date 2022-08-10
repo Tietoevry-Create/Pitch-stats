@@ -1,8 +1,8 @@
 import Head from "next/head";
 import groq from "groq";
 
-import client from "../../util/client.js";
-import Layout from "../../components/layout.jsx";
+import client from "util/client.js";
+import Layout from "components/layout.jsx";
 
 export default function Site({ data, preview = false }) {
   const { title } = data;
@@ -15,6 +15,7 @@ export default function Site({ data, preview = false }) {
       </Head>
       <Layout>
         <div className="bg-green-400">
+          {console.log(data)}
           <h1 className="text-3xl font-bold underline">
             {" "}
             Statistikk for {title}
@@ -29,7 +30,7 @@ export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const data = await client.fetch(
     `
-      *[_type == "site" && slug.current == $slug][0]
+      *[_type == "site" && slug.current == $slug][0]{title, webSiteUrl,  ...}
     `,
     { slug }
   );
