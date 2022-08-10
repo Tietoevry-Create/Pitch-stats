@@ -1,9 +1,10 @@
 import Head from "next/head";
 import { groq } from "next-sanity";
-import { PortableText } from "@portabletext/react";
+
 import client from "util/client.js";
 import Layout from "components/layout.jsx";
 import { blockContentQuery } from "util/queries";
+import BlockContent from "../../components/blockContent.jsx";
 
 export default function Site({ data, preview = false }) {
   const { title, webSiteUrl = "", blockContent = [] } = data;
@@ -17,12 +18,12 @@ export default function Site({ data, preview = false }) {
       </Head>
       <Layout>
         <div className="bg-green-400">
-          {console.log(data)}
+          {/*console.log(data)*/}
           <h1 className="text-3xl font-bold underline">
             {" "}
             Statistikk for {title}
           </h1>
-          <PortableText value={blockContent} />
+          <BlockContent blockContent={blockContent} />
         </div>
       </Layout>
     </div>
