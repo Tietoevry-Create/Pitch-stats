@@ -37,6 +37,7 @@ export async function getStaticProps(context) {
     props: {
       data,
     },
+    revalidate: 200,
   };
 }
 export async function getStaticPaths() {
