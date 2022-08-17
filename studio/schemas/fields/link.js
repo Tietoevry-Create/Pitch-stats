@@ -15,6 +15,7 @@ export default {
       title: "URL",
       name: "href",
       description: "An url like https://www.google.com/",
+      placeholder: "https://www.google.com/",
     },
   ],
 };
