@@ -10,6 +10,11 @@ export default {
       type: "string",
       validation: (Rule) => Rule.required(),
     },
-    { type: "url", title: "URL", name: "href" },
+    {
+      type: "url",
+      title: "URL",
+      name: "href",
+      description: "An url like https://www.google.com/",
+    },
   ],
 };
