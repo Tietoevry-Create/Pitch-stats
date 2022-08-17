@@ -1,8 +1,8 @@
 import Head from "next/head";
 import groq from "groq";
 
-import client from "../util/client.js";
-import Layout from "../components/layout.jsx";
+import client from "util/client.js";
+import Layout from "components/layout.jsx";
 
 export default function Home({ data, preview = false }) {
   const { title } = data;
