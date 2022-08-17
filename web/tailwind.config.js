@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: { coffe: "FBF0E7", tepurple: "560E62" },
+      colors: { coffe: "#FBF0E7", tepurple: "#560E62" },
       fontFamily: {
         sans: ["Karla", ...defaultTheme.fontFamily.sans],
       },
