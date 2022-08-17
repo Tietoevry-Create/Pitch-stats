@@ -27,6 +27,9 @@ export default {
       type: "reference",
       to: [{ type: "category" }],
       validation: (Rule) => Rule.required(),
+      options: {
+        disableNew: true,
+      },
     },
     { type: "blockContent", name: "blockContent", title: "Block Content" },
   ],
