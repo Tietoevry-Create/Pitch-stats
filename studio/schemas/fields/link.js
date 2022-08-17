@@ -17,5 +17,11 @@ export default {
       description: "An url like https://www.google.com/",
       placeholder: "https://www.google.com/",
     },
+    {
+      title: "Reference",
+      name: "linkReference",
+      type: "reference",
+      to: [{ type: "site" }],
+    },
   ],
 };
