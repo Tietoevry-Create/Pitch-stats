@@ -9,6 +9,7 @@ import category from "./documents/category";
 import title from "./fields/title";
 import webSiteUrl from "./fields/webSiteUrl";
 import blockContent from "./fields/blockContent";
+import link from "./fields/link";
 
 export default createSchema({
   name: "default",
@@ -20,5 +21,6 @@ export default createSchema({
     title,
     webSiteUrl,
     blockContent,
+    link,
   ]),
 });
