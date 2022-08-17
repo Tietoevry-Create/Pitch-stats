@@ -8,6 +8,7 @@ export default {
       title: "Title",
       name: "title",
     },
+    { type: "blockContent", name: "blockContent", title: "Block Content" },
   ],
 
   preview: {
