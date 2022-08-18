@@ -13,12 +13,15 @@
   "dependencies": {
     "@portabletext/react": "^1.0.6",
     "@sanity/image-url": "^1.0.1",
+    "@storybook/builder-vite": "^0.2.2",
     "groq": "^2.29.3",
     "next": "12.2.0",
     "next-sanity": "^0.5.2",
     "next-seo": "^5.5.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
