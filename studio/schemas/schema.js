@@ -5,6 +5,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import frontPage from "./documents/frontPage";
 import site from "./documents/site";
 import category from "./documents/category";
+import footer from "./documents/footer";
 //fields
 import title from "./fields/title";
 import webSiteUrl from "./fields/webSiteUrl";
@@ -22,5 +23,6 @@ export default createSchema({
     webSiteUrl,
     blockContent,
     link,
+    footer,
   ]),
 });
