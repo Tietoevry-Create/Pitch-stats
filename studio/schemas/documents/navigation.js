@@ -2,5 +2,12 @@ export default {
   name: "navigation",
   title: "Navigation",
   type: "document",
-  fields: [],
+  fields: [
+    {
+      type: "array",
+      title: "Lenker",
+      name: "menuLinks",
+      of: [{ type: "link", title: "Link", name: "link" }],
+    },
+  ],
 };
