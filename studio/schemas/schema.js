@@ -6,6 +6,7 @@ import frontPage from "./documents/frontPage";
 import site from "./documents/site";
 import category from "./documents/category";
 import footer from "./documents/footer";
+import navigation from "./documents/navigation";
 //fields
 import title from "./fields/title";
 import webSiteUrl from "./fields/webSiteUrl";
@@ -24,5 +25,6 @@ export default createSchema({
     blockContent,
     link,
     footer,
+    navigation,
   ]),
 });
