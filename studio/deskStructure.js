@@ -10,9 +10,14 @@ export default () =>
       S.listItem()
         .title("Footer")
         .child(S.document().schemaType("footer").documentId("footer")),
+      S.listItem()
+        .title("Menu")
+        .child(S.document().schemaType("navigation").documentId("navigation")),
       S.listItem().title("Sites").child(S.documentTypeList("site")),
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["frontPage", "site", "footer"].includes(listItem.getId())
+          !["frontPage", "site", "footer", "navigation"].includes(
+            listItem.getId()
+          )
       ),
     ]);
