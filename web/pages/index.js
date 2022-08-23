@@ -15,7 +15,7 @@ export default function Home({ data, preview = false }) {
       </Head>
       <Layout>
         <div className="bg-green-400">
-          <h1 className="text-3xl font-bold underline">{title}</h1>
+          <h1 className=" font-bold underline">{title}</h1>
         </div>
       </Layout>
     </div>
