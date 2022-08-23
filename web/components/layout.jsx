@@ -1,7 +1,7 @@
 import Footer from "./footer";
 const Layout = ({children, ...rest}) => (
     <>
-    <div className="container mx-auto">{children}</div>
+    <main>{children}</main>
     <Footer />
     </>
   );
