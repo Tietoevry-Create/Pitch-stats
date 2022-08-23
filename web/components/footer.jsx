@@ -4,7 +4,7 @@ const Footer = () => (
     <p>Om dette prosjektet</p>
 		<p>Kildekode</p>
 		<p>Tietoevry</p>
-		<div className="mt-7 h-0.5 bg-pink-100 w-full"></div>
+		<hr className="mt-7 h-0.5 bg-pink-100 w-full" />
 		<p>©Tietoevry 2022</p>
 	</div>
   </footer>
