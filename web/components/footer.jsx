@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="bg-purple-800 absolute bottom-0 w-full">
+  <footer className="bg-tepurple absolute bottom-0 w-full">
   <div className="mx-auto container grid grid-rows-5 grid-flow-col gap-4 py-10 px-10 md:px-32 text-pink-100">
     <p>Om dette prosjektet</p>
 		<p>Kildekode</p>
