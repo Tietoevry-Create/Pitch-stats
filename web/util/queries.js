@@ -1,1 +1,1 @@
-export const blockContentQuery = "blockContent[]{..., markDefs[]{ ...} }";
+export const blockContentQuery = 'blockContent[]{..., markDefs[]{ ...} }';
