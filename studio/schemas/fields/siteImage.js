@@ -1,6 +1,6 @@
 export default {
   title: "Image",
-  name: "Image",
+  name: "siteImage",
   type: "image",
 
   fields: [

@@ -31,6 +31,7 @@ export default {
         disableNew: true,
       },
     },
+    { type: "siteImage", name: "siteImage" },
     { type: "blockContent", name: "blockContent", title: "Block Content" },
   ],
   preview: {
