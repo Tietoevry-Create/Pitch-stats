@@ -17,7 +17,7 @@ const Navbar = () => (
 			</span>
 
 			{/*		Can maybe use later
-			<button className=' inline-flex p-3 hover:bg-purple-800 rounded lg:hidden text-black ml-auto hover:text-pink-100 outline-none'>
+			<button className=' inline-flex p-3 hover:bg-tepurple rounded lg:hidden text-black ml-auto hover:text-pink-100 outline-none'>
 				<svg
 					className='w-6 h-6'
 					fill='none'
@@ -36,20 +36,20 @@ const Navbar = () => (
 			*/}
 
 			<div className='lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
-				<span  className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-purple-800 hover:text-white'>
+				<span  className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
 					Features
 				</span>
-				<span className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-purple-800 hover:text-white'>
+				<span className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
 					Sites
 				</span>
-				<span className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-purple-800 hover:text-white'>
+				<span className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
 					About
 				</span>
-				<span className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-purple-800 hover:text-white'>
+				<span className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
 					 Tietoevry
 				</span>
 			</div>
-			<div className="mx-3 mt-3 h-0.5 bg-purple-800 w-full"></div>
+			<div className="mx-3 mt-3 h-0.5 bg-tepurple w-full"></div>
 		</div>
 	</nav>
 );
