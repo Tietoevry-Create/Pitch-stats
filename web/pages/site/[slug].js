@@ -1,13 +1,13 @@
-import Head from "next/head";
-import { groq } from "next-sanity";
+import Head from 'next/head';
+import { groq } from 'next-sanity';
 
-import client from "util/client.js";
-import Layout from "components/layout.jsx";
-import { blockContentQuery } from "util/queries";
-import BlockContent from "../../components/blockContent.jsx";
+import client from 'util/client.js';
+import Layout from 'components/layout.jsx';
+import { blockContentQuery } from 'util/queries';
+import BlockContent from '../../components/blockContent.jsx';
 
 export default function Site({ data, preview = false }) {
-  const { title, webSiteUrl = "", blockContent = [] } = data;
+  const { title, webSiteUrl = '', blockContent = [] } = data;
   const metaTitle = `Statistikk for ${title}`;
   return (
     <div>
@@ -19,10 +19,7 @@ export default function Site({ data, preview = false }) {
       <Layout>
         <div className="bg-green-400">
           {/*console.log(data)*/}
-          <h1 className="text-3xl font-bold underline">
-            {" "}
-            Statistikk for {title}
-          </h1>
+          <h1 className="text-3xl font-bold underline"> Statistikk for {title}</h1>
           <BlockContent blockContent={blockContent} />
         </div>
       </Layout>
@@ -31,14 +28,14 @@ export default function Site({ data, preview = false }) {
 }
 
 export async function getStaticProps(context) {
-  const { slug = "" } = context.params;
+  const { slug = '' } = context.params;
   const siteQuery = groq`*[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, ${blockContentQuery},  ...}`;
   const data = await client.fetch(siteQuery, { slug });
   return {
     props: {
-      data,
+      data
     },
-    revalidate: 200,
+    revalidate: 200
   };
 }
 export async function getStaticPaths() {
@@ -47,6 +44,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: true
   };
 }

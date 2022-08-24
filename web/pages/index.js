@@ -1,8 +1,8 @@
-import Head from "next/head";
-import groq from "groq";
+import Head from 'next/head';
+import groq from 'groq';
 
-import client from "util/client.js";
-import Layout from "components/layout.jsx";
+import client from 'util/client.js';
+import Layout from 'components/layout.jsx';
 
 export default function Home({ data, preview = false }) {
   const { title } = data;
@@ -15,7 +15,7 @@ export default function Home({ data, preview = false }) {
       </Head>
       <Layout>
         <div className="bg-green-400">
-          <h1 className="text-3xl font-bold underline">{title}</h1>
+          <h1 className=" font-bold underline">{title}</h1>
         </div>
       </Layout>
     </div>
@@ -27,8 +27,8 @@ export async function getStaticProps({ preview = false }) {
   const data = await client.fetch(query);
   return {
     props: {
-      data,
+      data
     },
-    revalidate: 200,
+    revalidate: 200
   };
 }

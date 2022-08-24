@@ -1,11 +1,11 @@
-import Footer from "./footer";
-import Navbar from "./navbar";
-const Layout = ({children, ...rest}) => (
-    <>
-      <Navbar />
-    <div className="container mx-auto">{children}</div>
+import Footer from './footer';
+import Navbar from './navbar';
+const Layout = ({ children, ...rest }) => (
+  <>
+		<Navbar />
+    <main>{children}</main>
     <Footer />
-    </>
-  );
+  </>
+);
 
-  export default Layout;
+export default Layout;
