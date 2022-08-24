@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "eslint": "eslint --fix"
   },
   "dependencies": {
     "@portabletext/react": "^1.0.6",
@@ -38,8 +41,11 @@
     "babel-loader": "^8.2.5",
     "eslint": "8.18.0",
     "eslint-config-next": "12.2.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-storybook": "^0.6.4",
     "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
     "tailwindcss": "^3.1.7"
   }
 }

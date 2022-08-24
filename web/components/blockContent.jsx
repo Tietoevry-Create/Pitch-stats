@@ -1,12 +1,9 @@
-import { PortableText } from "@portabletext/react";
+import { PortableText } from '@portabletext/react';
 
-
-const BlockContent = ({blockContent, ...rest}) => (
-   
-    <> 
+const BlockContent = ({ blockContent, ...rest }) => (
+  <>
     <PortableText value={blockContent} />
-    </>
-    
+  </>
 );
-  
+
 export default BlockContent;
