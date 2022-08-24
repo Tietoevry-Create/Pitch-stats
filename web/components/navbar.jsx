@@ -1,9 +1,8 @@
 import React from "react";
-import Link from "next/link";
 
 const Navbar = () => (
 	<nav className="flex items-center flex-wrap bg-yellow-50">
-		<div className="px-10 py-3 md:px-52 w-full">
+		<div className="mx-auto container px-10 py-3 md:px-52 w-full">
 			<span className='inline-flex items-center p-2 mr-4'>
 				<svg
 					viewBox='0 0 24 24'
