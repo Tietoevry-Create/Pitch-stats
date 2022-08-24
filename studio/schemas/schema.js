@@ -12,6 +12,7 @@ import title from "./fields/title";
 import webSiteUrl from "./fields/webSiteUrl";
 import blockContent from "./fields/blockContent";
 import link from "./fields/link";
+import image from "./fields/image";
 
 export default createSchema({
   name: "default",
@@ -26,5 +27,6 @@ export default createSchema({
     link,
     footer,
     navigation,
+    image,
   ]),
 });
