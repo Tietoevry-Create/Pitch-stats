@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Heading = ({ title, ...rest }) => (
     <div className="bg-tepurple ">
        <heading className="container mx-auto px-10 py-3 md:px-52">
@@ -7,5 +9,11 @@ const Heading = ({ title, ...rest }) => (
        </heading>
     </div>
   );
+
   
+
   export default Heading;
+
+  Heading.propTypes = {
+    title: PropTypes.string.isRequired  };
+  

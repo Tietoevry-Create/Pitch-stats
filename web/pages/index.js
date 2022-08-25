@@ -3,7 +3,7 @@ import groq from 'groq';
 
 import client from 'util/client.js';
 import Layout from 'components/layout.jsx';
-
+import Heading from 'components/heading';
 export default function Home({ data, preview = false }) {
   const { title } = data;
   return (
@@ -14,9 +14,7 @@ export default function Home({ data, preview = false }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className="bg-green-400">
-          <h1 className=" font-bold underline">{title}</h1>
-        </div>
+        <Heading title={'Forside'} />
       </Layout>
     </div>
   );
