@@ -1,9 +1,9 @@
 import Link from "next/link";
-const CustomLink = ({ to, label, ...rest }) => (
+const CustomLink = ({ to, label, classes, ...rest }) => (
     <>
-      <Link to="/"><a className="text-white">{label}</a></Link>
+      <Link href="/"><a className={classes}>{label}</a></Link>
     </>
   );
   
-  export default CustomLink;
+export default CustomLink;
   
