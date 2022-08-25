@@ -6,7 +6,6 @@ import Layout from 'components/layout.jsx';
 import { blockContentQuery } from 'util/queries';
 import BlockContent from 'components/blockContent.jsx';
 import Heading from 'components/heading';
-import RadarChartWithTooltips from 'components/radarChart';
 
 export default function Site({ data, preview = false }) {
   const { title, webSiteUrl = '', blockContent = [] } = data;
