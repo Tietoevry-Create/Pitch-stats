@@ -4,7 +4,8 @@ import { groq } from 'next-sanity';
 import client from 'util/client.js';
 import Layout from 'components/layout.jsx';
 import { blockContentQuery } from 'util/queries';
-import BlockContent from '../../components/blockContent.jsx';
+import BlockContent from 'components/blockContent.jsx';
+import Heading from 'components/heading';
 
 export default function Site({ data, preview = false }) {
   const { title, webSiteUrl = '', blockContent = [] } = data;
@@ -17,11 +18,8 @@ export default function Site({ data, preview = false }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className="bg-green-400">
-          {/*console.log(data)*/}
-          <h1 className="text-3xl font-bold underline"> Statistikk for {title}</h1>
-          <BlockContent blockContent={blockContent} />
-        </div>
+        <Heading title={title} />
+        <BlockContent blockContent={blockContent} />
       </Layout>
     </div>
   );
