@@ -11,9 +11,9 @@ const Heading = ({ title, ...rest }) => (
   );
 
   
-
-  export default Heading;
-
   Heading.propTypes = {
     title: PropTypes.string.isRequired  };
+  export default Heading;
+
+
   
