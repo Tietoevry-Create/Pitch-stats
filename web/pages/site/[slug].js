@@ -21,7 +21,6 @@ export default function Site({ data, preview = false }) {
       <Layout>
         <Heading title={title} />
         <BlockContent blockContent={blockContent} />
-        <RadarChartWithTooltips />
       </Layout>
     </div>
   );
