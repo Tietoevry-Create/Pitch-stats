@@ -20,7 +20,7 @@ export default function Site({ data, preview = false }) {
       </Head>
       <Layout>
         <Heading title={title} />
-        <div className="block container mx-auto px-20 py-10 h-96">
+        <div className="block container mx-auto px-4 py-10 h-64 md:h-120">
           <CustomRadarChart />
         </div>
         <BlockContent blockContent={blockContent} />
