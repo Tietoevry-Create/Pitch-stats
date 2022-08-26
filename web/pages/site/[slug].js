@@ -6,6 +6,7 @@ import Layout from 'components/layout.jsx';
 import { blockContentQuery } from 'util/queries';
 import BlockContent from 'components/blockContent.jsx';
 import Heading from 'components/heading';
+import CustomRadarChart from 'components/radarChart';
 
 export default function Site({ data, preview = false }) {
   const { title, webSiteUrl = '', blockContent = [] } = data;
@@ -19,6 +20,9 @@ export default function Site({ data, preview = false }) {
       </Head>
       <Layout>
         <Heading title={title} />
+        <div className="block container mx-auto px-20 py-10 h-96">
+          <CustomRadarChart />
+        </div>
         <BlockContent blockContent={blockContent} />
       </Layout>
     </div>
