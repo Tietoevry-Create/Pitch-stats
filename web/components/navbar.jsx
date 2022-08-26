@@ -36,16 +36,16 @@ const Navbar = () => (
 			*/}
 
 			<div className='lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto'>
-				<span  className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
+				<span  className='text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
 					Features
 				</span>
-				<span className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
+				<span className='text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
 					Sites
 				</span>
-				<span className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
+				<span className='text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
 					About
 				</span>
-				<span className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
+				<span className='text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white'>
 					 Tietoevry
 				</span>
 			</div>
