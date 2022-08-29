@@ -8,7 +8,7 @@ import BlockContent from 'components/blockContent.jsx';
 import Heading from 'components/heading';
 import CustomRadarChart from 'components/radarChart';
 
-export default function Site({ pageData = {}, preview = false }) {
+export default function Site({ pageData = {}, footerData = {}, preview = false }) {
   const { title, webSiteUrl = '', blockContent = [] } = pageData;
   const metaTitle = `Statistikk for ${title}`;
   return (
@@ -19,7 +19,7 @@ export default function Site({ pageData = {}, preview = false }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        {console.log(pageData)}
+        {console.log(footerData)}
         <Heading title={title} />
         <div className="block container mx-auto px-4 py-10 h-64 md:h-120">
           <CustomRadarChart />
@@ -32,12 +32,13 @@ export default function Site({ pageData = {}, preview = false }) {
 
 export async function getStaticProps(context) {
   const { slug = '' } = context.params;
-  const siteQuery = `{"pageData":*[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, ${blockContentQuery},  ...}}`;
+  const siteQuery = `{"pageData":*[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, ${blockContentQuery},  ...}, ${footerQuery} }`;
   const data = await client.fetch(siteQuery, { slug });
-  const { pageData = {} } = data;
+  const { pageData = {}, footerData = {} } = data;
   return {
     props: {
-      pageData: pageData
+      pageData: pageData,
+      footerData: footerData
     },
     revalidate: 200
   };
