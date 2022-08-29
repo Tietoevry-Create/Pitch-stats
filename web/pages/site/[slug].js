@@ -3,13 +3,13 @@ import { groq } from 'next-sanity';
 
 import client from 'util/client.js';
 import Layout from 'components/layout.jsx';
-import { blockContentQuery } from 'util/queries';
+import { blockContentQuery, footerQuery } from 'util/queries';
 import BlockContent from 'components/blockContent.jsx';
 import Heading from 'components/heading';
 import CustomRadarChart from 'components/radarChart';
 
-export default function Site({ data, preview = false }) {
-  const { title, webSiteUrl = '', blockContent = [] } = data;
+export default function Site({ pageData = {}, preview = false }) {
+  const { title, webSiteUrl = '', blockContent = [] } = pageData;
   const metaTitle = `Statistikk for ${title}`;
   return (
     <div>
@@ -19,6 +19,7 @@ export default function Site({ data, preview = false }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
+        {console.log(pageData)}
         <Heading title={title} />
         <div className="block container mx-auto px-4 py-10 h-64 md:h-120">
           <CustomRadarChart />
@@ -31,11 +32,12 @@ export default function Site({ data, preview = false }) {
 
 export async function getStaticProps(context) {
   const { slug = '' } = context.params;
-  const siteQuery = groq`*[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, ${blockContentQuery},  ...}`;
+  const siteQuery = `{"pageData":*[_type == "site" && slug.current == $slug][0]{title, webSiteUrl, ${blockContentQuery},  ...}}`;
   const data = await client.fetch(siteQuery, { slug });
+  const { pageData = {} } = data;
   return {
     props: {
-      data
+      pageData: pageData
     },
     revalidate: 200
   };
