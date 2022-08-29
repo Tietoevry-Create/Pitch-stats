@@ -4,7 +4,7 @@ const Layout = ({ footerData, children, ...rest }) => (
   <>
 		<Navbar />
     <main >{children}</main>
-    <Footer footerData={footerData} />
+    <Footer footerData={footerData || {}} />
   </>
 );
 
