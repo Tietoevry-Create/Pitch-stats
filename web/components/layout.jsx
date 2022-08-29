@@ -1,10 +1,10 @@
-import Footer from './footer';
+import Footer from './footer.js';
 import Navbar from './navbar';
-const Layout = ({ children, ...rest }) => (
+const Layout = ({ footerData, children, ...rest }) => (
   <>
 		<Navbar />
     <main >{children}</main>
-    <Footer />
+    <Footer footerData={footerData} />
   </>
 );
 
