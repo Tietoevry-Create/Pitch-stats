@@ -22,8 +22,21 @@ export default function Site({ pageData = {}, footerData = {}, preview = false }
         <Heading title={title} webSiteUrl={webSiteUrl || ''} />
 
         <BlockContent blockContent={blockContent} />
-        <div className="block container mx-auto px-4 py-10 h-64 md:h-120">
-          <CustomRadarChart />
+
+        <div className="flex flex-col container mx-auto py-10 ">
+          <div className="px-4 md:px-40 py-10">
+            <h2 className="py-4">Lighthouse analysis</h2>
+            <p className="text-left text-xl py-4">
+              Lighthouse is an open-source, automated tool for improving the performance, quality,
+              and correctness of your web apps. When auditing a page, Lighthouse runs a barrage of
+              tests against the page, and then generates a report on how well the page did. From
+              here you can use the failing tests as indicators on what you can do to improve your
+              app.
+            </p>
+          </div>
+          <div className="h-64 md:h-120">
+            <CustomRadarChart />
+          </div>
         </div>
       </Layout>
     </div>
