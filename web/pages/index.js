@@ -4,9 +4,10 @@ import groq from 'groq';
 import client from 'util/client.js';
 import Layout from 'components/layout.jsx';
 import Heading from 'components/heading';
-import { footerQuery } from 'util/queries';
+import BlockContent from 'components/blockContent';
+import { footerQuery, blockContentQuery } from 'util/queries';
 export default function Home({ pageData = {}, footerData = {}, preview = false }) {
-  const { title, categotyRefList } = pageData;
+  const { title, categotyRefList, blockContent } = pageData;
 
   return (
     <div>
@@ -17,13 +18,14 @@ export default function Home({ pageData = {}, footerData = {}, preview = false }
       </Head>
       <Layout footerData={footerData}>
         <Heading title={title} />
+        <BlockContent blockContent={blockContent || []} />
       </Layout>
     </div>
   );
 }
 
 export async function getStaticProps({ preview = false }) {
-  const query = `{"pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, categoryRefList[]->{_id, _type, title, slug, ... }, ...}, ${footerQuery} }`;
+  const query = `{"pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ${blockContentQuery}, categoryRefList[]->{_id, _type, title, slug, ... }, ...}, ${footerQuery} }`;
   const data = await client.fetch(query);
   const { pageData = {}, footerData = {} } = data;
   return {
