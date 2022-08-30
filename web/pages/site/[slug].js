@@ -23,8 +23,8 @@ export default function Site({ pageData = {}, footerData = {}, preview = false }
 
         <BlockContent blockContent={blockContent} />
 
-        <div className="flex flex-col container mx-auto py-10 ">
-          <div className="px-4 md:px-40 py-10">
+        <div className="flex flex-col container mx-auto py-4 md:py-10 ">
+          <div className="px-4 md:px-40 py-4 md:py-10">
             <h2 className="py-4">Lighthouse analysis</h2>
             <p className="text-left text-xl py-4">
               Lighthouse is an open-source, automated tool for improving the performance, quality,
