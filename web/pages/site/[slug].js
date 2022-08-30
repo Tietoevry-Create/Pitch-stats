@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { groq } from 'next-sanity';
 
 import client from 'util/client.js';
-import Layout from 'components/layout.jsx';
+import Layout from 'components/layout';
 import { blockContentQuery, footerQuery } from 'util/queries';
 import BlockContent from 'components/blockContent.jsx';
 import Heading from 'components/heading';
@@ -19,11 +19,12 @@ export default function Site({ pageData = {}, footerData = {}, preview = false }
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout footerData={footerData}>
-        <Heading title={title} />
+        <Heading title={title} webSiteUrl={webSiteUrl || ''} />
+
+        <BlockContent blockContent={blockContent} />
         <div className="block container mx-auto px-4 py-10 h-64 md:h-120">
           <CustomRadarChart />
         </div>
-        <BlockContent blockContent={blockContent} />
       </Layout>
     </div>
   );
