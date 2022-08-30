@@ -8,9 +8,9 @@ const CustomLink = ({ to,   children, ...rest }) => (
   
  
 CustomLink.propTypes = {
-  label: PropTypes.string.isRequired,
+  
   to: PropTypes.string,
-  classes: PropTypes.string }; 
+}
 
   export default CustomLink;
 
