@@ -9,6 +9,20 @@ export default {
       name: "title",
     },
     { type: "blockContent", name: "blockContent", title: "Block Content" },
+
+    {
+      name: "categoryRefList",
+      title: "Categories",
+      type: "array",
+      of: [
+        {
+          name: "categoryRef",
+          title: "Category",
+          type: "reference",
+          to: [{ type: "category" }],
+        },
+      ],
+    },
   ],
 
   preview: {
