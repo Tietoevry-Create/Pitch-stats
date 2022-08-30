@@ -9,7 +9,7 @@ const Heading = ({ title, webSiteUrl, ...rest }) => (
       {webSiteUrl && (
         <div className="py-4 px-3">
           <CustomLink to={webSiteUrl}>
-            <a className="text-white hover:underline text-lg">URL: {webSiteUrl}</a>
+            <a className="text-white font-bold hover:underline text-lg">URL: {webSiteUrl}</a>
           </CustomLink>
         </div>
       )}
