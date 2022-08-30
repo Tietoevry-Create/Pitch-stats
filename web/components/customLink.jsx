@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import Link from "next/link";
-const CustomLink = ({ to, label, classes, ...rest }) => (
+const CustomLink = ({ to,   children, ...rest }) => (
     <>
-      <Link href="/"><a className={classes}>{label}</a></Link>
+      <Link href="/">{children}</Link>
     </>
   );
   
@@ -14,4 +14,5 @@ CustomLink.propTypes = {
 
   export default CustomLink;
 
+  
   

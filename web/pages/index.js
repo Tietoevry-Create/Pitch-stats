@@ -6,7 +6,8 @@ import Layout from 'components/layout.jsx';
 import Heading from 'components/heading';
 import { footerQuery } from 'util/queries';
 export default function Home({ pageData = {}, footerData = {}, preview = false }) {
-  const { title } = pageData;
+  const { title, categotyRefList } = pageData;
+
   return (
     <div>
       <Head>
@@ -22,7 +23,7 @@ export default function Home({ pageData = {}, footerData = {}, preview = false }
 }
 
 export async function getStaticProps({ preview = false }) {
-  const query = `{"pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ...}, ${footerQuery} }`;
+  const query = `{"pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, categoryRefList[]->{_id, _type, title, slug, ... }, ...}, ${footerQuery} }`;
   const data = await client.fetch(query);
   const { pageData = {}, footerData = {} } = data;
   return {

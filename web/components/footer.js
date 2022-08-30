@@ -6,11 +6,9 @@ const Footer = ({ footerData: { footerLinks = [] } }) => {
         {footerLinks &&
           footerLinks.length > 0 &&
           footerLinks.map((footerLink) => (
-            <CustomLink
-              key={footerLink._key}
-              classes="px-3 color-white hover:underline text-lg"
-              label={footerLink.label}
-            />
+            <CustomLink key={footerLink._key}>
+              <a className="px-3 color-white hover:underline text-lg">{footerLink.label}</a>
+            </CustomLink>
           ))}
 
         <hr className="mx-3 mt-7 h-0.5 bg-pink-100 w-full" />
