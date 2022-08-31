@@ -7,6 +7,7 @@ import { blockContentQuery, footerQuery } from 'util/queries';
 import BlockContent from 'components/blockContent.jsx';
 import Heading from 'components/heading';
 import CustomRadarChart from 'components/radarChart';
+import Counter from 'components/counter';
 
 export default function Site({ pageData = {}, footerData = {}, preview = false }) {
   const { title, webSiteUrl = '', blockContent = [] } = pageData;
@@ -22,7 +23,16 @@ export default function Site({ pageData = {}, footerData = {}, preview = false }
         <Heading title={title} webSiteUrl={webSiteUrl || ''} />
 
         <BlockContent blockContent={blockContent} />
-
+        <div className="flex flex-col container mx-auto py-4 md:py-10 ">
+          <div className="px-4 md:px-40 py-4 md:py-10">
+            <h2 className="py-4">Carbon results</h2>
+            <p className="text-left text-xl py-4">
+              This analysis is using the Website Carbon service to calculate the Co2 emmissions of{' '}
+              <span className="text-tepurple">{webSiteUrl}</span>.
+            </p>
+            <Counter />
+          </div>
+        </div>
         <div className="flex flex-col container mx-auto py-4 md:py-10 ">
           <div className="px-4 md:px-40 py-4 md:py-10">
             <h2 className="py-4">Lighthouse analysis</h2>
