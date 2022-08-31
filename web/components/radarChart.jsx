@@ -5,31 +5,31 @@ const data = [
   {
     subject: 'SEO',
     A: 55,
-    B: 60,
+   
     fullmark: 100,
   },
   {
     subject: 'Performance',
-    A: 98,
-    B: 130,
+    A: 60,
+   
     fullmark: 100,
   },
   {
     subject: 'Accessibility',
-    A: 86,
-    B: 130,
+    A: 30,
+   
     fullmark: 100,
   },
   {
     subject: 'Best practices',
-    A: 99,
-    B: 100,
+    A: 40,
+    
     fullmark: 100,
   },
   {
     subject: 'Something else',
-    A: 99,
-    B: 100,
+    A: 30,
+   
     fullmark: 100,
   },
   
