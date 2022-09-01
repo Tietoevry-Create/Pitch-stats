@@ -3,7 +3,7 @@ import React from "react";
 
 const CategoryRefList = ({ categoryList, ...rest }) => (
 	<div className="container mx-auto px-4 md:px-24 py-10 text-xl">
-		<h2>Categories</h2>
+		<h2>Kategorier</h2>
 		<div className="grid grid-cols-2 my-14">
 			{categoryList &&
 			categoryList.length > 0 &&
