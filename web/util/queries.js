@@ -2,7 +2,7 @@ import { groq } from 'next-sanity';
 export const blockContentQuery = 'blockContent[]{..., markDefs[]{ ...} }';
 
 export const footerQuery =
-  '"footerData": *[_type == "footer" && _id == "footer"][0]{ footerLinks[]{_key, _type, label, linkReference->}}';
+  '"footerData": *[_type == "footer" && _id == "footer"][0]{ footerLinks[]{_key, _type, label, linkReference->{...}}}';
 
 export const menuQuery =
   '"menuData": *[_type == "navigation" && _id == "navigation"][0]{ menuLinks[]{_key, _type, label, linkReference->{...}}}';
