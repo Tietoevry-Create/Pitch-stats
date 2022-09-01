@@ -26,7 +26,7 @@ export default function Home({ pageData = {}, footerData = {}, preview = false }
 }
 
 export async function getStaticProps({ preview = false }) {
-  const query = `{"pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ${blockContentQuery}, "categoryList": categoryRefList[]->{_id, _type, title, slug, ... }, ...}, ${footerQuery} }`;
+  const query = `{"pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ${blockContentQuery}, "categoryList": categoryRefList[]->{_id, _type, title, slug, lede, ... }, ...}, ${footerQuery} }`;
   const data = await client.fetch(query);
   const { pageData = {}, footerData = {} } = data;
   return {
