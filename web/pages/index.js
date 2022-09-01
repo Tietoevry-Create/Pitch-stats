@@ -28,7 +28,6 @@ export default function Home({
         <BlockContent blockContent={blockContent || []} />
         <CategoryRefList categoryList={categoryList || []} />
       </Layout>
-      {console.log(siteList)}
     </div>
   );
 }
