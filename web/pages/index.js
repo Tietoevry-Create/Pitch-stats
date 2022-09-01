@@ -6,7 +6,7 @@ import Heading from 'components/heading';
 import BlockContent from 'components/blockContent';
 import CategoryRefList from '/components/categoryRefList';
 import { footerQuery, blockContentQuery } from 'util/queries';
-export default function Home({ pageData = {}, footerData = {}, preview = false }) {
+export default function Home({ pageData = {}, footerData = {}, siteList = [], preview = false }) {
   const { title, categoryList, blockContent } = pageData;
 
   return (
@@ -21,18 +21,20 @@ export default function Home({ pageData = {}, footerData = {}, preview = false }
         <BlockContent blockContent={blockContent || []} />
         <CategoryRefList categoryList={categoryList || []} />
       </Layout>
+      {console.log(siteList)}
     </div>
   );
 }
 
 export async function getStaticProps({ preview = false }) {
-  const query = `{"pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ${blockContentQuery}, "categoryList": categoryRefList[]->{_id, _type, title, slug, lede, ... }, ...}, ${footerQuery} }`;
+  const query = `{"siteList": *[_type=="site"]{title, slug, _type, _id, "category": categoryReference->{title}}, "pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ${blockContentQuery}, "categoryList": categoryRefList[]->{_id, _type, title, slug, lede, ... }, ...}, ${footerQuery} }`;
   const data = await client.fetch(query);
-  const { pageData = {}, footerData = {} } = data;
+  const { pageData = {}, footerData = {}, siteList = [] } = data;
   return {
     props: {
       pageData: pageData,
-      footerData: footerData
+      footerData: footerData,
+      siteList: siteList
     },
     revalidate: 200
   };
