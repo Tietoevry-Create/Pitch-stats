@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import groq from 'groq';
 
 import client from 'util/client.js';
-import Layout from 'components/layout.jsx';
+import Layout from 'components/layout';
 import Heading from 'components/heading';
 import BlockContent from 'components/blockContent';
 import CategoryRefList from '/components/categoryRefList';
@@ -20,7 +19,7 @@ export default function Home({ pageData = {}, footerData = {}, preview = false }
       <Layout footerData={footerData}>
         <Heading title={title} />
         <BlockContent blockContent={blockContent || []} />
-        <CategoryRefList categoryList={categoryList || []}/>
+        <CategoryRefList categoryList={categoryList || []} />
       </Layout>
     </div>
   );
