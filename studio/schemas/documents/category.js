@@ -7,6 +7,7 @@ export default {
       type: "title",
       title: "Title",
       name: "title",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "slug",
