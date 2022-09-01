@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { RiHome4Line } from "react-icons/ri";
+import { RiHome4Line, RiBracketsLine, RiMenuAddLine } from "react-icons/ri";
 import { GiBarefoot } from "react-icons/gi";
 
 export default () =>
@@ -18,13 +18,17 @@ export default () =>
         ),
       S.listItem()
         .title("Meny")
+        .icon(RiMenuAddLine)
         .child(
           S.document()
             .schemaType("navigation")
             .documentId("navigation")
             .title("Meny")
         ),
-      S.listItem().title("Sider").child(S.documentTypeList("site")),
+      S.listItem()
+        .title("Sider")
+        .icon(RiBracketsLine)
+        .child(S.documentTypeList("site")),
       ...S.documentTypeListItems().filter(
         (listItem) =>
           !["frontPage", "site", "footer", "navigation"].includes(
