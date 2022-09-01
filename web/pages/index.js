@@ -33,7 +33,7 @@ export default function Home({
 }
 
 export async function getStaticProps({ preview = false }) {
-  const query = `{"siteList": *[_type=="site"]{title, slug, _type, _id, "category": categoryReference->{title}}, "pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ${blockContentQuery}, "categoryList": categoryRefList[]->{_id, _type, title, slug, lede, ... }, ...}, ${footerQuery}, ${menuQuery} }`;
+  const query = `{"siteList": *[_type=="site"]{title, slug, _type, _id, "category": categoryReference->{title}}, "pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ${blockContentQuery}, "categoryList": categoryRefList[]->{_id, _type, title, slug, lede, path, ... }, ...}, ${footerQuery}, ${menuQuery} }`;
   const data = await client.fetch(query);
   const { pageData = {}, footerData = {}, siteList = [], menuData = {} } = data;
   return {

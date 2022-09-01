@@ -30,6 +30,12 @@ export default {
             .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
       },
     },
+    {
+			type: "text",
+			name: "path",
+			title: "Path",
+			description: "Path som kan brukes til å generere SVG bilder",
+    }
   ],
   preview: {
     select: {
