@@ -9,6 +9,12 @@ export default {
       name: "title",
     },
     {
+      type: "text",
+      name: "lede",
+      title: "Ledetekst",
+      description: "En kort tekst som beskriver kategorien ",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
