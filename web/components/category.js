@@ -13,7 +13,7 @@ const Category = ({ children, ...rest }) => (
       </div>
       <div className="container text-xl ">
         <h3>{children.title}</h3>
-        <span className="">{children.lede}</span>
+        <p className="">{children.lede}</p>
       </div>
     </a>
   </CustomLink>
