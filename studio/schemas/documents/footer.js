@@ -7,7 +7,7 @@ export default {
       type: "array",
       title: "Lenker",
       name: "footerLinks",
-      of: [{ type: "link", title: "Link", name: "link" }],
+      of: [{ type: "link", title: "Lenke", name: "link" }],
     },
   ],
 };

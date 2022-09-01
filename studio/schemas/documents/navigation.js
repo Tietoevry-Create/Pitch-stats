@@ -1,6 +1,6 @@
 export default {
   name: "navigation",
-  title: "Navigation",
+  title: "Navigasjon",
   type: "document",
   fields: [
     {

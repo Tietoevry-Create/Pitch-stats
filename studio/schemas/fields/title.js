@@ -1,6 +1,6 @@
 export default {
   name: "title",
-  title: "Title",
+  title: "Tittel",
   type: "string",
   validation: (Rule) => Rule.required(),
 };

@@ -1,6 +1,6 @@
 export default {
   name: "blockContent",
-  title: "Block content",
+  title: "Riktekst",
   type: "array",
   of: [{ type: "block" }],
 };

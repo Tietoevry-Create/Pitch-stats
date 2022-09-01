@@ -2,10 +2,10 @@ import S from "@sanity/desk-tool/structure-builder";
 
 export default () =>
   S.list()
-    .title("Content")
+    .title("Stats")
     .items([
       S.listItem()
-        .title("Front Page")
+        .title("Forside")
         .child(S.document().schemaType("frontPage").documentId("frontPage")),
       S.listItem()
         .title("Footer")
@@ -13,14 +13,14 @@ export default () =>
           S.document().schemaType("footer").documentId("footer").title("Footer")
         ),
       S.listItem()
-        .title("Menu")
+        .title("Meny")
         .child(
           S.document()
             .schemaType("navigation")
             .documentId("navigation")
-            .title("Menu")
+            .title("Meny")
         ),
-      S.listItem().title("Sites").child(S.documentTypeList("site")),
+      S.listItem().title("Sider").child(S.documentTypeList("site")),
       ...S.documentTypeListItems().filter(
         (listItem) =>
           !["frontPage", "site", "footer", "navigation"].includes(

@@ -1,8 +1,8 @@
 export default {
   name: "webSiteUrl",
-  title: "Web site url",
+  title: "Webside url",
   type: "url",
-  description: "Url for the website to be tested (required) ",
+  description: "Url for the websiden som skal testes (required) ",
   validation: (Rule) => Rule.required(),
   placeholder: "https://www.google.com/",
 };

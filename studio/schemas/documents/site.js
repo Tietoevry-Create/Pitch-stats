@@ -9,7 +9,7 @@ export default {
       title: "Slug",
       type: "slug",
       description:
-        "No need to change this beyond generate, as this is a data point",
+        "Ingen grunn til å forandre denne etter å ha trykket 'generate'",
       validation: (Rule) => Rule.required(),
       options: {
         source: "title",

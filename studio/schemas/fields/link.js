@@ -14,11 +14,11 @@ export default {
       type: "url",
       title: "URL",
       name: "href",
-      description: "An url like https://www.google.com/",
+      description: "En URL som f.eks https://www.google.com/",
       placeholder: "https://www.google.com/",
     },
     {
-      title: "Reference",
+      title: "Referanse",
       name: "linkReference",
       type: "reference",
       to: [{ type: "site" }],

@@ -5,19 +5,19 @@ export default {
   fields: [
     {
       type: "title",
-      title: "Title",
+      title: "Tittel",
       name: "title",
     },
-    { type: "blockContent", name: "blockContent", title: "Block Content" },
+    { type: "blockContent", name: "blockContent", title: "Riktekst" },
 
     {
       name: "categoryRefList",
-      title: "Categories",
+      title: "Kategorier",
       type: "array",
       of: [
         {
           name: "categoryRef",
-          title: "Category",
+          title: "Kategori",
           type: "reference",
           to: [{ type: "category" }],
         },
