@@ -6,7 +6,8 @@ const Category = ({ children, ...rest }) => (
       <svg
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-current text-black h-46 w-46 mr-2">
+        className="fill-current text-black h-46 w-46 mr-2"
+      >
         <path d={children.path} />
       </svg>
       <div className="grid grid-row-2 gap-7">
