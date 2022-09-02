@@ -7,6 +7,7 @@ import site from "./documents/site";
 import category from "./documents/category";
 import footer from "./documents/footer";
 import navigation from "./documents/navigation";
+import sitePage from "./documents/sitePage";
 //fields
 import title from "./fields/title";
 import webSiteUrl from "./fields/webSiteUrl";
@@ -28,5 +29,6 @@ export default createSchema({
     footer,
     navigation,
     siteImage,
+    sitePage,
   ]),
 });
