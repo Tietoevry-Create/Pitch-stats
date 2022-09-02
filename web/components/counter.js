@@ -10,7 +10,7 @@ const Counter = () => {
           duration={3}
           delay={0.2}
           end={0.86}
-          suffix={' gram av Co2'}
+          suffix={' gram av CO₂'}
         />
         <p className="text-xl py-5">blir produsert etter hvert besøk.</p>
       </div>
@@ -25,7 +25,7 @@ const Counter = () => {
           duration={3}
           delay={1}
           end={102.97}
-          suffix={' kilo av Co2'}
+          suffix={' kilo av CO₂'}
         />
         <p className="text-xl py-5">blir produsert.</p>
       </div>

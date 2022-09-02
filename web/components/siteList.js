@@ -23,7 +23,7 @@ const SiteList = ({ siteList, ...rest }) => (
                         <a className="grid grid-cols-6">
                             <span>{site.title}</span>
                             <span>{site.category.title}</span>
-                            <span>0.39 Co2</span>
+                            <span>0.39 CO₂</span>
                             <span>90%</span>
                             <span>60%</span>
                             <span>80%</span>
