@@ -22,7 +22,9 @@ export default function Site({ pageData = {}, footerData = {}, preview = false }
       <Layout footerData={footerData} menuData={menuData}>
         <Heading title={title} webSiteUrl={webSiteUrl || ''} />
 
-        <BlockContent blockContent={blockContent} />
+        <div className="container mx-auto px-4 md:px-24 py-4 md:py-10 text-xl">
+          <BlockContent blockContent={blockContent || []} />
+        </div>
         <div className="flex flex-col container mx-auto py-4 md:py-10 ">
           <div className="px-4 md:px-40 py-4 md:py-10">
             <h2 className="py-4">Karbonresultat</h2>

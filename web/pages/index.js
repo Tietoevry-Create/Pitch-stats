@@ -25,8 +25,9 @@ export default function Home({
       </Head>
       <Layout footerData={footerData} menuData={menuData}>
         <Heading title={title} />
-
-        <BlockContent blockContent={blockContent || []} />
+        <div className="container mx-auto px-4 md:px-24 py-4 md:py-10 text-xl">
+          <BlockContent blockContent={blockContent || []} />
+        </div>
         <CategoryRefList categoryList={categoryList || []} />
         <SiteList siteList={siteList || []} />
       </Layout>
