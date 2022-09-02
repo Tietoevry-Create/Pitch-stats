@@ -21,7 +21,12 @@ export default {
       title: "Referanse",
       name: "linkReference",
       type: "reference",
-      to: [{ type: "site" }],
+      to: [
+        { type: "site" },
+        { type: "category" },
+        { type: "frontPage" },
+        { type: "sitePage" },
+      ],
       options: {
         disableNew: true,
       },
