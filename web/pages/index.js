@@ -4,6 +4,7 @@ import client from 'util/client.js';
 import Layout from 'components/layout';
 import Heading from 'components/heading';
 import BlockContent from 'components/blockContent';
+import SiteList from 'components/siteList';
 import CategoryRefList from '/components/categoryRefList';
 import { footerQuery, blockContentQuery, menuQuery } from 'util/queries';
 export default function Home({
@@ -27,6 +28,7 @@ export default function Home({
 
         <BlockContent blockContent={blockContent || []} />
         <CategoryRefList categoryList={categoryList || []} />
+        <SiteList siteList={siteList || []}/>
       </Layout>
     </div>
   );
