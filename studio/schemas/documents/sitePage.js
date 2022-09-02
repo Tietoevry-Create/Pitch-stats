@@ -25,6 +25,7 @@ export default {
             .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
       },
     },
+    { type: "blockContent", name: "blockContent", title: "Block Content" },
   ],
   preview: {
     select: {
