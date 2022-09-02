@@ -56,7 +56,7 @@ const Navbar = ({ menuData: { menuLinks = [] } }) => (
           menuLinks.length > 0 &&
           menuLinks.map((menuLink) => (
             <CustomLink key={menuLink._key}>
-              <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white">
+              <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/10">
                 {menuLink.label}
               </a>
             </CustomLink>
