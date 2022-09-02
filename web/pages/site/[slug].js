@@ -9,8 +9,8 @@ import Heading from 'components/heading';
 import CustomRadarChart from 'components/radarChart';
 import Counter from 'components/counter';
 
-export default function Site({ pageData = {}, footerData = {}, preview = false }) {
-  const { title, webSiteUrl = '', blockContent = [], menuData = [] } = pageData;
+export default function Site({ pageData = {}, footerData = {}, menuData, preview = false }) {
+  const { title, webSiteUrl = '', blockContent = [] } = pageData;
   const metaTitle = `Statistikk for ${title}`;
   return (
     <div>
