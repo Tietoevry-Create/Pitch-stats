@@ -1,5 +1,6 @@
 import CustomLink from './customLink';
-const Footer = ({ footerData: { footerLinks = [] } }) => {
+const Footer = ({ footerData = {} }) => {
+  const { footerLinks } = footerData;
   return (
     <footer aria-labelledby="footerHeading" className="bg-tepurple bottom-0 w-full">
       <h2 id="footerHeading" className="sr-only">
