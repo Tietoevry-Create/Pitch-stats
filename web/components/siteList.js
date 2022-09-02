@@ -4,7 +4,7 @@ import React from 'react';
 const SiteList = ({ siteList, ...rest }) => (
   <div className="container mx-auto px-4 md:px-24 py-10 text-xl">
     <section>
-      <h2 className="mb-14 font-bold border-b-4 border-black">Sider</h2>
+      <h2 className=" pb-1 mb-14 font-bold border-b-4 border-black">Sider</h2>
       <ul>
         <li className="grid grid-cols-6 p-2 rounded font-semibold">
           <span>Navn</span>
