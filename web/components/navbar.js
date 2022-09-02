@@ -1,6 +1,7 @@
 import React from 'react';
+import CustomLink from './customLink';
 
-const Navbar = () => (
+const Navbar = ({ menuData: { menuLinks = [] } }) => (
   <nav className="flex items-center flex-wrap bg-yellow-50">
     <div className="mx-auto container px-4 md:px-20 py-3 w-full">
       <span className="inline-flex items-center p-2 mr-4">
@@ -8,7 +9,9 @@ const Navbar = () => (
           viewBox="0 0 1328 224"
           xmlns="http://www.w3.org/2000/svg"
           className="fill-current text-black h-6 w-32 mr-2">
-          <path fill="#280071" d="M561,49.084c-33.689,0-63,29.311-63,63c0,33.689,26.311,61,60,61h51v-26h-82v-24h97v-11
+          <path
+            fill="#280071"
+            d="M561,49.084c-33.689,0-63,29.311-63,63c0,33.689,26.311,61,60,61h51v-26h-82v-24h97v-11
 	C624,78.395,594.689,49.084,561,49.084z M595,101.084h-68v-24h68V101.084z M429,25.084c0-9.389,7.611-17,17-17s17,7.611,17,17
 	s-7.611,17-17,17S429,34.473,429,25.084z M472,147.084h24v26h-74v-26h24v-70h-36v-26c36,0,62,28,62,62V147.084z M356,147.084h44v26
 	h-8c-38,0-62-26-62-62v-34h-26v-26h26v-51h26v51h32v26h-32V147.084z M1154,147.084h44v26h-88v-26h18v-36c0-34,26-60,62-60v26h-36
@@ -23,7 +26,8 @@ const Navbar = () => (
 	S160,167.163,160,176z M128,176c0,8.837-7.163,16-16,16s-16-7.163-16-16s7.163-16,16-16S128,167.163,128,176z M220,144
 	c0,6.627-5.373,12-12,12c-6.627,0-12-5.373-12-12s5.373-12,12-12C214.627,132,220,137.373,220,144z M176,128c8.837,0,16,7.163,16,16
 	s-7.163,16-16,16s-16-7.163-16-16S167.163,128,176,128z M222,112c0,7.732-6.268,14-14,14s-14-6.268-14-14s6.268-14,14-14
-	S222,104.268,222,112z M176,128c-8.837,0-16-7.163-16-16s7.163-16,16-16s16,7.163,16,16S184.837,128,176,128z"/>
+	S222,104.268,222,112z M176,128c-8.837,0-16-7.163-16-16s7.163-16,16-16s16,7.163,16,16S184.837,128,176,128z"
+          />
         </svg>
       </span>
 
@@ -47,18 +51,15 @@ const Navbar = () => (
 			*/}
 
       <div className="lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto">
-        <span className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white">
-          Features
-        </span>
-        <span className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white">
-          Sites
-        </span>
-        <span className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white">
-          About
-        </span>
-        <span className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white">
-          Tietoevry
-        </span>
+        {menuLinks &&
+          menuLinks.length > 0 &&
+          menuLinks.map((menuLink) => (
+            <CustomLink key={menuLink._key}>
+              <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-tepurple hover:text-white">
+                {menuLink.label}
+              </a>
+            </CustomLink>
+          ))}
       </div>
       <div className="mx-3 mt-3 h-0.5 bg-tepurple w-full"></div>
     </div>
