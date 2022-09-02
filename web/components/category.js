@@ -2,7 +2,7 @@ import React from 'react';
 import CustomLink from './customLink';
 const Category = ({ children, ...rest }) => (
   <CustomLink>
-    <a className="grid grid-cols-2 gap-3 rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/10 hover:scale-125 group">
+    <a className="grid grid-cols-2 gap-3 rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20 hover:scale-125 group">
       <svg
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
