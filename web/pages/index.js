@@ -28,7 +28,7 @@ export default function Home({
 
         <BlockContent blockContent={blockContent || []} />
         <CategoryRefList categoryList={categoryList || []} />
-        <SiteList siteList={siteList || []}/>
+        <SiteList siteList={siteList || []} />
       </Layout>
     </div>
   );
