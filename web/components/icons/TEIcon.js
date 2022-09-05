@@ -2,7 +2,8 @@ const TEIcon = () => (
   <svg
     viewBox="0 0 1328 224"
     xmlns="http://www.w3.org/2000/svg"
-    className="fill-current text-black h-6 w-32 mr-2">
+    className="fill-current text-black h-6 w-32 mr-2"
+  >
     <path
       fill="#280071"
       d="M561,49.084c-33.689,0-63,29.311-63,63c0,33.689,26.311,61,60,61h51v-26h-82v-24h97v-11

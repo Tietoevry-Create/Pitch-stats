@@ -22,7 +22,8 @@ const SiteList = ({ siteList, ...rest }) => (
           siteList.map((site, index) => (
             <li
               key={site._id}
-              className="p-2 border-solid border-tepurple border-2 rounded hover:bg-tepurple/20 border-t-0 first:border-t-2">
+              className="p-2 border-solid border-tepurple border-2 rounded hover:bg-tepurple/20 border-t-0 first:border-t-2"
+            >
               <CustomLink>
                 <a className="grid md:grid-desktop grid-mobile md:gap-4 gap-2 whitespace-nowrap">
                     <span className=' w-5 justify-self-center'>{index + 1}.</span>
