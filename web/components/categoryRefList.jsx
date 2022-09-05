@@ -7,7 +7,7 @@ const CategoryRefList = ({ categoryList, ...rest }) => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-20 my-14">
       {categoryList &&
         categoryList.length > 0 &&
-        categoryList.map((category) => <Category key={category._id}>{category}</Category>)}
+        categoryList.map((category) => <Category category={category} key={category._id}/>)}
     </div>
   </section>
 );
