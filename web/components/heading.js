@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 const Heading = ({ title, webSiteUrl, ...rest }) => (
   <div className="flex bg-tepurple mb-12 ">
-    <heading className="container mx-auto px-4 md:px-20 py-6 md:py-10">
+    <header className="container mx-auto px-4 md:px-20 py-6 md:py-10">
       <div>
         <h1 className="px-3 text-white text-6xl font-bold">{title}</h1>
       </div>
@@ -13,7 +13,7 @@ const Heading = ({ title, webSiteUrl, ...rest }) => (
           </Link>
         </div>
       )}
-    </heading>
+    </header>
   </div>
 );
 
