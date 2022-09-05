@@ -12,4 +12,13 @@
   }
 }
 @tailwind components;
+@layer components {
+  .grid-desktop {
+    grid-template-columns: 30px repeat(6, minmax(0, 1fr));
+  }
+
+  .grid-mobile {
+    grid-template-columns: 30px repeat(3, minmax(0, 1fr));
+  }
+}
 @tailwind utilities;
