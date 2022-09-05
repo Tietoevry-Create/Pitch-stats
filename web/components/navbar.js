@@ -1,14 +1,20 @@
 import React from 'react';
 import CustomLink from './customLink';
 import TEIcon from './icons/TEIcon';
+import Link from 'next/link';
 const Navbar = ({ menuData = {} }) => {
   const { menuLinks = [] } = menuData;
   return (
     <nav className="bg-yellow-50">
       <div className="mx-auto container flex flex-wrap items-center px-4 md:px-20 py-3 w-full">
-        <div className="inline-flex items-center p-2 mr-4">
-          <TEIcon />
-        </div>
+        <Link href="/">
+          <a>
+            <div className="inline-flex items-center p-2 mr-4">
+              <span className="sr-only">Forside </span>
+              <TEIcon />
+            </div>
+          </a>
+        </Link>
 
         {/*		Can maybe use later
     <button className=' inline-flex p-3 hover:bg-tepurple rounded lg:hidden text-black ml-auto hover:text-pink-100 outline-none'>
