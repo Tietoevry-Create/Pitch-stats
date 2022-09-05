@@ -10,7 +10,7 @@ const Footer = ({ footerData = {} }) => {
         {footerLinks &&
           footerLinks.length > 0 &&
           footerLinks.map((footerLink) => (
-            <CustomLink key={footerLink._key}>
+            <CustomLink to={footerLink} key={footerLink._key}>
               <a className="px-3 color-white hover:underline text-lg">{footerLink.label}</a>
             </CustomLink>
           ))}

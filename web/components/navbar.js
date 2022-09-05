@@ -33,7 +33,7 @@ const Navbar = ({ menuData = {} }) => {
           {menuLinks &&
             menuLinks.length > 0 &&
             menuLinks.map((menuLink) => (
-              <CustomLink key={menuLink._key}>
+              <CustomLink to={menuLink} key={menuLink._key}>
                 <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black font-bold items-center justify-center rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20">
                   {menuLink.label}
                 </a>
