@@ -1,46 +1,49 @@
 import React from 'react';
 import CustomLink from './customLink';
 import TEIcon from './icons/TEIcon';
-const Navbar = ({ menuData: { menuLinks = [] } }) => (
-  <nav className="bg-yellow-50">
-    <div className="mx-auto container flex flex-wrap items-center px-4 md:px-20 py-3 w-full">
-      <div className="inline-flex items-center p-2 mr-4">
-        <TEIcon />
-      </div>
+const Navbar = ({ menuData = {} }) => {
+  const { menuLinks = [] } = menuData;
+  return (
+    <nav className="bg-yellow-50">
+      <div className="mx-auto container flex flex-wrap items-center px-4 md:px-20 py-3 w-full">
+        <div className="inline-flex items-center p-2 mr-4">
+          <TEIcon />
+        </div>
 
-      {/*		Can maybe use later
-			<button className=' inline-flex p-3 hover:bg-tepurple rounded lg:hidden text-black ml-auto hover:text-pink-100 outline-none'>
-				<svg
-					className='w-6 h-6'
-					fill='none'
-					stroke='currentColor'
-					viewBox='0 0 24 24'
-					xmlns='http://www.w3.org/2000/svg'
-				>
-					<path
-						strokeLinecap='round'
-						strokeLinejoin='round'
-						strokeWidth={2}
-						d='M4 6h16M4 12h16M4 18h16'
-					/>
-				</svg>
-			</button>
-			*/}
+        {/*		Can maybe use later
+    <button className=' inline-flex p-3 hover:bg-tepurple rounded lg:hidden text-black ml-auto hover:text-pink-100 outline-none'>
+      <svg
+        className='w-6 h-6'
+        fill='none'
+        stroke='currentColor'
+        viewBox='0 0 24 24'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth={2}
+          d='M4 6h16M4 12h16M4 18h16'
+        />
+      </svg>
+    </button>
+    */}
 
-      <div className="lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto">
-        {menuLinks &&
-          menuLinks.length > 0 &&
-          menuLinks.map((menuLink) => (
-            <CustomLink key={menuLink._key}>
-              <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20">
-                {menuLink.label}
-              </a>
-            </CustomLink>
-          ))}
+        <div className="lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto">
+          {menuLinks &&
+            menuLinks.length > 0 &&
+            menuLinks.map((menuLink) => (
+              <CustomLink key={menuLink._key}>
+                <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20">
+                  {menuLink.label}
+                </a>
+              </CustomLink>
+            ))}
+        </div>
+        <div className="mx-3 mt-3 h-0.5 bg-tepurple w-full"></div>
       </div>
-      <div className="mx-3 mt-3 h-0.5 bg-tepurple w-full"></div>
-    </div>
-  </nav>
-);
+    </nav>
+  );
+};
 
 export default Navbar;
