@@ -11,23 +11,23 @@ env:
   working-directory: web
 
 jobs:
-  check-lint:
-    name: Check lint
+  # check-lint:
+  #   name: Check lint
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
 
-      - name: Install Node.js dependencies
-        uses: bahmutov/npm-install@v1
-        with:
-          working-directory: ${{env.working-directory}}
+  #     - name: Install Node.js dependencies
+  #       uses: bahmutov/npm-install@v1
+  #       with:
+  #         working-directory: ${{env.working-directory}}
 
-      - name: Check lint
-        run: npm run lint
-        working-directory: ${{ env.working-directory }}
+  #     - name: Check lint
+  #       run: npm run lint
+  #       working-directory: ${{ env.working-directory }}
 
   check-format:
     name: Check format
