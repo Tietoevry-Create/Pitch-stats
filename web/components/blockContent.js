@@ -19,9 +19,9 @@ const BlockContent = ({ blockContent, ...rest }) => (
           y2="88"
           fill="none"
           stroke="#000"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="10"
         />
         <line
           x1="128"
@@ -30,9 +30,9 @@ const BlockContent = ({ blockContent, ...rest }) => (
           y2="128"
           fill="none"
           stroke="#000"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="10"
         />
         <line
           x1="128"
@@ -41,15 +41,15 @@ const BlockContent = ({ blockContent, ...rest }) => (
           y2="104"
           fill="none"
           stroke="#000"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="10"
         />
         <path
           d="M132.5,181.2A64,64,0,1,0,194.7,69.9a8.6,8.6,0,0,1-4-4.2,68,68,0,0,0-125.4,0,8.6,8.6,0,0,1-4,4.2,64,64,0,1,0,62.2,111.3A8.2,8.2,0,0,1,132.5,181.2Z"
           fill="none"
           stroke="#000"
-          stroke-width="4"
+          strokeWidth="4"
         />
       </svg>
     </div>
