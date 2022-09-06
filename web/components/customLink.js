@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 const CustomLink = ({ to, children, ...rest }) => {
+  {
+    /* this component accepts either a document by looking for a slug in the slug key in an object, 
+    or it can accept a link object from Sanity */
+  }
+
   // checks references for type and routes to the corresponding folder in /pages/ with slug appended
   const toProductionURL = (document) => {
     switch (document._type) {
@@ -12,7 +17,6 @@ const CustomLink = ({ to, children, ...rest }) => {
         return '/' + document.slug.current;
       case 'site':
         return '/site/' + document.slug.current;
-
       default:
         return '/404';
     }
