@@ -2,8 +2,8 @@ import CustomLink from './customLink';
 import React from 'react';
 import SingleSite from './singleSite';
 
-const SiteList = ({ siteList, ...rest }) => (
-  <div className="container mx-auto px-4 md:px-24 py-10 text-xl">
+const SiteList = ({ refs, siteList, ...rest }) => (
+  <div ref={refs} className={'container mx-auto px-4 md:px-24 py-10 text-xl'}>
     <section>
       <h2 className=" pb-1 mb-14 font-bold text-3xl md:text-4xl border-b-4 border-black">Sider</h2>
       <ul>
