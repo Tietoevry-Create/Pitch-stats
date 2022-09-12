@@ -4,7 +4,7 @@ Website for analyzing SEO, carbon footprint, UU etc of other websites
 
 ## How we work
 
-We use [Zenhub](https://www.zenhub.com) for issue tracking. It is advised to install the [Zenhub browser extension](https://www.zenhub.com/extension). 
+We use [Zenhub](https://www.zenhub.com) for issue tracking. It is advised to install the [Zenhub browser extension](https://www.zenhub.com/extension), which gives access to Zenhub directly from Github. 
 
 ## Studio
 
