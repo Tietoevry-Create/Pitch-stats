@@ -4,6 +4,7 @@ const TreeIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     className="fill-current text-black h-20 w-20 md:h-80 md:w-80 mr-2">
     <rect width="256" height="256" fill="none" />
+    <title> Icon of tree </title>
     <line
       x1="128"
       y1="232"
