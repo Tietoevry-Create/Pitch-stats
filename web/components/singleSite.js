@@ -4,7 +4,7 @@ const SingleSite = ({ site, index, ...rest }) => {
   function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  // dirty code for setting sample data for data to be shown for sites
+  // dirty sample code for setting sample data for data to be shown for sites
   const [carbon, setCarbon] = useState(0);
   const [accesibility, setAccesibility] = useState(0);
   const [seo, setSeo] = useState(0);
