@@ -2,6 +2,10 @@
 Website for analyzing SEO, carbon footprint, UU etc of other websites
 
 
+## How we work
+
+We use [Zenhub](https://www.zenhub.com) for issue tracking. It is advised to install the [Zenhub browser extension](https://www.zenhub.com/extension). 
+
 ## Studio
 
 This project will use Sanity.io as a CMS, go to the [Sanity documentation to learn more](https://www.sanity.io/docs/sanity-studio)
