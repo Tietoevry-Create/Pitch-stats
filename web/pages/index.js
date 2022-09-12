@@ -5,7 +5,7 @@ import Layout from 'components/layout';
 import Heading from 'components/heading';
 import BlockContent from 'components/blockContent';
 import SiteList from 'components/siteList';
-import CategoryRefList from '/components/categoryRefList';
+import CategoryList from 'components/categoryList';
 
 import { footerQuery, blockContentQuery, menuQuery } from 'util/queries';
 export default function Home({
@@ -65,7 +65,7 @@ export default function Home({
           <BlockContent refs={blockContentRef} blockContent={blockContent || []} />
         </div>
         <div className={`${categoryRefListVisibility ? 'animate-fadeIn' : ''}`}>
-          <CategoryRefList refs={categoryRefListRef} categoryList={categoryList || []} />
+          <CategoryList refs={categoryRefListRef} categoryList={categoryList || []} />
         </div>
         <div className={`${siteListVisibility ? 'animate-fadeIn' : ''}`}>
           <SiteList refs={siteListRef} siteList={siteList || []} />
