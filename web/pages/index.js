@@ -46,7 +46,7 @@ export default function Home({
     categoryRefListObserver.observe(categoryRefListRef.current);
     siteListObserver.observe(siteListRef.current);
     return () => {
-      siteListObserver.disconnect();
+      blockContentObserver.disconnect();
       categoryRefListObserver.disconnect();
       siteListObserver.disconnect();
     };
