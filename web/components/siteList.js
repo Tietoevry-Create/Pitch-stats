@@ -1,15 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import SingleSite from './singleSite';
 
 export default function SiteList({ refs, siteList, ...rest }) {
   const siteListRef = useRef();
-  const [size, setSize] = useState();
-  const [showLoadMore, setShowLoadMore] = useState();
-
-  useEffect(() => {
-    setSize(10);
-    setShowLoadMore(true);
-  }, []);
+  const [size, setSize] = useState(10);
+  const [showLoadMore, setShowLoadMore] = useState(true);
 
   function increaseSiteList() {
     setSize(size + 10);
@@ -42,14 +37,12 @@ export default function SiteList({ refs, siteList, ...rest }) {
           className={
             `${!showLoadMore ? 'hidden' : ''}` +
             ' container flex flex-wrap items-center justify-center mx-auto mt-5 w-full'
-          }
-        >
+          }>
           <button
             onClick={() => increaseSiteList()}
             className={
               'px-3 py-2 text-black font-bold rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20'
-            }
-          >
+            }>
             Load More
           </button>
         </div>
