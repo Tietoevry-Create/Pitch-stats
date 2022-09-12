@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import SingleSite from './singleSite';
 
 export default function SiteList({ refs, siteList, ...rest }) {
@@ -6,13 +6,32 @@ export default function SiteList({ refs, siteList, ...rest }) {
   const [size, setSize] = useState(10);
   const [showLoadMore, setShowLoadMore] = useState(true);
 
+  const siteListRef = useRef();
+  const [siteListVisibility, setSiteListVisibility] = useState();
+
+  useEffect(() => {
+    const siteListObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setSiteListVisibility(entry.isIntersecting);
+    });
+
+    siteListObserver.observe(siteListRef.current);
+    return () => {
+      siteListObserver.disconnect();
+    };
+  }, []);
+
   function increaseSiteList() {
     setSize(size + 10);
     setShowLoadMore(showMoreRef.current.children.length >= size);
   }
 
   return (
-    <div ref={refs} className={'container mx-auto px-4 md:px-24 py-24 text-xl'}>
+    <div
+      ref={siteListRef}
+      className={`container mx-auto px-4 md:px-24 py-24 text-xl ${
+        siteListVisibility ? 'animate-fadeIn' : ''
+      }`}>
       <section>
         <h2 className="pb-1 mb-14 font-bold text-3xl md:text-4xl border-b-4 border-black">Sider</h2>
         <ul>

@@ -23,9 +23,6 @@ export default function Home({
   const categoryRefListRef = useRef();
   const [categoryRefListVisibility, setCategoryRefListVisibility] = useState();
 
-  const siteListRef = useRef();
-  const [siteListVisibility, setSiteListVisibility] = useState();
-
   useEffect(() => {
     const blockContentObserver = new IntersectionObserver((entries) => {
       const entry = entries[0];
@@ -37,18 +34,12 @@ export default function Home({
       setCategoryRefListVisibility(entry.isIntersecting);
     });
 
-    const siteListObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setSiteListVisibility(entry.isIntersecting);
-    });
-
     blockContentObserver.observe(blockContentRef.current);
     categoryRefListObserver.observe(categoryRefListRef.current);
-    siteListObserver.observe(siteListRef.current);
+
     return () => {
       blockContentObserver.disconnect();
       categoryRefListObserver.disconnect();
-      siteListObserver.disconnect();
     };
   }, []);
 
@@ -67,8 +58,8 @@ export default function Home({
         <div className={`${categoryRefListVisibility ? 'animate-fadeIn' : ''}`}>
           <CategoryList refs={categoryRefListRef} categoryList={categoryList || []} />
         </div>
-        <div className={`${siteListVisibility ? 'animate-fadeIn' : ''}`}>
-          <SiteList refs={siteListRef} siteList={siteList || []} />
+        <div>
+          <SiteList siteList={siteList || []} />
         </div>
       </Layout>
     </div>
