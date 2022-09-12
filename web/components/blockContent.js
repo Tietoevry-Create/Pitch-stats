@@ -1,8 +1,8 @@
 import { PortableText } from '@portabletext/react';
 import React from 'react';
 
-const BlockContent = ({ refs, blockContent, ...rest }) => (
-  <div ref={refs} className={'h-screen container mx-auto px-4 md:px-24 md:py-44 text-xl'}>
+const BlockContent = ({ blockContent, ...rest }) => (
+  <div className={'h-screen container mx-auto px-4 md:px-24 md:py-44 text-xl'}>
     <div className="items-top grid md:grid-cols-1 lg:grid-cols-2 pb-20">
       <div className="rounded-lg mb-auto border-2 border-tepurple py-5 px-5 md:py-10 md:px-16">
         <PortableText value={blockContent} />
@@ -11,8 +11,7 @@ const BlockContent = ({ refs, blockContent, ...rest }) => (
         <svg
           viewBox="0 0 240 240"
           xmlns="http://www.w3.org/2000/svg"
-          className="fill-current text-black h-20 w-20 md:h-80 md:w-80 mr-2"
-        >
+          className="fill-current text-black h-20 w-20 md:h-80 md:w-80 mr-2">
           <rect width="256" height="256" fill="none" />
           <line
             x1="128"

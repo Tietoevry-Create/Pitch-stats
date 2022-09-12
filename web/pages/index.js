@@ -17,28 +17,18 @@ export default function Home({
 }) {
   const { title, categoryList, blockContent } = pageData;
 
-  const blockContentRef = useRef();
-  const [blockContentVisibility, setBlockContentVisibility] = useState();
-
   const categoryRefListRef = useRef();
   const [categoryRefListVisibility, setCategoryRefListVisibility] = useState();
 
   useEffect(() => {
-    const blockContentObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setBlockContentVisibility(entry.isIntersecting);
-    });
-
     const categoryRefListObserver = new IntersectionObserver((entries) => {
       const entry = entries[0];
       setCategoryRefListVisibility(entry.isIntersecting);
     });
 
-    blockContentObserver.observe(blockContentRef.current);
     categoryRefListObserver.observe(categoryRefListRef.current);
 
     return () => {
-      blockContentObserver.disconnect();
       categoryRefListObserver.disconnect();
     };
   }, []);
@@ -52,15 +42,14 @@ export default function Home({
       </Head>
       <Layout footerData={footerData} menuData={menuData}>
         <Heading title={title} />
-        <div className={`${blockContentVisibility ? 'animate-fadeIn' : ''}`}>
-          <BlockContent refs={blockContentRef} blockContent={blockContent || []} />
-        </div>
+
+        <BlockContent blockContent={blockContent || []} />
+
         <div className={`${categoryRefListVisibility ? 'animate-fadeIn' : ''}`}>
           <CategoryList refs={categoryRefListRef} categoryList={categoryList || []} />
         </div>
-        <div>
-          <SiteList siteList={siteList || []} />
-        </div>
+
+        <SiteList siteList={siteList || []} />
       </Layout>
     </div>
   );
