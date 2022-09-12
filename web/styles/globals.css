@@ -35,6 +35,6 @@
     }
   }
   .animate-fadeIn {
-    animation: animate-fadeIn 3s;
+    animation: animate-fadeIn 1s;
   }
 }
