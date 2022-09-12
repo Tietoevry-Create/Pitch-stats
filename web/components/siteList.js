@@ -2,13 +2,13 @@ import React, { useRef, useState } from 'react';
 import SingleSite from './singleSite';
 
 export default function SiteList({ refs, siteList, ...rest }) {
-  const siteListRef = useRef();
+  const showMoreRef = useRef();
   const [size, setSize] = useState(10);
   const [showLoadMore, setShowLoadMore] = useState(true);
 
   function increaseSiteList() {
     setSize(size + 10);
-    setShowLoadMore(siteListRef.current.children.length >= size);
+    setShowLoadMore(showMoreRef.current.children.length >= size);
   }
 
   return (
@@ -26,7 +26,7 @@ export default function SiteList({ refs, siteList, ...rest }) {
             <span className="invisible md:visible">SEO</span>
           </li>
         </ul>
-        <ul ref={siteListRef}>
+        <ul ref={showMoreRef}>
           {siteList &&
             siteList.length > 0 &&
             siteList
