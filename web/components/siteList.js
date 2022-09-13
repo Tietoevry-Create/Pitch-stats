@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import SingleSite from './singleSite';
 
-export default function SiteList({ refs, siteList, ...rest }) {
+export default function SiteList({ siteList, ...rest }) {
   const showMoreRef = useRef();
   const [size, setSize] = useState(10);
   const [showLoadMore, setShowLoadMore] = useState(true);
