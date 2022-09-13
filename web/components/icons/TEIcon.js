@@ -2,7 +2,8 @@ const TEIcon = () => (
   <svg
     viewBox="0 0 1328 224"
     xmlns="http://www.w3.org/2000/svg"
-    className="fill-current text-black h-6 w-32 mr-2">
+    className="fill-current text-black h-6 w-32 mr-2"
+  >
     <title>Tietoevry Logo</title>
     <path
       fill="#280071"
