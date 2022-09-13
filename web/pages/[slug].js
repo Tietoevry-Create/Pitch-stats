@@ -39,7 +39,7 @@ export async function getStaticProps(context) {
       footerData: footerData,
       menuData: menuData
     },
-    revalidate: 200
+    revalidate: 50
   };
 }
 export async function getStaticPaths() {

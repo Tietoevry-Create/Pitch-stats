@@ -48,6 +48,6 @@ export async function getStaticProps({ preview = false }) {
       menuData: menuData,
       siteList: siteList
     },
-    revalidate: 200
+    revalidate: 50
   };
 }
