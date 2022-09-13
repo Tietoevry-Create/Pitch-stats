@@ -17,22 +17,6 @@ export default function Home({
 }) {
   const { title, categoryList, blockContent } = pageData;
 
-  const categoryRefListRef = useRef();
-  const [categoryRefListVisibility, setCategoryRefListVisibility] = useState();
-
-  useEffect(() => {
-    const categoryRefListObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setCategoryRefListVisibility(entry.isIntersecting);
-    });
-
-    categoryRefListObserver.observe(categoryRefListRef.current);
-
-    return () => {
-      categoryRefListObserver.disconnect();
-    };
-  }, []);
-
   return (
     <div>
       <Head>
@@ -45,9 +29,7 @@ export default function Home({
 
         <BlockContent blockContent={blockContent || []} />
 
-        <div className={`${categoryRefListVisibility ? 'animate-fadeIn' : ''}`}>
-          <CategoryList refs={categoryRefListRef} categoryList={categoryList || []} />
-        </div>
+        <CategoryList categoryList={categoryList || []} />
 
         <SiteList siteList={siteList || []} />
       </Layout>
