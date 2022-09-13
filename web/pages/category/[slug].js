@@ -4,6 +4,7 @@ import { groq } from 'next-sanity';
 import client from 'util/client.js';
 import Layout from 'components/layout';
 import { footerQuery, menuQuery } from 'util/queries';
+import SiteList from 'components/siteList';
 
 import Heading from 'components/heading';
 
@@ -22,6 +23,8 @@ export default function Category({ pageData = {}, footerData = {}, menuData, pre
         <Heading title={title} />
 
         <div className="container mx-auto px-4 md:px-24 py-4 md:py-10 text-2xl">{lede}</div>
+
+        {siteList && siteList.length > 0 && <SiteList siteList={siteList || []} />}
       </Layout>
     </div>
   );
@@ -38,7 +41,7 @@ export async function getStaticProps(context) {
       footerData: footerData,
       menuData: menuData
     },
-    revalidate: 200
+    revalidate: 50
   };
 }
 export async function getStaticPaths() {
