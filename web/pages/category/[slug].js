@@ -24,7 +24,7 @@ export default function Category({ pageData = {}, footerData = {}, menuData, pre
 
         <div className="container mx-auto px-4 md:px-24 py-4 md:py-10 text-2xl">{lede}</div>
 
-        <SiteList siteList={siteList || []} />
+        {siteList && siteList.length > 0 && <SiteList siteList={siteList || []} />}
       </Layout>
     </div>
   );
