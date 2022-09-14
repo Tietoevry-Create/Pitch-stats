@@ -63,7 +63,7 @@ export default function SiteList({ siteList, ...rest }) {
           <button
             onClick={() => setSize(size + 10)}
             className="px-3 py-2 text-black font-bold rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20">
-							Last inn flere sider
+            Last inn flere sider
           </button>
         </div>
       </section>
