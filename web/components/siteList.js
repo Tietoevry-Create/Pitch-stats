@@ -59,9 +59,7 @@ export default function SiteList({ siteList, ...rest }) {
           }>
           <button
             onClick={() => increaseSiteList()}
-            className={
-              'px-3 py-2 text-black font-bold rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20'
-            }>
+            className="px-3 py-2 text-black font-bold rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20">
             Load More
           </button>
         </div>
