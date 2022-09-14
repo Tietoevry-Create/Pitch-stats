@@ -14,7 +14,6 @@ const Footer = ({ footerData = {} }) => {
               <a className="px-3 color-white hover:underline text-lg">{footerLink.label}</a>
             </CustomLink>
           ))}
-
         <hr className="mx-3 mt-7 h-0.5 bg-pink-100 w-full" />
         <p className="px-3">©Tietoevry 2022</p>
       </div>
