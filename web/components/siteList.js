@@ -35,14 +35,16 @@ export default function SiteList({ siteList, ...rest }) {
       <section>
         <h2 className="pb-1 mb-14 font-bold text-3xl md:text-4xl border-b-4 border-black">Sider</h2>
         <ul>
-          <li className="grid md:grid-desktop grid-mobile p-2 rounded font-semibold md:gap-4 gap-2">
-            <span className="overflow-hidden text-ellipsis">Nr</span>
-            <span className="overflow-hidden text-ellipsis">Navn</span>
-            <span className="overflow-hidden text-ellipsis">Kategori</span>
-            <span className="overflow-hidden text-ellipsis">Utslipp</span>
-            <span className="invisible md:visible">Accesibility</span>
-            <span className="invisible md:visible">Performance</span>
-            <span className="invisible md:visible">SEO</span>
+          <li>
+            <ul className="grid md:grid-desktop grid-mobile p-2 rounded font-semibold md:gap-4 gap-2">
+            <li className="overflow-hidden text-ellipsis">Nr</li>
+            <li className="overflow-hidden text-ellipsis">Navn</li>
+            <li className="overflow-hidden text-ellipsis">Kategori</li>
+            <li className="overflow-hidden text-ellipsis">Utslipp</li>
+            <li className="invisible md:visible">Accesibility</li>
+            <li className="invisible md:visible">Performance</li>
+            <li className="invisible md:visible">SEO</li>
+            </ul>
           </li>
         </ul>
         <ul ref={showMoreRef}>
