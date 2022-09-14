@@ -34,8 +34,7 @@ export default function SiteList({ siteList, ...rest }) {
       ref={siteListRef}
       className={`container mx-auto px-4 md:px-24 py-24 text-xl ${
         siteListVisibility ? 'animate-fadeIn' : ''
-      }`}
-    >
+      }`}>
       <section>
         <h2 className="pb-1 mb-14 font-bold text-3xl md:text-4xl border-b-4 border-black">Sider</h2>
         <ul>
@@ -60,15 +59,11 @@ export default function SiteList({ siteList, ...rest }) {
           className={
             `${!showLoadMore ? 'hidden' : ''}` +
             ' container flex flex-wrap items-center justify-center mx-auto mt-5 w-full'
-          }
-        >
+          }>
           <button
             onClick={() => setSize(size + 10)}
-            className={
-              'px-3 py-2 text-black font-bold rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20'
-            }
-          >
-            Last inn flere sider
+            className="px-3 py-2 text-black font-bold rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20">
+							Last inn flere sider
           </button>
         </div>
       </section>

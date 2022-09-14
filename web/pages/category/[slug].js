@@ -3,10 +3,9 @@ import { groq } from 'next-sanity';
 
 import client from 'util/client.js';
 import Layout from 'components/layout';
-import { footerQuery, menuQuery } from 'util/queries';
 import SiteList from 'components/siteList';
-
 import Heading from 'components/heading';
+import { footerQuery, menuQuery } from 'util/queries';
 
 export default function Category({ pageData = {}, footerData = {}, menuData, preview = false }) {
   const { title, lede, siteList = [] } = pageData;
@@ -22,7 +21,9 @@ export default function Category({ pageData = {}, footerData = {}, menuData, pre
       <Layout footerData={footerData} menuData={menuData}>
         <Heading title={title} />
 
-        <div className="container mx-auto px-4 md:px-24 py-4 md:py-10 text-2xl">{lede}</div>
+        {lede && lede.length > 0 && (
+          <div className="container mx-auto px-4 md:px-24 py-4 md:py-10 text-2xl">{lede}</div>
+        )}
 
         {siteList && siteList.length > 0 && <SiteList siteList={siteList || []} />}
       </Layout>
