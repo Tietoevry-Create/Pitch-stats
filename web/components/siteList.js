@@ -37,13 +37,13 @@ export default function SiteList({ siteList, ...rest }) {
         <ul>
           <li>
               <ul className="grid md:grid-desktop grid-mobile p-2 rounded font-semibold md:gap-4 gap-2">
-              <li className="overflow-hidden text-ellipsis">Nr</li>
-              <li className="overflow-hidden text-ellipsis">Navn</li>
-              <li className="overflow-hidden text-ellipsis">Kategori</li>
-              <li className="overflow-hidden text-ellipsis">Utslipp</li>
-              <li className="invisible md:visible">Accesibility</li>
-              <li className="invisible md:visible">Performance</li>
-              <li className="invisible md:visible">SEO</li>
+                <li className="overflow-hidden text-ellipsis">Nr</li>
+                <li className="overflow-hidden text-ellipsis">Navn</li>
+                <li className="overflow-hidden text-ellipsis">Kategori</li>
+                <li className="overflow-hidden text-ellipsis">Utslipp</li>
+                <li className="invisible md:visible">Accesibility</li>
+                <li className="invisible md:visible">Performance</li>
+                <li className="invisible md:visible">SEO</li>
             </ul>
           </li>
         </ul>
