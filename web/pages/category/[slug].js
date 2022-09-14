@@ -3,10 +3,9 @@ import { groq } from 'next-sanity';
 
 import client from 'util/client.js';
 import Layout from 'components/layout';
-import { footerQuery, menuQuery } from 'util/queries';
 import SiteList from 'components/siteList';
-
 import Heading from 'components/heading';
+import { footerQuery, menuQuery } from 'util/queries';
 
 export default function Category({ pageData = {}, footerData = {}, menuData, preview = false }) {
   const { title, lede, siteList = [] } = pageData;
