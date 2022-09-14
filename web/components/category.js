@@ -7,8 +7,7 @@ const Category = ({ category, ...rest }) => (
         <svg
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
-          className="fill-current text-black h-44 w-44 mr-2"
-        >
+          className="fill-current text-black h-44 w-44 mr-2">
           <path d={category.path} />
         </svg>
 
