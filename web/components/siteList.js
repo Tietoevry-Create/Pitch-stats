@@ -2,29 +2,32 @@ import React, { useRef, useState, useEffect } from 'react';
 import SingleSite from './singleSite';
 
 export default function SiteList({ siteList, ...rest }) {
-  const showMoreRef = useRef();
-  const [size, setSize] = useState(10);
-  const [showLoadMore, setShowLoadMore] = useState(true);
-
   const siteListRef = useRef();
-  const [siteListVisibility, setSiteListVisibility] = useState();
+  const [siteListVisibility, setSiteListVisibility] = useState(false);
+  const [animatedOnce, setAnimatedOnce] = useState(false);
 
   useEffect(() => {
-    const siteListObserver = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setSiteListVisibility(entry.isIntersecting);
-    });
+    if (!animatedOnce) {
+      const siteListObserver = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        setSiteListVisibility(entry.isIntersecting);
+      });
+      siteListObserver.observe(siteListRef.current);
+      if (siteListVisibility) {
+        setAnimatedOnce(true);
+      }
+      return () => {
+        siteListObserver.disconnect();
+      };
+    }
+  }, [siteListVisibility]);
 
-    siteListObserver.observe(siteListRef.current);
-    return () => {
-      siteListObserver.disconnect();
-    };
-  }, []);
-
-  function increaseSiteList() {
-    setSize(size + 10);
+  const showMoreRef = useRef();
+  const [size, setSize] = useState(10);
+  const [showLoadMore, setShowLoadMore] = useState(null);
+  useEffect(() => {
     setShowLoadMore(showMoreRef.current.children.length >= size);
-  }
+  }, [size]);
 
   return (
     <div
@@ -58,9 +61,9 @@ export default function SiteList({ siteList, ...rest }) {
             ' container flex flex-wrap items-center justify-center mx-auto mt-5 w-full'
           }>
           <button
-            onClick={() => increaseSiteList()}
+            onClick={() => setSize(size + 10)}
             className="px-3 py-2 text-black font-bold rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20">
-            Load More
+            Last inn flere sider
           </button>
         </div>
       </section>
