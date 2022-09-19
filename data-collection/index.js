@@ -20,6 +20,7 @@ let result = [];
   urlsToBeRead = await client.fetch(queryForAllUrlsOfSites);
 
   const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless"] });
+  console.log("URLs to be checked: ", urlsToBeRead);
 
   const options = {
     logLevel: "info",
