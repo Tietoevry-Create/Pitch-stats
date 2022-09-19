@@ -23,19 +23,13 @@ const data = [
   },
   {
     subject: 'Accessibility',
-    A: 30,
+    A: 99,
 
     fullmark: 100
   },
   {
     subject: 'Best practices',
     A: 40,
-
-    fullmark: 100
-  },
-  {
-    subject: 'Something else',
-    A: 30,
 
     fullmark: 100
   }
