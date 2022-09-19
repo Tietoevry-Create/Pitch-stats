@@ -1,12 +1,24 @@
 const fs = require("fs");
 const lighthouse = require("lighthouse");
 const chromeLauncher = require("chrome-launcher");
+const sanityClient = require("@sanity/client");
+const client = sanityClient({
+  projectId: "ts5bhhuv",
+  dataset: "production",
+  useCdn: false, // `false` if you want to ensure fresh data
+  apiVersion: "2022-01-31",
+});
 
-var urlsToBeRead = ["https://www.w3schools.com/", "https://www.vg.no/"];
+const queryForAllUrlsOfSites =
+  '*[_type == "site" && defined(slug.current)][].webSiteUrl';
+
+let urlsToBeRead = [];
 
 let result = [];
 
 (async () => {
+  urlsToBeRead = await client.fetch(queryForAllUrlsOfSites);
+
   const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless"] });
 
   const options = {

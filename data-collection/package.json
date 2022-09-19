@@ -12,6 +12,7 @@
   "author": "Tietoevry",
   "license": "MIT",
   "dependencies": {
+    "@sanity/client": "^3.4.1",
     "lighthouse": "^9.6.7"
   }
 }
