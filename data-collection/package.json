@@ -1,0 +1,17 @@
+{
+  "name": "data-collection",
+  "version": "1.0.0",
+  "description": "collecting lighthouse and co2 data for project stats",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lighthouse"
+  ],
+  "author": "Tietoevry",
+  "license": "MIT",
+  "dependencies": {
+    "lighthouse": "^9.6.7"
+  }
+}
