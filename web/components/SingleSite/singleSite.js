@@ -1,4 +1,4 @@
-import CustomLink from './customLink';
+import CustomLink from '../CustomLink/customLink';
 import { useState, useEffect } from 'react';
 const SingleSite = ({ site, index, ...rest }) => {
   function getRndInteger(min, max) {

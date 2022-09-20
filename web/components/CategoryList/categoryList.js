@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import Category from './category';
+import {Category} from '../Category';
 const CategoryList = ({ categoryList, ...rest }) => {
   const categoryRefListRef = useRef();
   const [categoryRefListVisibility, setCategoryRefListVisibility] = useState();

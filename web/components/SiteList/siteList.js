@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import SingleSite from './singleSite';
+import SingleSite from '../SingleSite/singleSite';
 
 export default function SiteList({ siteList, ...rest }) {
   const siteListRef = useRef();
