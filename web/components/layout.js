@@ -1,4 +1,4 @@
-import Footer from './footer.js';
+import {Footer} from './Footer';
 import Navbar from './navbar';
 const Layout = ({ footerData, menuData, children, ...rest }) => (
   <>
