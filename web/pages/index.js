@@ -16,11 +16,10 @@ export default function Home({
   siteList = [],
   preview = false
 }) {
-  const { title, categoryList = [], blockContent} = pageData;
+  const { title, categoryList = [], blockContent } = pageData;
 
   return (
     <>
-      
       <MetaData document={pageData} />
 
       <Layout footerData={footerData} menuData={menuData}>
@@ -50,4 +49,3 @@ export async function getStaticProps({ preview = false }) {
     revalidate: 50
   };
 }
-

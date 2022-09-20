@@ -10,12 +10,10 @@ import Heading from 'components/heading';
 import MetaData from 'components/metaData';
 
 export default function PageSite({ pageData = {}, footerData = {}, menuData, preview = false }) {
-
   const { title, lede, blockContent = [] } = pageData;
 
   return (
     <div>
-
       <MetaData document={pageData} />
 
       <Layout footerData={footerData} menuData={menuData}>

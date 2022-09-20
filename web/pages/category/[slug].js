@@ -7,14 +7,11 @@ import SiteList from 'components/siteList';
 import Heading from 'components/heading';
 import { footerQuery, menuQuery } from 'util/queries';
 
-
 export default function Category({ pageData = {}, footerData = {}, menuData, preview = false }) {
-  
   const { title, lede, siteList = [] } = pageData;
-  
+
   return (
     <>
-      
       <MetaData document={pageData} />
 
       <Layout footerData={footerData} menuData={menuData}>

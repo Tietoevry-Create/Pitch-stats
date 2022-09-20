@@ -12,12 +12,10 @@ import Counter from 'components/counter';
 import MetaData from 'components/metaData';
 
 export default function Site({ pageData = {}, footerData = {}, menuData, preview = false }) {
-
   const { title, webSiteUrl = '', blockContent = [] } = pageData;
-  
+
   return (
     <div>
-
       <MetaData document={pageData} />
 
       <Layout footerData={footerData} menuData={menuData}>
