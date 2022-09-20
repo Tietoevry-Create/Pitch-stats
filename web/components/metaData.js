@@ -4,7 +4,7 @@ const MetaData = ({ document, ...rest }) => {
 
   let { title, lede, _createdAt, _updatedAt, websiteUrl, _type } = document;
 
-  if (!lede) {
+  if (!lede && document.blockContent) {
     lede = toPlainText(document.blockContent);
   };
 
