@@ -1,6 +1,5 @@
-import Head from 'next/head';
 import { groq } from 'next-sanity';
-import MetaData from 'components/metaData';
+import {MetaData} from 'components/MetaData';
 import client from 'util/client.js';
 import {Layout} from 'components/Layout';
 import SiteList from 'components/siteList';

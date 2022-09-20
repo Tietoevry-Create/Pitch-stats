@@ -1,4 +1,4 @@
-import Head from 'next/head';
+
 import { groq } from 'next-sanity';
 
 import client from 'util/client.js';
@@ -8,8 +8,7 @@ import BlockContent from 'components/blockContent';
 import { Heading } from 'components/Heading';
 import CustomRadarChart from 'components/radarChart';
 import {Counter} from 'components/Counter';
-
-import MetaData from 'components/metaData';
+import {MetaData} from 'components/MetaData';
 
 export default function Site({ pageData = {}, footerData = {}, menuData, preview = false }) {
   const { title, webSiteUrl = '', blockContent = [] } = pageData;
