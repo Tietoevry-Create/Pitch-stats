@@ -1,11 +1,11 @@
 import client from 'util/client.js';
-import {Layout} from 'components/Layout';
+import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
-import BlockContent from 'components/blockContent';
+import { BlockContent } from 'components/BlockContent';
 import SiteList from 'components/siteList';
 import CategoryList from 'components/categoryList';
 import { footerQuery, blockContentQuery, menuQuery } from 'util/queries';
-import {MetaData} from 'components/MetaData';
+import { MetaData } from 'components/MetaData';
 
 export default function Home({
   menuData = {},

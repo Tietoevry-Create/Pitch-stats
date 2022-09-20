@@ -4,7 +4,7 @@ import { groq } from 'next-sanity';
 import client from 'util/client.js';
 import {Layout} from 'components/Layout';
 import { blockContentQuery, footerQuery, menuQuery } from 'util/queries';
-import BlockContent from 'components/blockContent';
+import {BlockContent} from 'components/BlockContent';
 import { Heading } from 'components/Heading';
 import CustomRadarChart from 'components/radarChart';
 import {Counter} from 'components/Counter';

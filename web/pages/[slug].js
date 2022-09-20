@@ -1,6 +1,6 @@
 
 import { groq } from 'next-sanity';
-import BlockContent from 'components/blockContent';
+import {BlockContent} from 'components/BlockContent';
 import client from 'util/client.js';
 import {Layout} from 'components/Layout';
 import { footerQuery, menuQuery, blockContentQuery } from 'util/queries';

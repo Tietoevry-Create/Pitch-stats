@@ -1,6 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import React from 'react';
-import TreeIcon from './icons/TreeIcon';
+import TreeIcon from 'components/icons/TreeIcon';
 
 const BlockContent = ({ blockContent, ...rest }) => (
   <div className={'container mx-auto px-4 md:px-24 md:py-24 text-xl'}>
