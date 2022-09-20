@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { groq } from 'next-sanity';
 import BlockContent from 'components/blockContent';
 import client from 'util/client.js';
-import Layout from 'components/layout';
+import {Layout} from 'components/Layout';
 import { footerQuery, menuQuery, blockContentQuery } from 'util/queries';
 import { Heading } from 'components/Heading';
 import MetaData from 'components/metaData';
