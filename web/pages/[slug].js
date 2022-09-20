@@ -4,9 +4,7 @@ import BlockContent from 'components/blockContent';
 import client from 'util/client.js';
 import Layout from 'components/layout';
 import { footerQuery, menuQuery, blockContentQuery } from 'util/queries';
-
-import Heading from 'components/heading';
-
+import { Heading } from 'components/Heading';
 import MetaData from 'components/metaData';
 
 export default function PageSite({ pageData = {}, footerData = {}, menuData, preview = false }) {

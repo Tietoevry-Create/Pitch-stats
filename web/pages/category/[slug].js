@@ -4,7 +4,7 @@ import MetaData from 'components/metaData';
 import client from 'util/client.js';
 import Layout from 'components/layout';
 import SiteList from 'components/siteList';
-import Heading from 'components/heading';
+import { Heading } from 'components/Heading';
 import { footerQuery, menuQuery } from 'util/queries';
 
 export default function Category({ pageData = {}, footerData = {}, menuData, preview = false }) {
