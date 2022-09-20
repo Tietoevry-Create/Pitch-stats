@@ -11,7 +11,7 @@ const MetaData = ({ document, ...rest }) => {
   const tempType = _type === 'frontPage' ? 'frontpage' : 'article';
   const tempSitename = 'Stats';
 
-  console.log(document);
+  
 
   return (
     <>
