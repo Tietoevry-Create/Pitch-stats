@@ -7,7 +7,7 @@ import { blockContentQuery, footerQuery, menuQuery } from 'util/queries';
 import BlockContent from 'components/blockContent';
 import { Heading } from 'components/Heading';
 import CustomRadarChart from 'components/radarChart';
-import Counter from 'components/counter';
+import {Counter} from 'components/Counter';
 
 import MetaData from 'components/metaData';
 
