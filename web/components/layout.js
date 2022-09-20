@@ -1,5 +1,5 @@
 import {Footer} from './Footer';
-import Navbar from './navbar';
+import { Navbar } from './Navbar';
 const Layout = ({ footerData, menuData, children, ...rest }) => (
   <>
     <Navbar menuData={menuData} />

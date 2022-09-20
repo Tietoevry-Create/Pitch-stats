@@ -1,6 +1,6 @@
 import React from 'react';
-import CustomLink from './customLink';
-import TEIcon from './icons/TEIcon';
+import CustomLink from 'components/customLink';
+import TEIcon from 'components/icons/TEIcon';
 import Link from 'next/link';
 const Navbar = ({ menuData = {} }) => {
   const { menuLinks = [] } = menuData;
