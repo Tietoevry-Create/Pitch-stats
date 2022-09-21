@@ -26,7 +26,7 @@ export default function Site({ pageData = {}, footerData = {}, menuData, preview
             <h2 className="py-4">Karbonresultat</h2>
             <p className="text-left text-xl py-4">
               Denne analysen bruker Website Carbons tjeneste til å kalkulere CO₂-utslippet av{' '}
-              <span className="text-tepurple">{webSiteUrl}</span>.
+              <span className="text-heroblue">{webSiteUrl}</span>.
             </p>
             <Counter />
           </div>
