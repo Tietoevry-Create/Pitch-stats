@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo';
-import toPlainText from 'util/toPlainText';
+import toPlainText from '../../util/toPlainText';
 const MetaData = ({ document, ...rest }) => {
   let { title, lede, _createdAt, _updatedAt, websiteUrl, _type } = document;
 
