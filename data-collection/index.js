@@ -10,7 +10,7 @@ const client = sanityClient({
 });
 
 const queryForAllUrlsOfSites =
-  '*[_type == "site" && defined(slug.current)][]{webSiteUrl, "slug":slug.current, title}';
+  '*[_type == "site" && defined(slug.current)][]{webSiteUrl, "slug":slug.current, title, "category": categoryReference->title}';
 
 let urlsToBeRead = [];
 
@@ -40,12 +40,13 @@ let result = [];
 
     result.push({
       URL: runnerResult.lhr.finalUrl,
-      title: urlsToBeRead[i].title || "null",
+      title: urlsToBeRead[i]?.title || "null",
       performance: runnerResult.lhr.categories.performance.score * 100,
       accessibility: runnerResult.lhr.categories.accessibility.score * 100,
       bestPractises: runnerResult.lhr.categories["best-practices"].score * 100,
       seoScore: runnerResult.lhr.categories.seo.score * 100,
       slug: urlsToBeRead[i].slug || "null",
+      category: urlsToBeRead[i]?.category?.toLowerCase() || "null"
       
     });
   }
