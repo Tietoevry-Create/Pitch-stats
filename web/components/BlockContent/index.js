@@ -1,3 +1,3 @@
-import BlockContent from "./blockContent";
+import BlockContent from './blockContent';
 
-export {BlockContent}
+export { BlockContent };

@@ -1,3 +1,3 @@
-import MetaData from "./metaData";
+import MetaData from './metaData';
 
-export {MetaData}
+export { MetaData };

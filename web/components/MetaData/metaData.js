@@ -11,8 +11,6 @@ const MetaData = ({ document, ...rest }) => {
   const tempType = _type === 'frontPage' ? 'frontpage' : 'article';
   const tempSitename = 'Stats';
 
-  
-
   return (
     <>
       <NextSeo
