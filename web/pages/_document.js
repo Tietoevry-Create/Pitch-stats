@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link href="https://fonts.googleapis.com/css2?family=Karla" rel="stylesheet" />
       </Head>
-      <body className="bg-yellow-50">
+      <body className="bg-peach20">
         <Main />
         <NextScript />
       </body>

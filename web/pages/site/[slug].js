@@ -1,14 +1,13 @@
-
 import { groq } from 'next-sanity';
 
 import client from 'util/client.js';
-import {Layout} from 'components/Layout';
+import { Layout } from 'components/Layout';
 import { blockContentQuery, footerQuery, menuQuery } from 'util/queries';
-import {BlockContent} from 'components/BlockContent';
+import { BlockContent } from 'components/BlockContent';
 import { Heading } from 'components/Heading';
-import {CustomRadarChart} from 'components/RadarChart';
-import {Counter} from 'components/Counter';
-import {MetaData} from 'components/MetaData';
+import { CustomRadarChart } from 'components/RadarChart';
+import { Counter } from 'components/Counter';
+import { MetaData } from 'components/MetaData';
 
 export default function Site({ pageData = {}, footerData = {}, menuData, preview = false }) {
   const { title, webSiteUrl = '', blockContent = [] } = pageData;
@@ -27,7 +26,7 @@ export default function Site({ pageData = {}, footerData = {}, menuData, preview
             <h2 className="py-4">Karbonresultat</h2>
             <p className="text-left text-xl py-4">
               Denne analysen bruker Website Carbons tjeneste til å kalkulere CO₂-utslippet av{' '}
-              <span className="text-tepurple">{webSiteUrl}</span>.
+              <span className="text-heroblue">{webSiteUrl}</span>.
             </p>
             <Counter />
           </div>

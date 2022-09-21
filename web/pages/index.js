@@ -2,8 +2,8 @@ import client from 'util/client.js';
 import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
 import { BlockContent } from 'components/BlockContent';
-import {SiteList} from 'components/SiteList';
-import {CategoryList} from 'components/CategoryList';
+import { SiteList } from 'components/SiteList';
+import { CategoryList } from 'components/CategoryList';
 import { footerQuery, blockContentQuery, menuQuery } from 'util/queries';
 import { MetaData } from 'components/MetaData';
 
