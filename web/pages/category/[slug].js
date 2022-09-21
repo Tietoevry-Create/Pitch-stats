@@ -1,8 +1,8 @@
 import { groq } from 'next-sanity';
-import {MetaData} from 'components/MetaData';
+import { MetaData } from 'components/MetaData';
 import client from 'util/client.js';
-import {Layout} from 'components/Layout';
-import {SiteList} from 'components/SiteList';
+import { Layout } from 'components/Layout';
+import { SiteList } from 'components/SiteList';
 import { Heading } from 'components/Heading';
 import { footerQuery, menuQuery } from 'util/queries';
 

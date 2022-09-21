@@ -1,14 +1,13 @@
-
 import { groq } from 'next-sanity';
 
 import client from 'util/client.js';
-import {Layout} from 'components/Layout';
+import { Layout } from 'components/Layout';
 import { blockContentQuery, footerQuery, menuQuery } from 'util/queries';
-import {BlockContent} from 'components/BlockContent';
+import { BlockContent } from 'components/BlockContent';
 import { Heading } from 'components/Heading';
-import {CustomRadarChart} from 'components/RadarChart';
-import {Counter} from 'components/Counter';
-import {MetaData} from 'components/MetaData';
+import { CustomRadarChart } from 'components/RadarChart';
+import { Counter } from 'components/Counter';
+import { MetaData } from 'components/MetaData';
 
 export default function Site({ pageData = {}, footerData = {}, menuData, preview = false }) {
   const { title, webSiteUrl = '', blockContent = [] } = pageData;
