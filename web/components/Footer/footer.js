@@ -1,4 +1,4 @@
-import { CustomLink } from '../CustomLink'
+import { CustomLink } from '../CustomLink';
 const Footer = ({ footerData = {} }) => {
   const { footerLinks } = footerData;
   return (
