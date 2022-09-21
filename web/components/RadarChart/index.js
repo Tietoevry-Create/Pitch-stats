@@ -1,4 +1,3 @@
+import CustomRadarChart from './radarChart';
 
-import CustomRadarChart from "./radarChart";
-
-export { CustomRadarChart }
+export { CustomRadarChart };

@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Navbar = ({ menuData = {} }) => {
   const { menuLinks = [] } = menuData;
   return (
-    <nav className="bg-yellow-50">
+    <nav className="bg-peach20">
       <div className="mx-auto container flex flex-wrap items-center px-4 md:px-20 py-3 w-full">
         <Link href="/">
           <a>
@@ -17,7 +17,7 @@ const Navbar = ({ menuData = {} }) => {
         </Link>
 
         {/*		Can maybe use later
-    <button className=' inline-flex p-3 hover:bg-tepurple rounded lg:hidden text-black ml-auto hover:text-pink-100 outline-none'>
+    <button className=' inline-flex p-3 hover:bg-heroblue rounded lg:hidden text-black ml-auto hover:text-pink-100 outline-none'>
       <svg
         className='w-6 h-6'
         fill='none'
@@ -40,13 +40,13 @@ const Navbar = ({ menuData = {} }) => {
             menuLinks.length > 0 &&
             menuLinks.map((menuLink) => (
               <CustomLink to={menuLink} key={menuLink._key}>
-                <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black font-bold items-center justify-center rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20">
+                <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black font-bold items-center justify-center hover:underline">
                   {menuLink.label}
                 </a>
               </CustomLink>
             ))}
         </div>
-        <div className="mx-3 mt-3 h-0.5 bg-tepurple w-full"></div>
+        <div className="mx-3 mt-3 h-0.5 bg-heroblue w-full"></div>
       </div>
     </nav>
   );
