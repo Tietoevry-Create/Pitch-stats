@@ -11,7 +11,8 @@
     "build-storybook": "build-storybook",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
-    "eslint": "eslint --fix"
+    "eslint": "eslint --fix",
+    "prepare": "cd .. && husky install web/.husky"
   },
   "dependencies": {
     "@axe-core/react": "^4.4.4",
@@ -46,6 +47,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-storybook": "^0.6.4",
+    "husky": "^8.0.1",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.7"
