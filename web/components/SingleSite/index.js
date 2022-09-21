@@ -1,3 +1,3 @@
-import SingleSite from "./singleSite";
+import SingleSite from './singleSite';
 
-export {SingleSite}
+export { SingleSite };

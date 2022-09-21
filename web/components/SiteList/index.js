@@ -1,3 +1,3 @@
-import SiteList from "./siteList";
+import SiteList from './siteList';
 
-export {SiteList}
+export { SiteList };

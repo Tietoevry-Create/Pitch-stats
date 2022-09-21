@@ -1,5 +1,5 @@
 import React from 'react';
-import {CustomLink} from '../CustomLink';
+import { CustomLink } from '../CustomLink';
 const Category = ({ category, ...rest }) => (
   <CustomLink to={category}>
     <a className="pb-6 pt-16 px-3 rounded-lg border-2 border-yellow-50 hover:border-tepurple hover:bg-tepurple/20 hover:scale-110 group">
