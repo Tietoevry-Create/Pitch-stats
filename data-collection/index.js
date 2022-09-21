@@ -40,6 +40,7 @@ let result = [];
 
     result.push({
       URL: runnerResult.lhr.finalUrl,
+      title: urlsToBeRead[i].title || "null",
       performance: runnerResult.lhr.categories.performance.score * 100,
       accessibility: runnerResult.lhr.categories.accessibility.score * 100,
       bestPractises: runnerResult.lhr.categories["best-practices"].score * 100,
