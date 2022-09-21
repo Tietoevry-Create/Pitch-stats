@@ -20,7 +20,7 @@ const CategoryList = ({ categoryList, ...rest }) => {
   return (
     <section
       ref={categoryRefListRef}
-      className={`lg:h-screen container mx-auto px-4 md:px-24 pt-44 md:py-15 lg:py-10 ${
+      className={` container mx-auto px-4 md:px-24 pt-44 md:py-15 lg:py-10 ${
         categoryRefListVisibility ? 'animate-fadeIn' : ''
       }`}>
       <h2 className="text-3xl md:text-4xl font-bold pb-1 border-b-4 border-black">Kategorier</h2>

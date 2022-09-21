@@ -36,4 +36,11 @@ To learn more about Next, go to - [Next.js Documentation](https://nextjs.org/doc
 
 ## Storybook
 
+To run storybook: `npm run storybook` - (Accessible at: http://localhost:6006).
+
+If storybook fails: try resetting ->
+    1) remove storybook related dependencies from file: `./web/package.json`.
+    2) remove node modules and reinstall: `npm install`.
+    3) reinstall storybook: `npx storybook init`.
+
 
