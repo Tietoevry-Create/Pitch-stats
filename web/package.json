@@ -14,6 +14,7 @@
     "eslint": "eslint --fix"
   },
   "dependencies": {
+    "@axe-core/react": "^4.4.4",
     "@portabletext/react": "^1.0.6",
     "@sanity/image-url": "^1.0.1",
     "@storybook/builder-vite": "^0.2.2",
