@@ -14,7 +14,7 @@ const BlockContent = ({ blockContent, ...rest }) => (
         <TreeIcon />
       </div>
     </div>
-    <div className="hidden md:block mx-3 mt-3 h-0.5 bg-tepurple w-full"></div>
+    <div className="hidden mx-auto md:block  mt-3 h-0.5 bg-tepurple w-full"></div>
   </div>
 );
 
