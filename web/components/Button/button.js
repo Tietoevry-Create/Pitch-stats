@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
-const Button = ({ children, classes, ...rest }) => <button className={classes}>{children}</button>;
+const Button = ({ children, classes, onClick, ...rest }) => (
+  <button onClick={onClick} className={classes}>
+    {children}
+  </button>
+);
 
-CustomLink.propTypes = {
-  classes: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
+Button.propTypes = {
+  classes: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  onClick: PropType.func.isRequired
 };
 
 export default Button;
