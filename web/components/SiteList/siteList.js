@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
-import SingleSite from '../SingleSite/singleSite';
+import { SingleSite } from '../SingleSite';
 import { Button } from '../Button';
+import PropTypes from 'prop-types';
 
-export default function SiteList({ siteList, ...rest }) {
+const SiteList = ({ siteList, ...rest }) => {
   const siteListRef = useRef();
   const [siteListVisibility, setSiteListVisibility] = useState(false);
   const [animatedOnce, setAnimatedOnce] = useState(false);
@@ -70,4 +71,9 @@ export default function SiteList({ siteList, ...rest }) {
       </section>
     </div>
   );
-}
+};
+SiteList.propTypes = {
+  siteList: PropTypes.array.isRequired
+};
+
+export default SiteList;
