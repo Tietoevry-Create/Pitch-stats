@@ -26,7 +26,6 @@ module.exports = {
         violet10: '#F7F7FA'
       },
       fontFamily: {
-        //sans: ['Karla', ...defaultTheme.fontFamily.sans]
         sans: ['TietoevrySans1-Regular', ...defaultTheme.fontFamily.sans]
       }
     }
