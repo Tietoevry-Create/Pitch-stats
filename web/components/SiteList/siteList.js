@@ -63,7 +63,7 @@ export default function SiteList({ siteList, ...rest }) {
           }>
           <Button
             onClick={() => setSize(size + 10)}
-            classes="bg-peach px-16 py-2 text-base hover:bg-peach40">
+            classes="bg-peach hover:bg-peach40 border-transparent border-2 hover:border-heroblue hover:border-solid">
             Last inn flere sider
           </Button>
         </div>
