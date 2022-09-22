@@ -8,7 +8,7 @@ const Button = ({ children, classes, onClick, ...rest }) => (
 Button.propTypes = {
   classes: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
-  onClick: PropType.func.isRequired
+  onClick: PropTypes.func.isRequired
 };
 
 export default Button;
