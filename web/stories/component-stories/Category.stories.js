@@ -1,9 +1,8 @@
-import { Category } from '../../components/Category'
-
+import { Category } from '../../components/Category';
 
 export default {
-    title: "Components/Category",
-    component: Category,
-  };
-  
-  export const Template = () => <Category />
+  title: 'Components/Category',
+  component: Category
+};
+
+export const Template = () => <Category />;

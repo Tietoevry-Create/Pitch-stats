@@ -1,9 +1,8 @@
-import { CustomLink } from '../../components/CustomLink'
-
+import { CustomLink } from '../../components/CustomLink';
 
 export default {
-    title: "Components/CustomLink",
-    component: CustomLink,
-  };
-  
-  export const Template = () => <CustomLink />
+  title: 'Components/CustomLink',
+  component: CustomLink
+};
+
+export const Template = () => <CustomLink />;
