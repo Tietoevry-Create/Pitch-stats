@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import SingleSite from '../SingleSite/singleSite';
+import { Button } from '../Button';
 
 export default function SiteList({ siteList, ...rest }) {
   const siteListRef = useRef();
@@ -60,11 +61,11 @@ export default function SiteList({ siteList, ...rest }) {
             `${!showLoadMore ? 'hidden' : ''}` +
             ' container flex flex-wrap items-center justify-center mx-auto mt-5 w-full'
           }>
-          <button
+          <Button
             onClick={() => setSize(size + 10)}
-            className="bg-peach px-16 py-2 text-base hover:bg-peach40">
+            classes="bg-peach px-16 py-2 text-base hover:bg-peach40">
             Last inn flere sider
-          </button>
+          </Button>
         </div>
       </section>
     </div>
