@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="no">
       <Head>
-        <link href="https://fonts.googleapis.com/css2?family=Karla" rel="stylesheet" />
+        <link href="public/TietoevrySans1-Regular.otf" rel="stylesheet" />
       </Head>
       <body className="bg-peach20">
         <Main />

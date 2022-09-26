@@ -1,9 +1,8 @@
-import { Navbar } from '../../components/Navbar'
-
+import { Navbar } from '../../components/Navbar';
 
 export default {
-    title: "Components/Navbar",
-    component: Navbar,
-  };
-  
-  export const Template = () => <Navbar />
+  title: 'Components/Navbar',
+  component: Navbar
+};
+
+export const Template = () => <Navbar />;

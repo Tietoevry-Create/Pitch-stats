@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { CustomLink } from '../CustomLink';
 const Category = ({ category, ...rest }) => (
@@ -22,5 +23,8 @@ const Category = ({ category, ...rest }) => (
     </a>
   </CustomLink>
 );
+Category.propTypes = {
+  category: PropTypes.object.isRequired
+};
 
 export default Category;

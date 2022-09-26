@@ -1,9 +1,8 @@
-import { Counter } from '../../components/Counter'
-
+import { Counter } from '../../components/Counter';
 
 export default {
-    title: "Components/Counter",
-    component: Counter,
-  };
-  
-  export const Template = () => <Counter />
+  title: 'Components/Counter',
+  component: Counter
+};
+
+export const Template = () => <Counter />;
