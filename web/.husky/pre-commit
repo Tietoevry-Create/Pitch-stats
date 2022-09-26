@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Get all files this commit touches
+files=$(git diff --name-only --cached --diff-filter=d)
+
 npm run --prefix web "format:fix"
-npm run --prefix web "format:check"
+
+# Re-add the files in case Prettier has changed any of them
+git add $files
