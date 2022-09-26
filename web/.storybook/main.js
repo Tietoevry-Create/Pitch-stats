@@ -7,6 +7,16 @@ module.exports = {
   ],
   framework: '@storybook/react',
   core: {
-    builder: '@storybook/builder-vite'
+    builder: {
+      name: 'webpack5',
+      options: {
+        lazyCompilation: 'true'
+      }
+    }
   }
+
+  //,
+  //"core": {
+  // "builder": "@storybook/builder-webpack5"
+  // }
 };

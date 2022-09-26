@@ -34,7 +34,7 @@ export default {
 			type: "text",
 			name: "path",
 			title: "Path",
-			description: "Path som kan brukes til å generere SVG bilder",
+			description: "Path som kan brukes til å generere SVG bilder.",
     }
   ],
   preview: {
