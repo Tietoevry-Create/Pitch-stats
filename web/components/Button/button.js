@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 const Button = ({ children, classes, onClick, ...rest }) => (
-  <button
-    onClick={onClick}
-    className={'rounded-lg px-16 py-2  text-base box-content ' + classes}>
+  <button onClick={onClick} className={'rounded-lg px-16 py-2  text-base box-content ' + classes}>
     {children}
   </button>
 );
