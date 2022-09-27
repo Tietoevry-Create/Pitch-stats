@@ -2,7 +2,14 @@ import React from 'react';
 import { CustomLink } from '../CustomLink';
 import TEIcon from '../icons/TEIcon';
 import Link from 'next/link';
+import linkResolver from 'util/linkResolver';
+import { useRouter } from 'next/router';
+
 const Navbar = ({ menuData = {} }) => {
+  const router = useRouter()
+  /* Require current site in order to style link in header */
+  const currentRoute = router.asPath
+  
   const { menuLinks = [] } = menuData;
   return (
     <nav className="bg-peach20">
@@ -40,7 +47,7 @@ const Navbar = ({ menuData = {} }) => {
             menuLinks.length > 0 &&
             menuLinks.map((menuLink) => (
               <CustomLink to={menuLink} key={menuLink._key}>
-                <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black font-bold items-center justify-center hover:underline">
+                <a className= {`text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black ${currentRoute == linkResolver(menuLink) ? "font-bold" : "font-regular"} items-center justify-center hover:underline`}>
                   {menuLink.label}
                 </a>
               </CustomLink>
