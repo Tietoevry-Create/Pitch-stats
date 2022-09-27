@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "axe-core": "^4.4.3",
+    "pre-commit": "^1.2.2"
+  },
+  "dependencies": {
+    "@axe-core/react": "^4.4.4"
+  }
+}
