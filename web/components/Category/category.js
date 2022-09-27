@@ -3,7 +3,7 @@ import React from 'react';
 import { CustomLink } from '../CustomLink';
 const Category = ({ category, ...rest }) => (
   <CustomLink to={category}>
-    <a className="pb-6 pt-16 px-3 hover:scale-95 group">
+    <a className="pb-6 pt-16  group border-transparent border-2 hover:border-heroblue hover:border-solid">
       <div className="items-center lg:items-start grid grid-cols-2 gap-3">
         <svg
           viewBox="0 0 24 24"
