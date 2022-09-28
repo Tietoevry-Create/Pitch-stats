@@ -3,7 +3,7 @@ import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
 import { footerQuery, blockContentQuery, menuQuery } from 'util/queries';
 import { MetaData } from 'components/MetaData';
-import Page404Icon from 'components/icons/Icon404';
+import Page404Icon from 'components/icons/Page404Icon';
 
 export default function Custom404({ menuData = {}, pageData = {}, footerData = {} }) {
   return (

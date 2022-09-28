@@ -196,3 +196,5 @@ const Page404Icon = () => (
     />
   </svg>
 );
+
+export default Page404Icon;
