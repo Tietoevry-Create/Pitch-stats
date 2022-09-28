@@ -13,7 +13,7 @@ export default function Site({ pageData = {}, footerData = {}, menuData, preview
   const { title, webSiteUrl = '', blockContent = [] } = pageData;
 
   return (
-    <div>
+    <>
       <MetaData document={pageData} />
 
       <Layout footerData={footerData} menuData={menuData}>
@@ -47,7 +47,7 @@ export default function Site({ pageData = {}, footerData = {}, menuData, preview
           </div>
         </div>
       </Layout>
-    </div>
+    </>
   );
 }
 
@@ -71,6 +71,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: false
+    fallback: true
   };
 }
