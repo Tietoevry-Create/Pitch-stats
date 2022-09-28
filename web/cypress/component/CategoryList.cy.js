@@ -1,4 +1,4 @@
-import { Counter } from '../../components/Counter';
+import { CategoryList } from '../../components/CategoryList';
 
 const localData = {
   categoryList: [
@@ -61,8 +61,8 @@ const localData = {
   ]
 };
 
-describe('<Counter />', () => {
+describe('<CategoryList />', () => {
   it('Check mount', () => {
-    cy.mount(<Counter />);
+    cy.mount(<CategoryList categoryList={localData} />);
   });
 });
