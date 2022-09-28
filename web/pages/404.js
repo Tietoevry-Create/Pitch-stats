@@ -1,8 +1,7 @@
 import client from 'util/client.js';
 import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
-import { footerQuery, blockContentQuery, menuQuery } from 'util/queries';
-import { MetaData } from 'components/MetaData';
+import { footerQuery, menuQuery } from 'util/queries';
 import Page404Icon from 'components/icons/Page404Icon';
 
 export default function Custom404({ menuData = {}, footerData = {} }) {
@@ -17,7 +16,7 @@ export default function Custom404({ menuData = {}, footerData = {} }) {
 }
 
 export async function getStaticProps() {
-  const query = `{"siteList": *[_type=="site"]{title, slug, _type, _id, "category": categoryReference->{title}}, "pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ${blockContentQuery}, "categoryList": categoryRefList[]->{_id, _type, title, slug, lede, path, ... }, ...}, ${footerQuery}, ${menuQuery} }`;
+  const query = `{${footerQuery}, ${menuQuery} }`;
   const data = await client.fetch(query);
   const { footerData = {}, menuData = {} } = data;
   return {
