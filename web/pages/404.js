@@ -3,7 +3,7 @@ import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
 import { footerQuery, blockContentQuery, menuQuery } from 'util/queries';
 import { MetaData } from 'components/MetaData';
-import Icon404 from 'components/icons/Icon404';
+import Page404Icon from 'components/icons/Icon404';
 
 export default function Custom404({ menuData = {}, pageData = {}, footerData = {} }) {
   return (
@@ -12,7 +12,7 @@ export default function Custom404({ menuData = {}, pageData = {}, footerData = {
 
       <Layout footerData={footerData} menuData={menuData}>
         <Heading title={'Page not found'} />
-        <Icon404 />
+        <Page404Icon />
       </Layout>
     </>
   );
