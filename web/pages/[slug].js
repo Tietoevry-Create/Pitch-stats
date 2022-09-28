@@ -10,7 +10,7 @@ export default function PageSite({ pageData = {}, footerData = {}, menuData, pre
   const { title, lede, blockContent = [] } = pageData;
 
   return (
-    <div>
+    <>
       <MetaData document={pageData} />
 
       <Layout footerData={footerData} menuData={menuData}>
@@ -20,7 +20,7 @@ export default function PageSite({ pageData = {}, footerData = {}, menuData, pre
           <BlockContent blockContent={blockContent || []} />
         </div>
       </Layout>
-    </div>
+    </>
   );
 }
 
