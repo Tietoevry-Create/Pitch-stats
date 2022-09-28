@@ -5,11 +5,9 @@ import { footerQuery, blockContentQuery, menuQuery } from 'util/queries';
 import { MetaData } from 'components/MetaData';
 import Page404Icon from 'components/icons/Page404Icon';
 
-export default function Custom404({ menuData = {}, pageData = {}, footerData = {} }) {
+export default function Custom404({ menuData = {}, footerData = {} }) {
   return (
     <>
-      <MetaData document={pageData} />
-
       <Layout footerData={footerData} menuData={menuData}>
         <Heading title={'Page not found'} />
         <Page404Icon />
