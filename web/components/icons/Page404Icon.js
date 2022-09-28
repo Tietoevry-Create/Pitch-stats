@@ -5,7 +5,6 @@ const Page404Icon = () => (
     viewBox="0 0 1773 926"
     fill="none"
     xmlns="http://www.w3.org/2000/svg">
-    <rect width="1773" height="926" fill="white" />
     <path
       d="M278 324C297.882 324 314 307.882 314 288C314 268.118 297.882 252 278 252C258.118 252 242 268.118 242 288C242 307.882 258.118 324 278 324Z"
       fill="#280071"
