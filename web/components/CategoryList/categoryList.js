@@ -24,7 +24,7 @@ const CategoryList = ({ categoryList, ...rest }) => {
         categoryRefListVisibility ? 'animate-fadeIn' : ''
       }`}>
       <h2 className="text-3xl md:text-4xl font-bold pb-1 border-b-4 border-black">Kategorier</h2>
-      <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-15 my-14">
+      <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-15 my-8">
         {categoryList &&
           categoryList.length > 0 &&
           categoryList.map((category) => <Category category={category} key={category._id} />)}
