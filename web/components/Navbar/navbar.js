@@ -34,18 +34,26 @@ const Navbar = ({ menuData = {} }) => {
       </svg>
     </button>
     */}
-
-        <div className="lg:inline-flex lg:flex-row lg:w-auto lg:items-center lg:h-auto">
+        <div class="space-y-2 sm:show md:hidden ml-auto w-max pr-2">
+          <div class="w-8 h-0.5 bg-gray-600 "></div>
+          <div class="w-8 h-0.5 bg-gray-600"></div>
+          <div class="w-8 h-0.5 bg-gray-600"></div>
+          <div class=" h-0.4 align-auto">
+            <p>Meny</p>
+          </div>
+        </div>
+        <div className="hidden md:flex-row md:inline-flex md:w-auto md:items-center md:h-auto sm:flex-col">
           {menuLinks &&
             menuLinks.length > 0 &&
             menuLinks.map((menuLink) => (
               <CustomLink to={menuLink} key={menuLink._key}>
-                <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black items-center justify-center font-medium hover:underline hover:text-heroblue">
+                <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black items-center justify-center font-medium hover:underline hover:text-heroblue md:flex-col">
                   {menuLink.label}
                 </a>
               </CustomLink>
             ))}
         </div>
+
         <div className="mx-3 mt-3 h-0.5 bg-heroblue w-full"></div>
       </div>
     </nav>
