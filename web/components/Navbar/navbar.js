@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CustomLink } from '../CustomLink';
 import TEIcon from '../icons/TEIcon';
 import Link from 'next/link';
 const Navbar = ({ menuData = {} }) => {
+  const [visible, setVisible] = useState(false);
   const { menuLinks = [] } = menuData;
   return (
     <nav className="bg-peach20">
@@ -34,15 +35,21 @@ const Navbar = ({ menuData = {} }) => {
       </svg>
     </button>
     */}
-        <div class="space-y-2 sm:show md:hidden ml-auto w-max pr-2">
-          <div class="w-8 h-0.5 bg-gray-600 "></div>
-          <div class="w-8 h-0.5 bg-gray-600"></div>
-          <div class="w-8 h-0.5 bg-gray-600"></div>
-          <div class=" h-0.4 align-auto">
+        <div
+          className="space-y-2 md:hidden ml-auto w-max pr-2"
+          onClick={() => setVisible((s) => !s)}>
+          <div className="w-8 h-0.5 bg-gray-600 "></div>
+          <div className="w-8 h-0.5 bg-gray-600"></div>
+          <div className="w-8 h-0.5 bg-gray-600"></div>
+          <div className=" h-0.4 align-auto">
             <p>Meny</p>
           </div>
         </div>
-        <div className="hidden md:flex-row md:inline-flex md:w-auto md:items-center md:h-auto sm:flex-col">
+        <div
+          className={
+            (visible ? 'display: flex ' : 'hidden display:none ') +
+            'flex-col md:flex-row md:inline-flex md:w-auto md:items-center md:h-auto'
+          }>
           {menuLinks &&
             menuLinks.length > 0 &&
             menuLinks.map((menuLink) => (
