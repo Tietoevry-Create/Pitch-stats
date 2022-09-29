@@ -19,7 +19,7 @@ const Category = ({ category, ...rest }) => (
           <p className="hidden lg:block text-lg lg:text-xl ">{category.lede}</p>
         </div>
       </div>
-      <p className="lg:hidden text-lg md:text-xl rounded-lg mb-auto border-2 border-heroblue py-5 px-5 md:py-10 md:px-16">
+      <p className="lg:hidden text-lg md:text-xl rounded-lg mb-auto  py-5 px-5 md:py-10 md:px-16">
         {category.lede}
       </p>
     </a>
