@@ -17,7 +17,7 @@ const Navbar = ({ menuData = {} }) => {
         <Link href="/">
           <a>
             <div className="inline-flex items-center p-2 mr-4">
-              <span className="sr-only">Forside </span>
+              <span className="sr-only">Forside</span>
               <TEIcon />
             </div>
           </a>
@@ -49,8 +49,9 @@ const Navbar = ({ menuData = {} }) => {
               <CustomLink to={menuLink} key={menuLink._key}>
                 <a
                   className={`text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black ${
-                    currentRoute == linkResolver(menuLink) ? 'font-bold' : 'font-regular'
-                  } items-center justify-center hover:underline`}>
+                    currentRoute == linkResolver(menuLink) ? 'font-bold' : 'font-medium'
+                  } items-center justify-center hover:text-heroblue`}>
+
                   {menuLink.label}
                 </a>
               </CustomLink>
