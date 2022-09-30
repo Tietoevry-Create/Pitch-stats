@@ -21,11 +21,19 @@ const Navbar = ({ menuData = {} }) => {
           <div
             className="space-y-2 md:hidden ml-auto w-max pr-2"
             onClick={() => setVisible((s) => !s)}>
-            <div className="w-8 h-0.5 bg-gray-600 "></div>
-            <div className="w-8 h-0.5 bg-gray-600"></div>
-            <div className="w-8 h-0.5 bg-gray-600"></div>
+            <div
+              className={
+                (visible ? 'rotate-45 absolute right-3 top-5 w-10 ' : 'rotate-0 ') +
+                'w-8 h-0.5 bg-gray-600 '
+              }></div>
+            <div
+              className={
+                (visible ? '-rotate-45 absolute right-3 w-10 ' : 'rotate-0 ') +
+                'w-8 h-0.5 bg-gray-600 '
+              }></div>
+            <div className={(visible ? 'invisible ' : 'show ') + 'w-8 h-0.5 bg-gray-600 '}></div>
             <div className=" h-0.4 align-auto">
-              <p>Meny</p>
+              <p className={visible ? 'pt-3 ' : 'pt-0 '}> Meny</p>
             </div>
           </div>
         </div>
