@@ -13,3 +13,6 @@ dist
 .env
 .DS_Store
 
+# Cypress - Screenshots + Videos
+web/cypress/screenshots
+web/cypress/videos
