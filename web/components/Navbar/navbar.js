@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/router';
 import { CustomLink } from '../CustomLink';
 import TEIcon from '../icons/TEIcon';
 import Link from 'next/link';
 const Navbar = ({ menuData = {} }) => {
-  const [isOpen, setOpen] = useState(false);
+  const router = useRouter();
+
+  const handleRouteChange = useCallback(() => {
+    setOpen(false);
+  }, []);
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => router.events.off('routeChangeComplete', handleRouteChange);
+  }, [router.events, handleRouteChange]);
+  const [isMenuOpen, setOpen] = useState(false);
   const { menuLinks = [] } = menuData;
 
   return (
@@ -20,23 +31,24 @@ const Navbar = ({ menuData = {} }) => {
 
         <div
           className="md:hidden p-2 flex flex-col align-middle items-center"
-          onClick={() => setOpen(!isOpen)}>
+          onClick={() => setOpen(!isMenuOpen)}>
           <div
             className={
-              (isOpen ? 'justify-center ' : 'justify-evenly ') +
+              (isMenuOpen ? 'justify-center ' : 'justify-evenly ') +
               'w-8 h-8 flex flex-col align-middle relative'
             }>
             <div
               className={
-                (isOpen ? 'rotate-45 absolute ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
+                (isMenuOpen ? 'rotate-45 absolute ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
               }></div>
 
             <div
               className={
-                (isOpen ? '-rotate-45 absolute ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
+                (isMenuOpen ? '-rotate-45 absolute ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
               }></div>
 
-            <div className={(isOpen ? 'invisible ' : 'show ') + 'w-full h-0.5 bg-gray-600 '}></div>
+            <div
+              className={(isMenuOpen ? 'invisible ' : 'show ') + 'w-full h-0.5 bg-gray-600 '}></div>
           </div>
 
           <p className="text-center relative"> Meny</p>
@@ -44,7 +56,7 @@ const Navbar = ({ menuData = {} }) => {
 
         <div
           className={
-            (isOpen ? 'display: flex ' : 'hidden ') +
+            (isMenuOpen ? 'display: flex ' : 'hidden ') +
             'flex-col md:flex-row md:flex w-full md:w-fit md:items-center h-max'
           }>
           {menuLinks &&
