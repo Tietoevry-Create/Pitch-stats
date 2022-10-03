@@ -24,20 +24,22 @@ const Navbar = ({ menuData = {} }) => {
           <div
             className={
               (isOpen ? 'justify-center ' : 'justify-evenly ') +
-              'w-8 h-8 flex flex-col align-middle'
+              'w-8 h-8 flex flex-col align-middle relative'
             }>
             <div
-              className={(isOpen ? 'rotate-45 ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '}></div>
+              className={
+                (isOpen ? 'rotate-45 absolute ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
+              }></div>
 
             <div
               className={
-                (isOpen ? '-rotate-45 ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
+                (isOpen ? '-rotate-45 absolute ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
               }></div>
 
-            <div className={(isOpen ? 'invisible ' : 'show ') + 'w-full h-0.5 bg-gray-600 '}></div>
+            <div className={(isOpen ? 'invisible ' : 'show ') + 'w-full h-1 bg-gray-600 '}></div>
           </div>
 
-          <p className="text-center"> Meny</p>
+          <p className="text-center relative"> Meny</p>
         </div>
 
         <div
