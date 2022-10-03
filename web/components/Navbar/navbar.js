@@ -3,10 +3,13 @@ import { useRouter } from 'next/router';
 import { CustomLink } from '../CustomLink';
 import TEIcon from '../icons/TEIcon';
 import Link from 'next/link';
+import linkResolver from 'util/linkResolver';
+
 const Navbar = ({ menuData = {} }) => {
   const [isMenuOpen, setOpen] = useState(false);
   const { menuLinks = [] } = menuData;
   const router = useRouter();
+  const currentRoute = router.asPath;
 
   const handleRouteChange = useCallback(() => {
     setOpen(false);
@@ -68,7 +71,10 @@ const Navbar = ({ menuData = {} }) => {
             menuLinks.length > 0 &&
             menuLinks.map((menuLink) => (
               <CustomLink to={menuLink} key={menuLink._key}>
-                <a className="text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black items-center justify-center font-medium hover:underline hover:text-heroblue md:flex-col">
+                <a
+                  className={`text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black ${
+                    currentRoute == linkResolver(menuLink) ? 'font-bold' : 'font-medium'
+                  } items-center justify-center hover:text-heroblue md:flex-col`}>
                   {menuLink.label}
                 </a>
               </CustomLink>

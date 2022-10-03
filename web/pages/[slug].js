@@ -16,7 +16,7 @@ export default function PageSite({ pageData = {}, footerData = {}, menuData, pre
       <Layout footerData={footerData} menuData={menuData}>
         <Heading title={title} />
 
-        <div className="container mx-auto px-4 md:px-24 py-4 md:py-10 text-2xl">
+        <div className=" test container mx-auto px-4 md:px-24 py-4 md:py-10 text-2xl">
           <BlockContent blockContent={blockContent || []} />
         </div>
       </Layout>

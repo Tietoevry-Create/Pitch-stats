@@ -3,10 +3,14 @@ import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
 import { footerQuery, menuQuery } from 'util/queries';
 import Page404Icon from 'components/icons/Page404Icon';
+import Head from 'next/head';
 
 export default function Custom404({ menuData = {}, footerData = {} }) {
   return (
     <>
+      <Head>
+        <title>404 NOT FOUND</title>
+      </Head>
       <Layout footerData={footerData} menuData={menuData}>
         <Heading title={'Page not found'} />
         <Page404Icon />
