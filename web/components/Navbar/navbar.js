@@ -39,16 +39,21 @@ const Navbar = ({ menuData = {} }) => {
             }>
             <div
               className={
-                (isMenuOpen ? 'rotate-45 absolute ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
+                (isMenuOpen ? 'rotate-45 absolute ' : 'rotate-0 ') +
+                'w-full h-0.5 bg-gray-600 transition ease-in-out transform duration-300'
               }></div>
 
             <div
               className={
-                (isMenuOpen ? '-rotate-45 absolute ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
+                (isMenuOpen ? '-rotate-45 absolute ' : 'rotate-0 ') +
+                'w-full h-0.5 bg-gray-600 transition ease-in-out transform duration-300'
               }></div>
 
             <div
-              className={(isMenuOpen ? 'invisible ' : 'show ') + 'w-full h-0.5 bg-gray-600 '}></div>
+              className={
+                (isMenuOpen ? 'invisible ' : 'show ') +
+                'w-full h-0.5 bg-gray-600 transition ease-in-out transform duration-300'
+              }></div>
           </div>
 
           <p className="text-center relative"> Meny</p>
