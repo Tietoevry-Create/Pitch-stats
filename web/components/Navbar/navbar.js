@@ -36,7 +36,7 @@ const Navbar = ({ menuData = {} }) => {
                 (isOpen ? '-rotate-45 absolute ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
               }></div>
 
-            <div className={(isOpen ? 'invisible ' : 'show ') + 'w-full h-1 bg-gray-600 '}></div>
+            <div className={(isOpen ? 'invisible ' : 'show ') + 'w-full h-0.5 bg-gray-600 '}></div>
           </div>
 
           <p className="text-center relative"> Meny</p>
