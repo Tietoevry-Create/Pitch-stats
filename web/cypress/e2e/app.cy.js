@@ -1,6 +1,6 @@
 describe('Page Navigation from "Landingpage". ', () => {
   const baseURL = 'http://localhost:3000';
-  const headerLinkNames = ['Funksjoner', 'Om', 'TietoEvry', 'Sammenligning']; // , 'Sider' === cross-origin.
+  const headerLinkNames = ['Funksjoner', 'Om', 'Tietoevry', 'Sammenligning']; // , 'Sider' === cross-origin.
   const mainLinkNames = ['Nyheter', 'Offentlig', 'Teknologi', 'Strømselskap'];
   const footerLinkNames = ['Tietoevry', 'Tietoevry', 'KIldekode']; // , 'Om dette prosjektet' === cross-origin.
 

@@ -4,6 +4,8 @@ import { CustomLink } from '../CustomLink';
 import TEIcon from '../icons/TEIcon';
 import Link from 'next/link';
 const Navbar = ({ menuData = {} }) => {
+  const [isMenuOpen, setOpen] = useState(false);
+  const { menuLinks = [] } = menuData;
   const router = useRouter();
 
   const handleRouteChange = useCallback(() => {
@@ -14,8 +16,6 @@ const Navbar = ({ menuData = {} }) => {
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => router.events.off('routeChangeComplete', handleRouteChange);
   }, [router.events, handleRouteChange]);
-  const [isMenuOpen, setOpen] = useState(false);
-  const { menuLinks = [] } = menuData;
 
   return (
     <nav className="bg-peach20 container flex flex-col mx-auto px-4 md:px-20 py-2">
