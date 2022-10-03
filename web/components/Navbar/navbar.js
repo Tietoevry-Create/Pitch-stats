@@ -3,45 +3,47 @@ import { CustomLink } from '../CustomLink';
 import TEIcon from '../icons/TEIcon';
 import Link from 'next/link';
 const Navbar = ({ menuData = {} }) => {
-  const [visible, setVisible] = useState(false);
+  const [isOpen, setOpen] = useState(false);
   const { menuLinks = [] } = menuData;
-  return (
-    <nav className="bg-peach20 mx-auto container flex flex-wrap items-center px-4 md:px-20 py-3 w-full flex-col md:flex-row">
-      <div className="flex flex-col md:flex-row w-full">
-        <div className="w-full flex content-center align-baseline md:flex-row">
-          <Link href="/">
-            <a>
-              <div className="inline-flex items-center p-2 mr-4">
-                <span className="sr-only">Forside</span>
-                <TEIcon />
-              </div>
-            </a>
-          </Link>
 
-          <div
-            className="space-y-2 md:hidden ml-auto w-max pr-2"
-            onClick={() => setVisible((s) => !s)}>
-            <div
-              className={
-                (visible ? 'rotate-45 absolute right-3 top-5 w-10 ' : 'rotate-0 ') +
-                'w-8 h-0.5 bg-gray-600 '
-              }></div>
-            <div
-              className={
-                (visible ? '-rotate-45 absolute right-3 w-10 ' : 'rotate-0 ') +
-                'w-8 h-0.5 bg-gray-600 '
-              }></div>
-            <div className={(visible ? 'invisible ' : 'show ') + 'w-8 h-0.5 bg-gray-600 '}></div>
-            <div className=" h-0.4 align-auto">
-              <p className={visible ? 'pt-3 ' : 'pt-0 '}> Meny</p>
+  return (
+    <nav className="bg-peach20 container flex flex-col mx-auto px-4 md:px-20 py-2">
+      <div className="flex flex-row flex-wrap md:flex-nowrap items-center justify-between">
+        <Link href="/">
+          <a>
+            <div className="inline-flex items-center p-2">
+              <span className="sr-only">Forside</span> {/* Purpose ?? */}
+              <TEIcon />
             </div>
+          </a>
+        </Link>
+
+        <div
+          className="md:hidden p-2 flex flex-col align-middle items-center"
+          onClick={() => setOpen(!isOpen)}>
+          <div
+            className={
+              (isOpen ? 'justify-center ' : 'justify-evenly ') +
+              'w-8 h-8 flex flex-col align-middle'
+            }>
+            <div
+              className={(isOpen ? 'rotate-45 ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '}></div>
+
+            <div
+              className={
+                (isOpen ? '-rotate-45 ' : 'rotate-0 ') + 'w-full h-0.5 bg-gray-600 '
+              }></div>
+
+            <div className={(isOpen ? 'invisible ' : 'show ') + 'w-full h-0.5 bg-gray-600 '}></div>
           </div>
+
+          <p className="text-center"> Meny</p>
         </div>
 
         <div
           className={
-            (visible ? 'display: flex ' : 'hidden ') +
-            'flex-col md:flex-row md:flex w-max md:items-center h-max'
+            (isOpen ? 'display: flex ' : 'hidden ') +
+            'flex-col md:flex-row md:flex w-full md:w-fit md:items-center h-max'
           }>
           {menuLinks &&
             menuLinks.length > 0 &&
@@ -55,7 +57,7 @@ const Navbar = ({ menuData = {} }) => {
         </div>
       </div>
 
-      <div className="mx-3 mt-3 h-0.5 bg-heroblue w-full"></div>
+      <div className="mt-3 h-0.5 bg-heroblue w-full"></div>
     </nav>
   );
 };
