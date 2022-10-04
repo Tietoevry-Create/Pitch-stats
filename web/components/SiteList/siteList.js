@@ -50,10 +50,10 @@ const SiteList = ({ siteList, ...rest }) => {
           </thead>
 
           <tbody ref={showMoreRef}>
-            <tr className="p-2 border-solid border-violet border-2 rounded hover:bg-peach10 border-t-0 first:border-t-2">
+            <tr>
               {['Nr', 'Navn', 'Kategori', 'Utslipp', 'Accesibility', 'Performance', 'SEO'].map(
                 (hValue, keyIndex) => (
-                  <th id={keyIndex}>{hValue}</th>
+                  <th id={keyIndex}>{hValue} </th>
                 )
               )}
             </tr>
@@ -83,28 +83,6 @@ const SiteList = ({ siteList, ...rest }) => {
             </tr>
           </tfoot>
         </table>
-
-        {/*
-        <ul>
-          <li className="grid md:grid-desktop grid-mobile p-2 rounded font-semibold md:gap-4 gap-2">
-            <span className="overflow-hidden text-ellipsis">Nr</span>
-            <span className="overflow-hidden text-ellipsis">Navn</span>
-            <span className="overflow-hidden text-ellipsis">Kategori</span>
-            <span className="overflow-hidden text-ellipsis">Utslipp</span>
-            <span className="invisible md:visible">Accesibility</span>
-            <span className="invisible md:visible">Performance</span>
-            <span className="invisible md:visible">SEO</span>
-          </li>
-        </ul>
-
-                <ul ref={showMoreRef}>
-          {siteList &&
-            siteList.length > 0 &&
-            siteList
-              .slice(0, size)
-              .map((site, index) => <SingleSite index={index} site={site} key={site._id} />)}
-        </ul>
-              */}
       </section>
     </div>
   );
