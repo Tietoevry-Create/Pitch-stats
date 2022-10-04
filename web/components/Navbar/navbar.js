@@ -21,7 +21,7 @@ const Navbar = ({ menuData = {} }) => {
   }, [router.events, handleRouteChange]);
 
   return (
-    <nav className="bg-peach20 container flex flex-col mx-auto px-4 md:px-20 py-2">
+    <nav className="bg-peach20 container flex flex-col mx-auto px-4 md:px-20 py-2 md:py-4">
       <div className="flex flex-row flex-wrap md:flex-nowrap items-center justify-between">
         <Link href="/">
           <a>
@@ -33,12 +33,14 @@ const Navbar = ({ menuData = {} }) => {
         </Link>
 
         <div
-          className="md:hidden p-2 flex flex-col align-middle items-center"
-          onClick={() => setOpen(!isMenuOpen)}>
+          className="md:hidden flex flex-col align-middle items-center"
+          onClick={() => setOpen(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
+          aria-controls={'mobile-dropdown-menu'}>
           <div
             className={
               (isMenuOpen ? 'justify-center ' : 'justify-evenly ') +
-              'w-8 h-8 flex flex-col align-middle relative'
+              'w-6 h-8 flex flex-col align-middle relative'
             }>
             <div
               className={
@@ -66,7 +68,8 @@ const Navbar = ({ menuData = {} }) => {
           className={
             (isMenuOpen ? 'display: flex ' : 'hidden ') +
             'flex-col md:flex-row md:flex w-full md:w-fit md:items-center h-max'
-          }>
+          }
+          id="mobile-dropdown-menu">
           {menuLinks &&
             menuLinks.length > 0 &&
             menuLinks.map((menuLink) => (
