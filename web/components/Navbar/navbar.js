@@ -34,7 +34,9 @@ const Navbar = ({ menuData = {} }) => {
 
         <div
           className="md:hidden p-2 flex flex-col align-middle items-center"
-          onClick={() => setOpen(!isMenuOpen)}>
+          onClick={() => setOpen(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
+          aria-controls={'mobile-dropdown-menu'}>
           <div
             className={
               (isMenuOpen ? 'justify-center ' : 'justify-evenly ') +
@@ -66,7 +68,8 @@ const Navbar = ({ menuData = {} }) => {
           className={
             (isMenuOpen ? 'display: flex ' : 'hidden ') +
             'flex-col md:flex-row md:flex w-full md:w-fit md:items-center h-max'
-          }>
+          }
+          id="mobile-dropdown-menu">
           {menuLinks &&
             menuLinks.length > 0 &&
             menuLinks.map((menuLink) => (
