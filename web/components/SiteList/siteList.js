@@ -38,7 +38,53 @@ const SiteList = ({ siteList, ...rest }) => {
         siteListVisibility ? 'animate-fadeIn' : ''
       }`}>
       <section>
-        <h2 className="pb-1 mb-14 font-bold text-3xl md:text-4xl border-b-4 border-black">Sider</h2>
+        <table className="mx-auto w-full">
+          <thead>
+            <tr>
+              <th colSpan={100}>
+                <h2 className="pb-1 mb-14 font-bold text-3xl md:text-4xl border-b-4 border-black">
+                  Sider
+                </h2>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody ref={showMoreRef}>
+            <tr className="p-2 border-solid border-violet border-2 rounded hover:bg-peach10 border-t-0 first:border-t-2">
+              {['Nr', 'Navn', 'Kategori', 'Utslipp', 'Accesibility', 'Performance', 'SEO'].map(
+                (hValue, keyIndex) => (
+                  <th id={keyIndex}>{hValue}</th>
+                )
+              )}
+            </tr>
+
+            {siteList &&
+              siteList.length > 0 &&
+              siteList
+                .slice(0, size)
+                .map((site, index) => <SingleSite index={index} site={site} key={site._id} />)}
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td colSpan={100}>
+                <div
+                  className={
+                    `${!showLoadMore ? 'hidden' : ''}` +
+                    ' container flex flex-wrap items-center justify-center mx-auto mt-5 w-full'
+                  }>
+                  <Button
+                    onClick={() => setSize(size + 10)}
+                    classes="bg-peach hover:bg-peach40 border-transparent border-2 hover:border-heroblue hover:border-solid">
+                    Last inn flere sider
+                  </Button>
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+
+        {/*
         <ul>
           <li className="grid md:grid-desktop grid-mobile p-2 rounded font-semibold md:gap-4 gap-2">
             <span className="overflow-hidden text-ellipsis">Nr</span>
@@ -50,24 +96,15 @@ const SiteList = ({ siteList, ...rest }) => {
             <span className="invisible md:visible">SEO</span>
           </li>
         </ul>
-        <ul ref={showMoreRef}>
+
+                <ul ref={showMoreRef}>
           {siteList &&
             siteList.length > 0 &&
             siteList
               .slice(0, size)
               .map((site, index) => <SingleSite index={index} site={site} key={site._id} />)}
         </ul>
-        <div
-          className={
-            `${!showLoadMore ? 'hidden' : ''}` +
-            ' container flex flex-wrap items-center justify-center mx-auto mt-5 w-full'
-          }>
-          <Button
-            onClick={() => setSize(size + 10)}
-            classes="bg-peach hover:bg-peach40 border-transparent border-2 hover:border-heroblue hover:border-solid">
-            Last inn flere sider
-          </Button>
-        </div>
+              */}
       </section>
     </div>
   );
