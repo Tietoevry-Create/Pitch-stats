@@ -17,7 +17,7 @@ const SingleSite = ({ site, index, ...rest }) => {
   }, []);
 
   return (
-    <tr className="p-2 border-solid border-violet border-2 rounded hover:bg-peach10 border-t-0 first:border-t-2">
+    <tr className="border-violet hover:bg-peach10 border-2">
       {[index + 1, site.title, site.category.title, carbon, accessibility, performance, seo].map(
         (val, keyIndex) => (
           <td id={keyIndex} className="text-center">
