@@ -38,8 +38,7 @@ const SingleSite = ({ site, index, ...rest }) => {
         <div className="rounded-r border-t border-b border-r border-stone-900 h-10 flex items-center justify-center">
           <CustomLink to={site}>
             <a className="rounded-full px-2 text-base bg-peach hover:bg-peach40 border-transparent border-2 hover:border-heroblue hover:border-solid">
-              {' '}
-              Se mer{' '}
+              {'Se mer'}
             </a>
           </CustomLink>
         </div>
