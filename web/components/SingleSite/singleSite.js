@@ -17,7 +17,7 @@ const SingleSite = ({ site, index, ...rest }) => {
   }, []);
 
   return (
-    <tr className="">
+    <tr>
       {[index + 1, site.title, site.category.title, carbon, accessibility, performance, seo].map(
         (val, keyIndex) => (
           <td id={keyIndex} className="text-center p-0 pt-2">
@@ -25,7 +25,8 @@ const SingleSite = ({ site, index, ...rest }) => {
               className={
                 (keyIndex === 0
                   ? 'rounded-l border-t border-b border-l '
-                  : 'rounded-none border-t border-b ') + 'border-stone-900'
+                  : 'rounded-none border-t border-b ') +
+                'border-stone-900 h-10 flex items-center justify-center'
               }>
               {val}
             </div>
@@ -34,9 +35,12 @@ const SingleSite = ({ site, index, ...rest }) => {
       )}
 
       <td className="text-center p-0 pt-2">
-        <div className="rounded-r border-t border-b border-r border-stone-900">
+        <div className="rounded-r border-t border-b border-r border-stone-900 h-10 flex items-center justify-center">
           <CustomLink to={site}>
-            <a> open page </a>
+            <a className="rounded-full px-2 text-base bg-peach hover:bg-peach40 border-transparent border-2 hover:border-heroblue hover:border-solid">
+              {' '}
+              Se mer{' '}
+            </a>
           </CustomLink>
         </div>
       </td>
