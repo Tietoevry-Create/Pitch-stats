@@ -57,7 +57,7 @@ const SiteList = ({ siteList, ...rest }) => {
           <thead>
             <tr>
               {listOfColumns.map((value, index) => (
-                <th id={index + '#' + value} className="px-4 flex-row items-center justify-center">
+                <th key={index + '#' + value} className="px-4 flex-row items-center justify-center">
                   {value}
                 </th>
               ))}
