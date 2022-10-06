@@ -27,7 +27,7 @@ const SingleSite = ({ site, index, ...rest }) => {
         performance,
         seo
       ].map((val, keyIndex) => (
-        <td id={keyIndex} className="text-center p-0 pt-2">
+        <td key={keyIndex} className="text-center p-0 pt-2">
           <div
             className={
               (keyIndex === 0
