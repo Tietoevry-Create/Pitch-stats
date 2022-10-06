@@ -17,16 +17,29 @@ const SingleSite = ({ site, index, ...rest }) => {
   }, []);
 
   return (
-    <tr className="border-violet hover:bg-peach10 border-2">
+    <tr className="">
       {[index + 1, site.title, site.category.title, carbon, accessibility, performance, seo].map(
         (val, keyIndex) => (
-          <td id={keyIndex} className="text-center">
-            <CustomLink to={site}>
-              <a> {val} </a>
-            </CustomLink>
+          <td id={keyIndex} className="text-center p-0 pt-2">
+            <div
+              className={
+                (keyIndex === 0
+                  ? 'rounded-l border-t border-b border-l '
+                  : 'rounded-none border-t border-b ') + 'border-stone-900'
+              }>
+              {val}
+            </div>
           </td>
         )
       )}
+
+      <td className="text-center p-0 pt-2">
+        <div className="rounded-r border-t border-b border-r border-stone-900">
+          <CustomLink to={site}>
+            <a> open page </a>
+          </CustomLink>
+        </div>
+      </td>
     </tr>
   );
 };
