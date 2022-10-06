@@ -48,7 +48,9 @@ const SiteList = ({ siteList, ...rest }) => {
       className={`container mx-auto px-4 md:px-24 py-24 text-xl ${
         siteListVisibility ? 'animate-fadeIn' : ''
       }`}>
-      <h2 className="pb-1 mb-14 font-bold text-3xl md:text-4xl border-b-4 border-black">Sider</h2>
+      <h2 className="pb-1 mb-14 font-bold text-3xl md:text-4xl border-b-4 border-black">
+        {'Sider'}
+      </h2>
 
       <div className="block overflow-x-auto whitespace-nowrap">
         <table className="w-full">
@@ -80,7 +82,7 @@ const SiteList = ({ siteList, ...rest }) => {
         <Button
           onClick={() => setSize(size + 10)}
           classes="bg-peach hover:bg-peach40 border-transparent border-2 hover:border-heroblue hover:border-solid">
-          Last inn flere sider
+          {'Last inn flere sider'}
         </Button>
       </div>
     </section>
