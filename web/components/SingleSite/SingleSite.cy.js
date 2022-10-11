@@ -1,4 +1,4 @@
-import { SingleSite } from '../../components/SingleSite';
+import { SingleSite } from '.';
 
 const localData = {
   index: 5,

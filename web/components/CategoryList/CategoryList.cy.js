@@ -1,4 +1,4 @@
-import { CategoryList } from '../../components/CategoryList';
+import { CategoryList } from '.';
 
 const localData = {
   categoryList: [

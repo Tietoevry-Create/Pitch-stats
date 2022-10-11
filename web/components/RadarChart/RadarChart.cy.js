@@ -1,4 +1,4 @@
-import { CustomRadarChart } from '../../components/RadarChart';
+import { CustomRadarChart } from '.';
 
 describe('<CustomRadarChart />', () => {
   it('Check mount', () => {
