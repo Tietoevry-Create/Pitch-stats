@@ -1,4 +1,4 @@
-import { CustomLink } from '../../components/CustomLink';
+import { CustomLink } from '.';
 
 export default {
   title: 'Components/CustomLink',
