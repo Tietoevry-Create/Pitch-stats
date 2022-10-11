@@ -1,4 +1,4 @@
-import { Heading } from '../../components/Heading';
+import { Heading } from '.';
 
 export default {
   title: 'Components/Heading',

@@ -1,4 +1,4 @@
-import { Category } from '../../components/Category';
+import { Category } from '.';
 
 export default {
   title: 'Components/Category',

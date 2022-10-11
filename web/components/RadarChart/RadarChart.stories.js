@@ -1,4 +1,4 @@
-import { RadarChart } from '../../components/RadarChart';
+import { RadarChart } from '.';
 
 export default {
   title: 'Components/Radarchart',
