@@ -17,19 +17,39 @@ const SingleSite = ({ site, index, ...rest }) => {
   }, []);
 
   return (
-    <li className="p-2 border-solid border-violet border-2 rounded hover:bg-peach10 border-t-0 first:border-t-2">
-      <CustomLink to={site}>
-        <a className="grid md:grid-desktop grid-mobile md:gap-4 gap-2 whitespace-nowrap">
-          <span className=" w-5 justify-self-center">{index + 1}.</span>
-          <span className=" overflow-hidden text-ellipsis">{site.title}</span>
-          <span className=" overflow-hidden text-ellipsis">{site.category.title}</span>
-          <span className=" overflow-hidden text-ellipsis">0.{carbon} CO₂</span>
-          <span className=" overflow-hidden text-ellipsis hidden md:block">{accessibility}%</span>
-          <span className=" overflow-hidden text-ellipsis hidden md:block">{performance}%</span>
-          <span className=" overflow-hidden text-ellipsis hidden md:block">{seo}%</span>
-        </a>
-      </CustomLink>
-    </li>
+    <tr>
+      {[
+        index + 1 + '.',
+        site.title,
+        site.category.title,
+        carbon,
+        accessibility,
+        performance,
+        seo
+      ].map((val, keyIndex) => (
+        <td key={keyIndex} className="text-center p-0 pt-2">
+          <div
+            className={
+              (keyIndex === 0
+                ? 'rounded-l border-t-2 border-b-2 border-l-2 '
+                : 'rounded-none border-t-2 border-b-2 ') +
+              'border-violet h-10 flex items-center justify-center'
+            }>
+            {val}
+          </div>
+        </td>
+      ))}
+
+      <td className="text-center p-0 pt-2">
+        <div className="rounded-r border-t-2 border-b-2 border-r-2 border-violet h-10 flex items-center justify-center">
+          <CustomLink to={site}>
+            <a className="rounded-full px-2 text-base bg-peach hover:bg-peach40 border-transparent border-2 hover:border-heroblue hover:border-solid">
+              {'Se mer'}
+            </a>
+          </CustomLink>
+        </div>
+      </td>
+    </tr>
   );
 };
 

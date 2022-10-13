@@ -1,4 +1,4 @@
-import { SiteList } from '../../components/SiteList';
+import { SiteList } from '.';
 
 export default {
   title: 'Components/SiteList',

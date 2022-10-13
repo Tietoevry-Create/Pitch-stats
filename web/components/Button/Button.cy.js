@@ -1,4 +1,4 @@
-import { SiteList } from '../../components/SiteList';
+import { Button } from '.';
 
 const localData = {
   classes:
@@ -6,8 +6,8 @@ const localData = {
   children: 'Last inn flere sider'
 };
 
-describe('<SiteList />', () => {
+describe('<Button />', () => {
   it('Check mount', () => {
-    cy.mount(<SiteList siteList={[]} />);
+    cy.mount(<Button children={localData.children} classes={localData.classes} />);
   });
 });

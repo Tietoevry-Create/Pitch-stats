@@ -1,4 +1,4 @@
-import { Counter } from '../../components/Counter';
+import { Counter } from '.';
 
 describe('<Counter />', () => {
   it('Check mount', () => {

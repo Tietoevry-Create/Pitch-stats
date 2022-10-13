@@ -1,4 +1,4 @@
-import { Category } from '../../components/Category';
+import { Category } from '.';
 
 const localData = {
   _createdAt: '2022-08-08T14:13:05Z',

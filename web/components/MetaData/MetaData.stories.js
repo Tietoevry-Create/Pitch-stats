@@ -1,4 +1,4 @@
-import { MetaData } from '../../components/MetaData';
+import { MetaData } from '.';
 
 export default {
   title: 'Components/MetaData',

@@ -1,4 +1,4 @@
-import { BlockContent } from '../../components/BlockContent';
+import { BlockContent } from '.';
 
 export default {
   title: 'Components/BlockContent',

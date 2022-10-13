@@ -1,4 +1,4 @@
-import { BlockContent } from '../../components/BlockContent';
+import { BlockContent } from '.';
 
 const localData = {
   blockContent: [
