@@ -12,8 +12,7 @@ name: Deploy web app to Azure Static Web Apps
 env:
   APP_LOCATION: "/web/" # location of your client code
   API_LOCATION: "" # location of your api source code - optional
-  APP_ARTIFACT_LOCATION: "" # location of client code build output
-  build_timeout_in_minutes: 30
+  APP_ARTIFACT_LOCATION: "out" # location of client code build output
 
 on:
   push:
