@@ -13,7 +13,7 @@ env:
   APP_LOCATION: "/web/" # location of your client code
   API_LOCATION: "" # location of your api source code - optional
   APP_ARTIFACT_LOCATION: "" # location of client code build output
-  build_timeout_in_minutes: 10
+  build_timeout_in_minutes: 30
 
 on:
   push:
