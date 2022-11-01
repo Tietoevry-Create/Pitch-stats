@@ -1,0 +1,51 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy container app to Azure Web App - proj-stats-docker-test
+
+on:
+  push:
+    branches:
+      - vv-docker-test
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Log in to registry
+      uses: docker/login-action@v1
+      with:
+        registry: https://ghcr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_98de6317c98e4852a2bbb2cb0fb02a9a }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_34432a2342514c79a96c72a13d63c587 }}
+
+    - name: Build and push container image to registry
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_98de6317c98e4852a2bbb2cb0fb02a9a }}/appsvc/staticsite:${{ github.sha }}
+        file: ./web/Dockerfile
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'proj-stats-docker-test'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_738b548d27ba4e26ab18b2f40ecc5331 }}
+        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_98de6317c98e4852a2bbb2cb0fb02a9a }}/appsvc/staticsite:${{ github.sha }}'
