@@ -1,8 +1,6 @@
 FROM node:lts-alpine3.16
 
-CD /web
-
-COPY . /nextapp
+COPY /web/ /nextapp
 
 WORKDIR /nextapp
 
