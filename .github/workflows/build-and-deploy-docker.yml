@@ -6,7 +6,7 @@ name: Build and deploy container app to Azure Web App - proj-stats-docker-test
 on:
   push:
     branches:
-      - vv-docker-test
+      - main
   workflow_dispatch:
 
 jobs:
