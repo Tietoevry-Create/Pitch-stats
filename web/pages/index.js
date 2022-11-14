@@ -46,20 +46,19 @@ export default function Home({
 
 export async function getStaticProps({ preview = false }) {
   const infra = new DataManager();
-  const headerPaths = infra
-    .getHeaderPaths()
-    .filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
-  const footerPaths = infra.getFooterPaths();
-  const siteData = infra.getSiteData();
-  let pageData = infra.getFrontpageContent();
-  const categories = infra
-    .getCategoryContent()
-    .categories.filter((item) => (item.slug = infra.generateProdURL('kategori', item.slug)));
+  const footerPaths = infra.footerPaths;
+  const siteData = infra.siteData;
+  let pageData = infra.frontpageContent;
+
+  const headerPaths = infra.getHeaderPaths();
+  headerPaths.filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
+
+  const categories = infra.categoryContent.categories;
+  categories.filter((item) => (item.slug = infra.generateProdURL('/kategori', item.slug)));
   pageData.categories = categories;
 
-  const siteList = infra
-    .getSiteContent()
-    .sites.filter((item) => (item.slug = infra.generateProdURL('side', item.slug)));
+  const siteList = infra.siteContent.sites;
+  siteList.filter((item) => (item.slug = infra.generateProdURL('/side', item.slug)));
 
   return {
     props: {

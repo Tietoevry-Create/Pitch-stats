@@ -42,11 +42,13 @@ export default function PageSite({
 export async function getStaticProps(context) {
   const { slug = '' } = context.params;
   const infra = new DataManager();
-  const headerPaths = infra
-    .getHeaderPaths()
-    .filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
-  const footerPaths = infra.getFooterPaths();
-  const siteData = infra.getSiteData();
+
+  const headerPaths = infra.getHeaderPaths();
+  headerPaths.filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
+
+  const footerPaths = infra.footerPaths;
+  const siteData = infra.siteData;
+
   const pageData = infra.getPageContent(slug);
 
   return {

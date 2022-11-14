@@ -63,14 +63,14 @@ export default function Site({
 export async function getStaticProps(context) {
   const { slug = '' } = context.params;
   const infra = new DataManager();
-  const headerPaths = infra
-    .getHeaderPaths()
-    .filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
-  const footerPaths = infra.getFooterPaths();
-  const siteData = infra.getSiteData();
+
+  const headerPaths = infra.getHeaderPaths();
+  headerPaths.filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
+
+  const footerPaths = infra.footerPaths;
+  const siteData = infra.siteData;
 
   const pageData = infra.getPageContent(slug);
-  console.log(pageData);
 
   return {
     props: {
@@ -84,7 +84,7 @@ export async function getStaticProps(context) {
 }
 export async function getStaticPaths() {
   const infra = new DataManager();
-  const paths = infra.getSiteContent().sites.map((item) => item.slug);
+  const paths = infra.siteContent.sites.map((item) => item.slug);
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),

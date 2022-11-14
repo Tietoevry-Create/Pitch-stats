@@ -1,38 +1,29 @@
 import { CustomLink } from '../CustomLink';
-import { useState, useEffect } from 'react';
-const SingleSite = ({ site, index, ...rest }) => {
-  function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  // dirty sample code for setting sample data for data to be shown for sites
-  const [carbon, setCarbon] = useState(0);
-  const [accessibility, setAccessibility] = useState(0);
-  const [seo, setSeo] = useState(0);
-  const [performance, setPerformance] = useState(0);
-  useEffect(() => {
-    setCarbon(getRndInteger(4, 95));
-    setPerformance(getRndInteger(30, 95));
-    setAccessibility(getRndInteger(30, 95));
-    setSeo(getRndInteger(30, 95));
-  }, []);
 
+const SingleSite = ({ site, index, ...rest }) => {
   return (
     <tr>
-      {[index + 1 + '.', site.title, site.type, carbon, accessibility, performance, seo].map(
-        (val, keyIndex) => (
-          <td key={keyIndex} className="text-center p-0 pt-2">
-            <div
-              className={
-                (keyIndex === 0
-                  ? 'rounded-l border-t-2 border-b-2 border-l-2 '
-                  : 'rounded-none border-t-2 border-b-2 ') +
-                'border-violet h-10 flex items-center justify-center'
-              }>
-              {val}
-            </div>
-          </td>
-        )
-      )}
+      {[
+        index + 1 + '.',
+        site.title,
+        site.type,
+        site.results.carbon,
+        site.results.accessibility,
+        site.results.performance,
+        site.results.seo
+      ].map((val, keyIndex) => (
+        <td key={keyIndex} className="text-center p-0 pt-2">
+          <div
+            className={
+              (keyIndex === 0
+                ? 'rounded-l border-t-2 border-b-2 border-l-2 '
+                : 'rounded-none border-t-2 border-b-2 ') +
+              'border-violet h-10 flex items-center justify-center'
+            }>
+            {val}
+          </div>
+        </td>
+      ))}
 
       <td className="text-center p-0 pt-2">
         <div className="rounded-r border-t-2 border-b-2 border-r-2 border-violet h-10 flex items-center justify-center">

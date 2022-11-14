@@ -12,25 +12,21 @@ const data = [
   {
     subject: 'SEO',
     A: 55,
-
     fullmark: 100
   },
   {
     subject: 'Performance',
     A: 60,
-
     fullmark: 100
   },
   {
     subject: 'Accessibility',
     A: 99,
-
     fullmark: 100
   },
   {
     subject: 'Best practices',
     A: 40,
-
     fullmark: 100
   }
 ];

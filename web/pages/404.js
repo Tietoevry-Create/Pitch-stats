@@ -20,10 +20,11 @@ export default function Custom404({ headerPaths = {}, footerPaths = {} }) {
 
 export async function getStaticProps() {
   const infra = new DataManager();
-  const headerPaths = infra
-    .getHeaderPaths()
-    .filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
-  const footerPaths = infra.getFooterPaths();
+
+  const headerPaths = infra.getHeaderPaths();
+  headerPaths.filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
+
+  const footerPaths = infra.footerPaths;
 
   return {
     props: {
