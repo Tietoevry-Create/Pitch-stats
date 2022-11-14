@@ -328,23 +328,15 @@ export default class DataManager {
     };
   }
 
-  generateProdURL(base, slug) {
-    return base + '/' + slug + '/';
-  }
-
   getPageContent(slug) {
     const categorySlugs = this.categoryContent.categories.map((item) => item.slug);
 
     const siteSlugs = this.siteContent.sites.map((item) => item.slug);
 
     if (categorySlugs.includes(slug)) {
-      const val = this.categoryContent.categories.filter((item) => item.slug === slug)[0];
-
-      return val;
+      return this.categoryContent.categories.filter((item) => item.slug === slug)[0];
     } else if (siteSlugs.includes(slug)) {
-      const val = this.siteContent.sites.filter((item) => item.slug === slug)[0];
-
-      return val;
+      return this.siteContent.sites.filter((item) => item.slug === slug)[0];
     } else {
       switch (slug) {
         case '/':
@@ -362,15 +354,14 @@ export default class DataManager {
   }
 
   getHeaderPaths() {
-    const allData = [this.aboutContent, this.categoryContent, this.siteContent];
-    const paths = [];
-    allData.map((item) => {
-      paths.push({ title: item.title, slug: item.slug });
-    });
+    const paths = [this.aboutContent, this.categoryContent, this.siteContent].map((item) => ({
+      title: item.title,
+      slug: item.slug
+    }));
     return paths;
   }
 
-  getFooterPaths() {
-    return this.footerPaths;
+  generateProdURL(base, slug) {
+    return base + '/' + slug + '/';
   }
 }
