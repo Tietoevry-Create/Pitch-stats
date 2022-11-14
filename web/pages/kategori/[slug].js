@@ -1,19 +1,20 @@
-import { BlockContent } from 'components/BlockContent';
-import { Layout } from 'components/Layout';
-import { Heading } from 'components/Heading';
 import { MetaData } from 'components/MetaData';
+import { Layout } from 'components/Layout';
+import { SiteList } from 'components/SiteList';
+import { Heading } from 'components/Heading';
 
 import DataManager from 'util/DataManager';
 
-export default function PageSite({
+export default function Category({
   headerPaths = [],
   footerPaths = [],
   siteData = {},
   pageData = {},
+  siteList = [],
   preview = false
 }) {
   const { baseURL, sitename, description, type, icon } = siteData;
-  const { slug, title, content } = pageData;
+  const { slug, title, text, svg } = pageData;
 
   return (
     <>
@@ -29,11 +30,11 @@ export default function PageSite({
       <Layout headerPaths={headerPaths} footerPaths={footerPaths}>
         <Heading title={title} />
 
-        <div className="test container mx-auto px-4 md:px-24 py-4 md:py-10 text-2xl">
-          {content.map((item, index) => (
-            <BlockContent text={item.text} image={item.svg} key={index} />
-          ))}
-        </div>
+        {description && description.length > 0 && (
+          <div className="container mx-auto px-4 md:px-24 py-4 md:py-10 text-2xl">{text}</div>
+        )}
+
+        {siteList && siteList.length > 0 && <SiteList siteList={siteList} />}
       </Layout>
     </>
   );
@@ -54,14 +55,15 @@ export async function getStaticProps(context) {
       headerPaths: headerPaths,
       footerPaths: footerPaths,
       siteData: siteData,
-      pageData: pageData
+      pageData: pageData,
+      siteList: []
     },
     revalidate: 50
   };
 }
 export async function getStaticPaths() {
   const infra = new DataManager();
-  const paths = infra.getHeaderPaths().map((item) => item.slug);
+  const paths = infra.getCategoryContent().categories.map((item) => item.slug);
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),

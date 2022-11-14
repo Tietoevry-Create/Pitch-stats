@@ -69,7 +69,7 @@ const SiteList = ({ siteList, ...rest }) => {
               siteList.length > 0 &&
               siteList
                 .slice(0, size)
-                .map((site, index) => <SingleSite index={index} site={site} key={site._id} />)}
+                .map((site, index) => <SingleSite index={index} site={site} key={index} />)}
           </tbody>
         </table>
       </div>

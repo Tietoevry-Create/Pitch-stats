@@ -1,17 +1,16 @@
-import client from 'util/client.js';
 import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
-import { footerQuery, menuQuery } from 'util/queries';
 import Page404Icon from 'components/icons/Page404Icon';
 import Head from 'next/head';
+import DataManager from 'util/DataManager';
 
-export default function Custom404({ menuData = {}, footerData = {} }) {
+export default function Custom404({ headerPaths = {}, footerPaths = {} }) {
   return (
     <>
       <Head>
         <title>404 NOT FOUND</title>
       </Head>
-      <Layout footerData={footerData} menuData={menuData}>
+      <Layout headerPaths={headerPaths} footerPaths={footerPaths}>
         <Heading title={'Page not found'} />
         <Page404Icon />
       </Layout>
@@ -20,13 +19,16 @@ export default function Custom404({ menuData = {}, footerData = {} }) {
 }
 
 export async function getStaticProps() {
-  const query = `{${footerQuery}, ${menuQuery} }`;
-  const data = await client.fetch(query);
-  const { footerData = {}, menuData = {} } = data;
+  const infra = new DataManager();
+  const headerPaths = infra
+    .getHeaderPaths()
+    .filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
+  const footerPaths = infra.getFooterPaths();
+
   return {
     props: {
-      footerData: footerData,
-      menuData: menuData
+      headerPaths: headerPaths,
+      footerPaths: footerPaths
     },
     revalidate: 50
   };

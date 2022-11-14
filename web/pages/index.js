@@ -1,47 +1,72 @@
-import client from 'util/client.js';
 import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
 import { BlockContent } from 'components/BlockContent';
 import { SiteList } from 'components/SiteList';
 import { CategoryList } from 'components/CategoryList';
-import { footerQuery, blockContentQuery, menuQuery } from 'util/queries';
 import { MetaData } from 'components/MetaData';
 
+import DataManager from 'util/DataManager';
+
 export default function Home({
-  menuData = {},
+  headerPaths = [],
+  footerPaths = [],
+  siteData = {},
   pageData = {},
-  footerData = {},
   siteList = [],
   preview = false
 }) {
-  const { title, categoryList = [], blockContent } = pageData;
+  const { baseURL, sitename, description, type, icon } = siteData;
+  const { slug, title, content, categories } = pageData;
 
   return (
     <>
-      <MetaData document={pageData} />
+      <MetaData
+        title={title}
+        sitename={sitename}
+        description={description}
+        url={baseURL}
+        type={type}
+        icon={icon}
+      />
 
-      <Layout footerData={footerData} menuData={menuData}>
+      <Layout headerPaths={headerPaths} footerPaths={footerPaths}>
         <Heading title={title} />
 
-        <BlockContent blockContent={blockContent || []} />
+        {content.map((item, index) => (
+          <BlockContent text={item.text} image={item.svg} key={index} />
+        ))}
 
-        <CategoryList categoryList={categoryList || []} />
+        <CategoryList categoryList={categories} />
 
-        <SiteList siteList={siteList || []} />
+        <SiteList siteList={siteList} />
       </Layout>
     </>
   );
 }
 
 export async function getStaticProps({ preview = false }) {
-  const query = `{"siteList": *[_type=="site"]{title, slug, _type, _id, "category": categoryReference->{title}}, "pageData": *[_type == 'frontPage' && _id == 'frontPage' && !(_id in path("drafts.**"))][0]{title, ${blockContentQuery}, "categoryList": categoryRefList[]->{_id, _type, title, slug, lede, path, ... }, ...}, ${footerQuery}, ${menuQuery} }`;
-  const data = await client.fetch(query);
-  const { pageData = {}, footerData = {}, siteList = [], menuData = {} } = data;
+  const infra = new DataManager();
+  const headerPaths = infra
+    .getHeaderPaths()
+    .filter((item) => (item.slug = infra.generateProdURL('', item.slug)));
+  const footerPaths = infra.getFooterPaths();
+  const siteData = infra.getSiteData();
+  let pageData = infra.getFrontpageContent();
+  const categories = infra
+    .getCategoryContent()
+    .categories.filter((item) => (item.slug = infra.generateProdURL('kategori', item.slug)));
+  pageData.categories = categories;
+
+  const siteList = infra
+    .getSiteContent()
+    .sites.filter((item) => (item.slug = infra.generateProdURL('side', item.slug)));
+
   return {
     props: {
+      headerPaths: headerPaths,
+      footerPaths: footerPaths,
+      siteData: siteData,
       pageData: pageData,
-      footerData: footerData,
-      menuData: menuData,
       siteList: siteList
     },
     revalidate: 50

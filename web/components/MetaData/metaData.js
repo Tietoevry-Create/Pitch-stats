@@ -1,37 +1,22 @@
 import { NextSeo } from 'next-seo';
-import toPlainText from '../../util/toPlainText';
-const MetaData = ({ document, ...rest }) => {
-  let { title, lede, _createdAt, _updatedAt, websiteUrl, _type } = document;
 
-  if (!lede && document.blockContent) {
-    lede = toPlainText(document.blockContent);
-  }
-
-  const temporaryIconSRC = { alt: 'Website icon', src: '/favicon.ico' };
-  const tempType = _type === 'frontPage' ? 'frontpage' : 'article';
-  const tempSitename = 'Stats';
-
+const MetaData = ({ title, sitename, description, url, type, icon, ...rest }) => {
   return (
     <>
       <NextSeo
         title={title}
         openGraph={{
-          site_name: tempSitename,
-          type: tempType,
-          url: websiteUrl,
+          site_name: sitename,
+          type: type,
+          url: url,
           title: title,
-          description: lede,
+          description: description,
           images: [
             {
-              url: temporaryIconSRC.src,
-              alt: temporaryIconSRC.alt
+              url: icon.src,
+              alt: icon.alt
             }
-          ],
-          article: {
-            // Tags are only added if "type" === "article".
-            publishedTime: _createdAt,
-            modifiedTime: _updatedAt
-          }
+          ]
         }}
       />
     </>
