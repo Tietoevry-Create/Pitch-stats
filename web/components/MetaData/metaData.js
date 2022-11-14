@@ -10,13 +10,7 @@ const MetaData = ({ title, sitename, description, url, type, icon, ...rest }) =>
           type: type,
           url: url,
           title: title,
-          description: description,
-          images: [
-            {
-              url: icon.src,
-              alt: icon.alt
-            }
-          ]
+          description: description
         }}
       />
     </>
