@@ -27,7 +27,15 @@ const CategoryList = ({ categoryList, ...rest }) => {
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-15 my-8">
         {categoryList &&
           categoryList.length > 0 &&
-          categoryList.map((category) => <Category category={category} key={category._id} />)}
+          categoryList.map((category, index) => (
+            <Category
+              slug={category.slug}
+              title={category.title}
+              description={category.text}
+              svgPath={category.svg}
+              key={index}
+            />
+          ))}
       </div>
     </section>
   );

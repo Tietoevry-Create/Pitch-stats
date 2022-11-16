@@ -3,11 +3,10 @@ import { useRouter } from 'next/router';
 import { CustomLink } from '../CustomLink';
 import TEIcon from '../icons/TEIcon';
 import Link from 'next/link';
-import linkResolver from 'util/linkResolver';
 
-const Navbar = ({ menuData = {} }) => {
+const Navbar = ({ headerPaths }) => {
+  const menuLinks = headerPaths;
   const [isMenuOpen, setOpen] = useState(false);
-  const { menuLinks = [] } = menuData;
   const router = useRouter();
   const currentRoute = router.asPath;
 
@@ -72,13 +71,13 @@ const Navbar = ({ menuData = {} }) => {
           id="mobile-dropdown-menu">
           {menuLinks &&
             menuLinks.length > 0 &&
-            menuLinks.map((menuLink) => (
-              <CustomLink to={menuLink} key={menuLink._key}>
+            menuLinks.map((item, index) => (
+              <CustomLink to={item.slug} key={index}>
                 <a
                   className={`text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black ${
-                    currentRoute == linkResolver(menuLink) ? 'font-bold' : 'font-medium'
+                    currentRoute == item.slug ? 'font-bold' : 'font-medium'
                   } items-center justify-center hover:text-heroblue md:flex-col`}>
-                  {menuLink.label}
+                  {item.title}
                 </a>
               </CustomLink>
             ))}

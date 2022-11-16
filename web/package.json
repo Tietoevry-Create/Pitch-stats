@@ -19,11 +19,7 @@
   },
   "dependencies": {
     "@axe-core/react": "^4.4.4",
-    "@portabletext/react": "^1.0.6",
-    "@sanity/image-url": "^1.0.1",
-    "groq": "^2.29.3",
     "next": "12.2.0",
-    "next-sanity": "^0.5.2",
     "next-seo": "^5.5.0",
     "node-fetch": "^2.6.6",
     "react": "18.2.0",

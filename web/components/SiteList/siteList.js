@@ -7,17 +7,9 @@ const SiteList = ({ siteList, ...rest }) => {
   const siteListRef = useRef();
   const [siteListVisibility, setSiteListVisibility] = useState(false);
   const [animatedOnce, setAnimatedOnce] = useState(false);
-
-  const listOfColumns = [
-    'Nr',
-    'Navn',
-    'Kategori',
-    'Utslipp',
-    'Tilgjengelighet',
-    'Ytelse',
-    'SEO',
-    'Detaljer'
-  ];
+  const showMoreRef = useRef();
+  const [size, setSize] = useState(10);
+  const [showLoadMore, setShowLoadMore] = useState(null);
 
   useEffect(() => {
     if (!animatedOnce) {
@@ -35,12 +27,20 @@ const SiteList = ({ siteList, ...rest }) => {
     }
   }, [siteListVisibility]);
 
-  const showMoreRef = useRef();
-  const [size, setSize] = useState(10);
-  const [showLoadMore, setShowLoadMore] = useState(null);
   useEffect(() => {
     setShowLoadMore(showMoreRef.current.children.length >= size);
   }, [size]);
+
+  const listOfColumns = [
+    'Nr',
+    'Navn',
+    'Kategori',
+    'Utslipp',
+    'Tilgjengelighet',
+    'Ytelse',
+    'SEO',
+    'Detaljer'
+  ];
 
   return (
     <section
@@ -69,7 +69,7 @@ const SiteList = ({ siteList, ...rest }) => {
               siteList.length > 0 &&
               siteList
                 .slice(0, size)
-                .map((site, index) => <SingleSite index={index} site={site} key={site._id} />)}
+                .map((site, index) => <SingleSite index={index} site={site} key={index} />)}
           </tbody>
         </table>
       </div>

@@ -1,10 +1,10 @@
 import { Footer } from '../Footer';
 import { Navbar } from '../Navbar';
-const Layout = ({ footerData, menuData, children, ...rest }) => (
+const Layout = ({ headerPaths, footerPaths, children, ...rest }) => (
   <>
-    <Navbar menuData={menuData} />
+    <Navbar headerPaths={headerPaths} />
     <main>{children}</main>
-    <Footer footerData={footerData || {}} />
+    <Footer footerPaths={footerPaths} />
   </>
 );
 
