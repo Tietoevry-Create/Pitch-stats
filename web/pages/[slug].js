@@ -3,7 +3,7 @@ import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
 import { MetaData } from 'components/MetaData';
 
-import DataManager from 'util/DataManager';
+import DataManager from 'model/LocalDataManager';
 
 export default function PageSite({
   headerPaths = [],

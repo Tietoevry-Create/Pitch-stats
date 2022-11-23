@@ -3,7 +3,7 @@ import { Layout } from 'components/Layout';
 import { SiteList } from 'components/SiteList';
 import { Heading } from 'components/Heading';
 
-import DataManager from 'util/DataManager';
+import DataManager from 'model/LocalDataManager';
 
 export default function Category({
   headerPaths = [],
