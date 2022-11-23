@@ -386,6 +386,7 @@ export default class DataManager {
       title: item.title,
       slug: item.slug
     }));
+    paths.push({ title: 'Finn selskap', slug: 'utforsker' });
     return paths;
   }
 
