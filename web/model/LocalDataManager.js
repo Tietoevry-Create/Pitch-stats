@@ -1,5 +1,33 @@
 export default class DataManager {
   constructor() {
+    this.mockdataCompany = {
+      name: 'Tietoevry',
+      identifier: '12345',
+      founded: '00 00 0000',
+
+      sector: 'Private',
+      sectorCode: '0',
+      industry: 'Technology',
+      industryCode: '',
+
+      ceo: 'Kim Possible',
+      employees: '10 000',
+
+      address: 'Folke bernadottes vei 40',
+      postalCode: '0000',
+      municipality: 'Bergen',
+      state: 'Vestland',
+      country: 'Norge',
+
+      website: 'https://tietoevry.com',
+      websitePerformanceScore: '0',
+      websiteAccessibilityScore: '0',
+      websiteBestPracticesScore: '0',
+      websiteSeoScore: '0',
+      websitePwaScore: '0',
+      websiteCO2Score: '0'
+    };
+
     this.sites = [
       {
         slug: 'dagbladet',
