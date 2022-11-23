@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Sidebar = ({ headerTitle, headerButton, children }) => {
-  const [sidebarToggle, setSidebarTogge] = useState(false);
+  const [sidebarToggle, setSidebarTogge] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSidebarTogge(false);
+    }, 300);
+    console.log('hi');
+  }, []);
 
   return (
     <div
