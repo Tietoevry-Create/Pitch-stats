@@ -63,7 +63,10 @@ export async function getStaticProps(context) {
 }
 export async function getStaticPaths() {
   const infra = new DataManager();
-  const paths = infra.getHeaderPaths().map((item) => item.slug);
+  const paths = infra
+    .getHeaderPaths()
+    .map((item) => item.slug)
+    .filter((slug) => slug !== 'utforsker'); //.filter.... temporary fix due to crappy local data management.
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),

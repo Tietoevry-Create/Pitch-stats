@@ -354,6 +354,12 @@ export default class DataManager {
       ],
       sites: this.sites
     };
+
+    this.explorerContent = {
+      slug: 'utforsker',
+      title: 'Finn selskap',
+      content: []
+    };
   }
 
   getPageContent(slug) {
@@ -382,11 +388,15 @@ export default class DataManager {
   }
 
   getHeaderPaths() {
-    const paths = [this.aboutContent, this.categoryContent, this.siteContent].map((item) => ({
+    const paths = [
+      this.aboutContent,
+      this.categoryContent,
+      this.siteContent,
+      this.explorerContent
+    ].map((item) => ({
       title: item.title,
       slug: item.slug
     }));
-    paths.push({ title: 'Finn selskap', slug: 'utforsker' });
     return paths;
   }
 
