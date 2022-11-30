@@ -65,7 +65,7 @@ const Navbar = ({ headerPaths }) => {
 
         <div
           className={
-            (isMenuOpen ? 'display: flex ' : 'hidden ') +
+            (isMenuOpen ? 'animate-fadeIn display: flex ' : 'hidden ') +
             'flex-col md:flex-row md:flex w-full md:w-fit md:items-center h-max'
           }
           id="mobile-dropdown-menu">
