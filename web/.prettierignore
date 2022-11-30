@@ -2,3 +2,4 @@
 .swc
 node_modules
 .husky
+model/mapData.json
