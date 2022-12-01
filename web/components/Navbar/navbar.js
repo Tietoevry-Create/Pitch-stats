@@ -66,7 +66,7 @@ const Navbar = ({ headerPaths }) => {
         <div
           className={
             (isMenuOpen
-              ? ' animate-fadeIn display: flex flex-grow mb-20 pb-14 transition-all transform duration-300  max-h-0 '
+              ? ' animate-fadeIn display: flex flex-grow mb-20 pb-14 transition-all transform duration-300 max-h-0 md:mb-0 md:pb-0 '
               : ' flex-grow mb-0 duration-300 max-h-0 ') +
             'flex-col md:flex-row md:flex w-full md:w-fit md:items-center h-max md:flex-grow-0 md:visible'
           }
@@ -78,7 +78,7 @@ const Navbar = ({ headerPaths }) => {
                 <a
                   className={
                     (isMenuOpen ? 'visible ' : 'hidden ') +
-                    ` text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black ${
+                    ` text-lg md:inline-flex md:w-auto w-full px-3 py-2 text-black ${
                       currentRoute == item.slug ? 'font-bold' : 'font-medium'
                     } items-center justify-center hover:text-heroblue md:flex-col`
                   }>
