@@ -29,74 +29,88 @@ export default function Home({}) {
       zoom: initialState.zoom
     });
 
-    map.on('load', async function () {
+    map.on('load', async () => {
       const featureCollectionBorder = mapData['postnummeromrader.postnummeromradegrense']; // Draw border. https://maplibre.org/maplibre-gl-js-docs/example/geojson-line/
+
       const featureCollectionFill = mapData['postnummeromrader.postnummeromrade']; // Fill area. https://maplibre.org/maplibre-gl-js-docs/example/geojson-polygon/
 
-      const sourceDataBorder = {
-        type: 'geojson',
-        data: featureCollectionBorder
-      };
+      function generateRandomColor() {
+        const randomFillColors = [
+          '#BA4D35',
+          '#35BA63',
+          '#3588BA',
+          '#AABA35',
+          '#BA35B8',
+          '#35BAAC',
+          '#EADA17',
+          '#EEB4FF',
+          '#8A24A8',
+          '#F1C40F',
+          '#1A5276'
+        ];
+        const randomNumber = Math.floor(Math.random() * randomFillColors.length);
 
-      const sourceDataFill = {
-        type: 'geojson',
-        data: featureCollectionFill
-      };
+        const randomColor = randomFillColors[randomNumber];
+        return randomColor;
+      }
 
-      const mapBorders = {
-        id: `outline`,
-        type: 'line',
-        source: `route2`,
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round'
+      Object.entries(featureCollectionFill.features).forEach((item) => {
+        item[1]['properties']['color'] = generateRandomColor();
+      });
+
+      // ADD POLYGONS
+      map.addLayer({
+        id: 'polygons',
+        type: 'fill',
+        source: {
+          type: 'geojson',
+          data: featureCollectionFill
         },
+        layout: {},
+        paint: {
+          'fill-color': ['get', 'color'],
+          'fill-opacity': 0.8
+        }
+      });
+
+      // ADD BORDER
+      map.addLayer({
+        id: 'outline',
+        type: 'line',
+        source: {
+          type: 'geojson',
+          data: featureCollectionBorder
+        },
+        layout: {},
         paint: {
           'line-color': '#888',
           'line-width': 1
         }
-      };
-
-      const mapFill = {
-        id: `polygons`,
-        type: 'fill',
-        source: `route1`,
-        layout: {},
-        paint: {
-          'fill-color': '#088',
-          'fill-opacity': 0.2
-        }
-      };
-
-      map.addSource(`route2`, sourceDataBorder);
-      map.addSource(`route1`, sourceDataFill);
-
-      map.addLayer(mapBorders);
-      map.addLayer(mapFill);
-
-      map.on('click', 'polygons', (e) => {
-        new maplibregl.Popup()
-          .setLngLat(e.lngLat)
-          .setHTML(
-            '<h3>' +
-              'Valgt område: ' +
-              '</h3>' +
-              '<p>' +
-              'Postnummer: ' +
-              e.features[0].properties['postnummer'] +
-              '</p>' +
-              '<p>' +
-              'Poststed: ' +
-              e.features[0].properties['poststed'] +
-              '</p>' +
-              '<p>' +
-              'Kommune: ' +
-              e.features[0].properties['kommune'] +
-              '</p>'
-          )
-          .setMaxWidth('300px')
-          .addTo(map);
       });
+    });
+
+    map.on('click', 'polygons', (e) => {
+      new maplibregl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(
+          '<h3>' +
+            'Valgt område: ' +
+            '</h3>' +
+            '<p>' +
+            'Postnummer: ' +
+            e.features[0].properties['postnummer'] +
+            '</p>' +
+            '<p>' +
+            'Poststed: ' +
+            e.features[0].properties['poststed'] +
+            '</p>' +
+            '<p>' +
+            'Kommune: ' +
+            e.features[0].properties['kommune'] +
+            '</p>'
+        )
+        .setMaxWidth('300px')
+        .addTo(map);
     });
   }, []);
 
