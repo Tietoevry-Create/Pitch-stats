@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import maplibregl, { Map } from 'maplibre-gl';
 import { Sidebar } from 'components/Sidebar';
+import Gradient from 'javascript-color-gradient';
 
 export default function Home({}) {
   var mapData = require('../../model/mapData.json'); // SHOULD BE MOVED TO CLOUD.
@@ -34,23 +35,14 @@ export default function Home({}) {
 
       const featureCollectionFill = mapData['postnummeromrader.postnummeromrade']; // Fill area. https://maplibre.org/maplibre-gl-js-docs/example/geojson-polygon/
 
+      // ADD COLORS TO POLYGON..
       function generateRandomColor() {
-        const randomFillColors = [
-          '#BA4D35',
-          '#35BA63',
-          '#3588BA',
-          '#AABA35',
-          '#BA35B8',
-          '#35BAAC',
-          '#EADA17',
-          '#EEB4FF',
-          '#8A24A8',
-          '#F1C40F',
-          '#1A5276'
-        ];
+        const randomFillColors = new Gradient().setColorGradient('#FFFFFF', '#BB0000').getColors();
+
         const randomNumber = Math.floor(Math.random() * randomFillColors.length);
 
         const randomColor = randomFillColors[randomNumber];
+
         return randomColor;
       }
 

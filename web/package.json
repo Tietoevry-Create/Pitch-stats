@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@axe-core/react": "^4.4.4",
+    "javascript-color-gradient": "^2.4.4",
     "maplibre-gl": "^1.15.3",
     "next": "12.2.0",
     "next-seo": "^5.5.0",
