@@ -326,17 +326,6 @@ export default class DataManager {
       ],
       sites: this.sites
     };
-    this.testContent = {
-      slug: 'test',
-      title: 'TEST',
-      content: [
-        {
-          definition: 'SITE ?',
-          text: 'Vi benytter Google sitt PageSpeed Insight API, til å analysere nettsider via et verktøy som kalles Lighthouse. Verktøyet måler og genererer en rapport av en nettsides ytelse, brukervennlighet og søkemotorvennlighet. Rapporten kan for eksempel brukes til å oppdage forbedringsmuligheter for videre utvikling av nettsiden.',
-          svg: ''
-        }
-      ]
-    };
   }
 
   getPageContent(slug) {
@@ -358,8 +347,6 @@ export default class DataManager {
           return this.categoryContent;
         case 'side':
           return this.siteContent;
-        case 'test':
-          return this.testContent;
         default:
           break;
       }
@@ -367,12 +354,10 @@ export default class DataManager {
   }
 
   getHeaderPaths() {
-    const paths = [this.aboutContent, this.categoryContent, this.siteContent, this.testContent].map(
-      (item) => ({
-        title: item.title,
-        slug: item.slug
-      })
-    );
+    const paths = [this.aboutContent, this.categoryContent, this.siteContent].map((item) => ({
+      title: item.title,
+      slug: item.slug
+    }));
     return paths;
   }
 
