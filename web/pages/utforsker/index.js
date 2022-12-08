@@ -20,7 +20,7 @@ export default function Home({}) {
     const initialState = {
       lng: 10,
       lat: 65,
-      zoom: 4
+      zoom: 0
     };
 
     const map = new Map({
@@ -35,7 +35,7 @@ export default function Home({}) {
 
       const featureCollectionFill = mapData['postnummeromrader.postnummeromrade']; // Fill area. https://maplibre.org/maplibre-gl-js-docs/example/geojson-polygon/
 
-      // ADD COLORS TO POLYGON..
+      // ADD COLORS TO POLYGON.. REPLACE WITH: ->       https://maplibre.org/maplibre-gl-js-docs/example/heatmap-layer/
       function generateRandomColor() {
         const randomFillColors = new Gradient().setColorGradient('#FFFFFF', '#BB0000').getColors();
 
