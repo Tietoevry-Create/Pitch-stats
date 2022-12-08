@@ -65,8 +65,10 @@ const Navbar = ({ headerPaths }) => {
 
         <div
           className={
-            (isMenuOpen ? 'display: flex ' : 'hidden ') +
-            'flex-col md:flex-row md:flex w-full md:w-fit md:items-center h-max'
+            (isMenuOpen
+              ? ' animate-fadeIn display: flex flex-grow max-h-60 duration-500 '
+              : ' display: flex flex-grow max-h-0 duration-500 ') +
+            ' flex-col md:flex-row w-full md:w-fit md:items-center md:flex-grow-0 md:visible'
           }
           id="mobile-dropdown-menu">
           {menuLinks &&
@@ -74,9 +76,12 @@ const Navbar = ({ headerPaths }) => {
             menuLinks.map((item, index) => (
               <CustomLink to={item.slug} key={index}>
                 <a
-                  className={`text-lg lg:inline-flex lg:w-auto w-full px-3 py-2 text-black ${
-                    currentRoute == item.slug ? 'font-bold' : 'font-medium'
-                  } items-center justify-center hover:text-heroblue md:flex-col`}>
+                  className={
+                    (isMenuOpen ? 'visible ' : 'hidden ') +
+                    ` text-lg md:inline-flex md:w-auto w-full px-3 py-2 text-black ${
+                      currentRoute == item.slug ? 'font-bold' : 'font-medium'
+                    } items-center justify-center hover:text-heroblue md:flex-col`
+                  }>
                   {item.title}
                 </a>
               </CustomLink>
