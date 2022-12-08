@@ -24,11 +24,8 @@ const MapArea = ({ mapStyle, polygonLayer, borderLayer }) => {
     });
 
     map.on('load', async () => {
-      // ADD POLYGONS
-      map.addLayer(polygonLayer);
-
-      // ADD BORDER
-      map.addLayer(borderLayer);
+      map.addLayer(polygonLayer); // add polygons.
+      map.addLayer(borderLayer); // add borders.
     });
 
     map.on('click', 'polygons', (e) => {
