@@ -81,25 +81,16 @@ export default function Home({}) {
       });
     });
 
+    const html = String.raw;
+
     map.on('click', 'polygons', (e) => {
       new maplibregl.Popup()
         .setLngLat(e.lngLat)
         .setHTML(
-          '<h3>' +
-            'Valgt område: ' +
-            '</h3>' +
-            '<p>' +
-            'Postnummer: ' +
-            e.features[0].properties['postnummer'] +
-            '</p>' +
-            '<p>' +
-            'Poststed: ' +
-            e.features[0].properties['poststed'] +
-            '</p>' +
-            '<p>' +
-            'Kommune: ' +
-            e.features[0].properties['kommune'] +
-            '</p>'
+          html`<h3>Valgt område:</h3>
+          <p>Postnummer: ${e.features[0].properties['postnummer']}</p>
+          <p>Poststed: ${e.features[0].properties['poststed']}</p>
+          <p>Kommune: ${e.features[0].properties['kommune']}</p>`
         )
         .setMaxWidth('300px')
         .addTo(map);
