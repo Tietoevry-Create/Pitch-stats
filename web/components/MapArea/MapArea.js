@@ -2,20 +2,13 @@ import { useEffect, useState, useRef } from 'react';
 
 import maplibregl, { Map } from 'maplibre-gl';
 
-import Gradient from 'javascript-color-gradient';
-
-const MapArea = () => {
-  var mapData = require('../../model/mapData.json'); // SHOULD BE MOVED TO CLOUD.
-
+const MapArea = ({ mapStyle, polygonLayer, borderLayer }) => {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
   const mapContainer = useRef(null);
 
   useEffect(() => {
     if (isMapLoaded) return;
     setIsMapLoaded(true);
-
-    const mapStyle =
-      'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL';
 
     const initialState = {
       lng: 10,
@@ -31,59 +24,15 @@ const MapArea = () => {
     });
 
     map.on('load', async () => {
-      const featureCollectionBorder = mapData['postnummeromrader.postnummeromradegrense']; // Draw border. https://maplibre.org/maplibre-gl-js-docs/example/geojson-line/
-
-      const featureCollectionFill = mapData['postnummeromrader.postnummeromrade']; // Fill area. https://maplibre.org/maplibre-gl-js-docs/example/geojson-polygon/
-
-      // ADD COLORS TO POLYGON.. REPLACE WITH: ->       https://maplibre.org/maplibre-gl-js-docs/example/heatmap-layer/
-      function generateRandomColor() {
-        const randomFillColors = new Gradient().setColorGradient('#FFFFFF', '#BB0000').getColors();
-
-        const randomNumber = Math.floor(Math.random() * randomFillColors.length);
-
-        const randomColor = randomFillColors[randomNumber];
-
-        return randomColor;
-      }
-
-      Object.entries(featureCollectionFill.features).forEach((item) => {
-        item[1]['properties']['color'] = generateRandomColor();
-      });
-
       // ADD POLYGONS
-      map.addLayer({
-        id: 'polygons',
-        type: 'fill',
-        source: {
-          type: 'geojson',
-          data: featureCollectionFill
-        },
-        layout: {},
-        paint: {
-          'fill-color': ['get', 'color'],
-          'fill-opacity': 0.8
-        }
-      });
+      map.addLayer(polygonLayer);
 
       // ADD BORDER
-      map.addLayer({
-        id: 'outline',
-        type: 'line',
-        source: {
-          type: 'geojson',
-          data: featureCollectionBorder
-        },
-        layout: {},
-        paint: {
-          'line-color': '#888',
-          'line-width': 1
-        }
-      });
+      map.addLayer(borderLayer);
     });
 
-    const html = String.raw;
-
     map.on('click', 'polygons', (e) => {
+      const html = String.raw;
       new maplibregl.Popup()
         .setLngLat(e.lngLat)
         .setHTML(
