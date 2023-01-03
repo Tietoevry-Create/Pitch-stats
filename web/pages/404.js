@@ -2,7 +2,7 @@ import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
 import Page404Icon from 'components/icons/Page404Icon';
 import Head from 'next/head';
-import DataManager from 'util/DataManager';
+import DataManager from 'model/LocalDataManager';
 
 export default function Custom404({ headerPaths = {}, footerPaths = {} }) {
   return (

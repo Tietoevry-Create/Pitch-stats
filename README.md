@@ -1,29 +1,34 @@
 # Pitch-stats
+
 Website for analyzing SEO, carbon footprint, UU etc of other websites
 
 
 ## How we work
 
+This project uses Next.js for the web part.
 
 
-## Web app
+## How to run Web App
 
-This procject uses Next.js for the web part.
+`cd web`
 
-To run the app, navigate to the `web` directory, change your node version to at least 16. It is recommended to install [NVM](https://github.com/nvm-sh/nvm)
+`npm i`
 
-Then run `npm install`, then `npm run dev` to run the development version of the app, which can be seen at [http://localhost:3000](http://localhost:3000). 
+`npm run dev`
 
-To learn more about Next, go to - [Next.js Documentation](https://nextjs.org/docs) or [Learn Next.js](https://nextjs.org/learn).
-
-
-## Storybook
-
-To run storybook: `npm run storybook` - (Accessible at: http://localhost:6006).
-
-If storybook fails: try resetting ->
-    1) remove storybook related dependencies from file: `./web/package.json`.
-    2) remove node modules and reinstall: `npm install`.
-    3) reinstall storybook: `npx storybook init`.
+Accessible at: http://localhost:3000
 
 
+## How to run Storybook
+
+`npm run storybook` 
+
+Accessible at: http://localhost:6006
+
+If storybook fails: try resetting :
+
+    1) Remove storybook related dependencies from file: `./web/package.json`.
+
+    2) Remove node modules and reinstall: `npm i`.
+
+    3) Reinstall storybook: `npx storybook init`.

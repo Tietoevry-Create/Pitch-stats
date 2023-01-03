@@ -4,7 +4,7 @@ import { Heading } from 'components/Heading';
 import { CustomRadarChart } from 'components/RadarChart';
 import { Counter } from 'components/Counter';
 import { MetaData } from 'components/MetaData';
-import DataManager from 'util/DataManager';
+import DataManager from 'model/LocalDataManager';
 
 export default function Site({
   headerPaths = [],

@@ -3,7 +3,7 @@ import { Layout } from 'components/Layout';
 import { Heading } from 'components/Heading';
 import { MetaData } from 'components/MetaData';
 
-import DataManager from 'util/DataManager';
+import DataManager from 'model/LocalDataManager';
 
 export default function PageSite({
   headerPaths = [],
@@ -63,7 +63,10 @@ export async function getStaticProps(context) {
 }
 export async function getStaticPaths() {
   const infra = new DataManager();
-  const paths = infra.getHeaderPaths().map((item) => item.slug);
+  const paths = infra
+    .getHeaderPaths()
+    .map((item) => item.slug)
+    .filter((slug) => slug !== 'utforsker'); //.filter.... temporary fix due to crappy local data management.
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),

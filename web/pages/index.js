@@ -5,7 +5,7 @@ import { SiteList } from 'components/SiteList';
 import { CategoryList } from 'components/CategoryList';
 import { MetaData } from 'components/MetaData';
 
-import DataManager from 'util/DataManager';
+import DataManager from 'model/LocalDataManager';
 
 export default function Home({
   headerPaths = [],
