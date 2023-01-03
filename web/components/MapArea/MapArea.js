@@ -13,7 +13,7 @@ const MapArea = ({ mapStyle, polygonLayer, borderLayer }) => {
     const initialState = {
       lng: 10,
       lat: 65,
-      zoom: 0
+      zoom: 4
     };
 
     const map = new Map({

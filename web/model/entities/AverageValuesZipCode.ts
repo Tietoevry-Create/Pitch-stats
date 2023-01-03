@@ -1,4 +1,4 @@
-type AverageStatisticsEntity = {
+type AverageValuesZipCode = {
   ZipId: string;
   AntallAnsatte: number;
 

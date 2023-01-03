@@ -5,19 +5,10 @@ import { Sidebar } from 'components/Sidebar';
 import { MapArea } from 'components/MapArea';
 import Gradient from 'javascript-color-gradient';
 
-export default function Home({ mapStyle, polygonLayer, borderLayer }) {
-  return (
-    <>
-      <MapArea mapStyle={mapStyle} polygonLayer={polygonLayer} borderLayer={borderLayer} />
-      <Sidebar headerTitle={'Utforsker'} headerButton={<Link href={'/'}>{'<--'}</Link>}></Sidebar>
-    </>
-  );
-}
-
-export async function getStaticProps({ preview = false }) {
+export default function Home({}) {
   const mapStyle =
     'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL';
-  const mapData = require('model/mapData.json'); // SHOULD BE MOVED TO CLOUD.
+  const mapData = require('model/mapData.json');
   const featureCollectionBorder = mapData['postnummeromrader.postnummeromradegrense']; // Draw border. https://maplibre.org/maplibre-gl-js-docs/example/geojson-line/
   const featureCollectionFill = mapData['postnummeromrader.postnummeromrade']; // Fill area. https://maplibre.org/maplibre-gl-js-docs/example/geojson-polygon/
 
@@ -58,11 +49,16 @@ export async function getStaticProps({ preview = false }) {
     }
   };
 
+  return (
+    <>
+      <MapArea mapStyle={mapStyle} polygonLayer={polygonLayer} borderLayer={borderLayer} />
+      <Sidebar headerTitle={'Utforsker'} headerButton={<Link href={'/'}>{'<--'}</Link>}></Sidebar>
+    </>
+  );
+}
+
+export async function getStaticProps({ preview = false }) {
   return {
-    props: {
-      mapStyle: mapStyle,
-      polygonLayer: polygonLayer,
-      borderLayer: borderLayer
-    }
+    props: {}
   };
 }
