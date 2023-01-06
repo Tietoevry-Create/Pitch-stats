@@ -2,4 +2,6 @@
 .swc
 node_modules
 .husky
-model/mapData.json
+model/Kommuner.json
+model/Fylker.json
+model/Postnummeromrader.json
