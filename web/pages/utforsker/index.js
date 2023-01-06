@@ -49,17 +49,18 @@ export async function getStaticProps() {
 
   const minValue = 0; // REPLACE WITH VALUE FROM DB.
   const maxValue = 300; // REPLACE WITH VALUE FROM DB.
+  const countValueGroups = 0; // Should contain count of unique number of employeees ???
 
   const arrayOfColors = new Gradient()
     .setColorGradient('#FFFFFF', '#BB0000')
-    .setMidpoint(maxValue)
+    .setMidpoint(maxValue) // countValueGroups..
     .getColors();
 
   Object.keys(data).forEach((key) => {
     const areaPolygons = data[key]['polygon'];
     Object.entries(areaPolygons['features']).forEach((area) => {
-      const randomValueInRange = formulaGetRandomValue(maxValue);
-      const percentage = formulaGetPercentOfValueInRange(minValue, maxValue, randomValueInRange);
+      const value = formulaGetRandomValue(maxValue); // Replace with feks: numberOfEmployees;
+      const percentage = formulaGetPercentOfValueInRange(minValue, maxValue, value);
       const index = formulaGetIndexInArrayFromPercentValue(0, arrayOfColors.length - 1, percentage);
 
       area[1]['properties']['color'] = arrayOfColors[index];
