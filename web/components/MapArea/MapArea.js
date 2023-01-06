@@ -76,15 +76,9 @@ const MapArea = ({ data }) => {
 
       // SHOW DIFFERENT LAYERS ON ZOOM LEVELS.
       const currentZoom = map.getZoom();
-      const zoomLevelCountry = currentZoom <= 4; // Land.
-      const zoomLevelState = currentZoom > 4 && currentZoom <= 5; // Fylker.
+      const zoomLevelState = currentZoom <= 5; // Fylker.
       const zoomLevelMunicipality = currentZoom > 5 && currentZoom <= 7; // Kommuner.
       const zoomLevelZipAreas = currentZoom > 7; // Postområder.
-
-      if (zoomLevelCountry) {
-        map.setLayoutProperty('fylkerBorderLayer', 'visibility', 'visible');
-        map.setLayoutProperty('fylkerPolygonLayer', 'visibility', 'visible');
-      }
 
       if (zoomLevelState) {
         map.setLayoutProperty('fylkerBorderLayer', 'visibility', 'visible');
@@ -102,9 +96,8 @@ const MapArea = ({ data }) => {
       }
     });
 
+    // Replace click event wth hoover. replace id with any in list..
     map.on('click', 'fylkerPolygonLayer', (e) => {
-      // Replace click event wth hoover. replace id with any in list..
-
       const clickPosition = e.lngLat;
       const polygonData = e.features[0].properties; // Will be modified with custom entries when data is loaded from db.
 

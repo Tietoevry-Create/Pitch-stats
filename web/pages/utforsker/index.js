@@ -4,16 +4,7 @@ import { Sidebar } from 'components/Sidebar';
 import { MapArea } from 'components/MapArea';
 import Gradient from 'javascript-color-gradient';
 
-export default function Home({ data }) {
-  return (
-    <>
-      <MapArea data={data} />
-      <Sidebar headerTitle={'Utforsker'} headerButton={<Link href={'/'}>{'<--'}</Link>}></Sidebar>
-    </>
-  );
-}
-
-export async function getStaticProps() {
+export default function Home({}) {
   // ADD DATA FROM LOCAL DATASET -> SHOULD BE RETREIVED FROM DB TOGETHER WITH DATA.
   const datasetPostomrader = require('model/Postnummeromrader.json');
   const datasetKommuner = require('model/Kommuner.json');
@@ -54,5 +45,17 @@ export async function getStaticProps() {
     });
   });
 
+  return (
+    <>
+      <MapArea data={data} />
+      <Sidebar headerTitle={'Utforsker'} headerButton={<Link href={'/'}>{'<--'}</Link>}></Sidebar>
+    </>
+  );
+}
+/*
+export async function getStaticProps() {
+
+
   return { props: { data } };
 }
+*/
