@@ -42,7 +42,6 @@ export async function getStaticProps() {
   };
 
   // ADD TEMPORARY RANDOM COLORS -> SHOULD BE BASED ON AVERAGE VALUES.
-
   const formulaGetRandomValue = (max) => Math.floor(Math.random() * max);
   const formulaGetPercentOfValueInRange = (min, max, value) => (value / max - min) * 100; // Returns percentage of value from range.
   const formulaGetIndexInArrayFromPercentValue = (min, max, percent) =>
@@ -55,7 +54,6 @@ export async function getStaticProps() {
     .setColorGradient('#FFFFFF', '#BB0000')
     .setMidpoint(maxValue)
     .getColors();
-  console.log(arrayOfColors);
 
   Object.keys(data).forEach((key) => {
     const areaPolygons = data[key]['polygon'];
