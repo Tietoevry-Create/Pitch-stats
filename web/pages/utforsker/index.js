@@ -42,15 +42,28 @@ export async function getStaticProps() {
   };
 
   // ADD TEMPORARY RANDOM COLORS -> SHOULD BE BASED ON AVERAGE VALUES.
+
+  const formulaGetPercentOfValueInRange = (min, max, value) => (value / max - min) * 100; // Returns percentage of value from range.
+  const formulaGetIndexInArrayFromPercentValue = (min, max, percent) =>
+    Math.round(min + (percent / 100) * (max - min)); // Returns an Index in array from percentage..
+
+  const minValue = 0; // REPLACE WITH VALUE FROM DB.
+  const maxValue = 300; // REPLACE WITH VALUE FROM DB.
+
+  const arrayOfColors = new Gradient()
+    .setColorGradient('#FFFFFF', '#BB0000')
+    .setMidpoint(maxValue)
+    .getColors();
+  console.log(arrayOfColors);
+
   Object.keys(data).forEach((key) => {
     const areaPolygons = data[key]['polygon'];
-
     Object.entries(areaPolygons['features']).forEach((area) => {
-      const randomFillColors = new Gradient().setColorGradient('#FFFFFF', '#BB0000').getColors();
+      const randomValueInRange = Math.floor(Math.random() * maxValue);
+      const percentage = formulaGetPercentOfValueInRange(minValue, maxValue, randomValueInRange);
+      const index = formulaGetIndexInArrayFromPercentValue(0, arrayOfColors.length - 1, percentage);
 
-      const randomNumber = Math.floor(Math.random() * randomFillColors.length);
-
-      area[1]['properties']['color'] = randomFillColors[randomNumber];
+      area[1]['properties']['color'] = arrayOfColors[index];
     });
   });
 
