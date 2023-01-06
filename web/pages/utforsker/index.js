@@ -14,6 +14,7 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
+  // ADD DATA FROM LOCAL DATASET -> SHOULD BE RETREIVED FROM DB TOGETHER WITH DATA.
   const datasetPostomrader = require('model/Postnummeromrader.json');
   const datasetKommuner = require('model/Kommuner.json');
   const datasetFylker = require('model/Fylker.json');
@@ -40,7 +41,7 @@ export async function getStaticProps() {
     }
   };
 
-  // ADD TEMPORARY COLORS -> SHOULD BE REPLACED WITH HEATMAP BASED ON DATA VALUES.
+  // ADD TEMPORARY RANDOM COLORS -> SHOULD BE BASED ON AVERAGE VALUES.
   Object.keys(data).forEach((key) => {
     const areaPolygons = data[key]['polygon'];
 
