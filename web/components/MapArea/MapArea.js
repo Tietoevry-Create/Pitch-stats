@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import maplibregl, { Map } from 'maplibre-gl';
+import Gradient from 'javascript-color-gradient';
 
 const MapArea = ({ data }) => {
   const [isMapLoaded, setIsMapLoaded] = useState(false);

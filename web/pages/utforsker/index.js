@@ -41,6 +41,17 @@ export async function getStaticProps() {
   };
 
   // ADD TEMPORARY COLORS -> SHOULD BE REPLACED WITH HEATMAP BASED ON DATA VALUES.
+  Object.keys(data).forEach((key) => {
+    const areaPolygons = data[key]['polygon'];
+
+    Object.entries(areaPolygons['features']).forEach((area) => {
+      const randomFillColors = new Gradient().setColorGradient('#FFFFFF', '#BB0000').getColors();
+
+      const randomNumber = Math.floor(Math.random() * randomFillColors.length);
+
+      area[1]['properties']['color'] = randomFillColors[randomNumber];
+    });
+  });
 
   return { props: { data } };
 }
