@@ -51,9 +51,9 @@ const assembleMapData = () => {
 
   // ADD COLORS :::
   const formulaGetRandomValue = (max) => Math.floor(Math.random() * max);
-  const formulaGetPercentOfValueInRange = (min, max, value) => (value / max - min) * 100; // Returns percentage of value from range.
+  const formulaGetPercentOfValueInRange = (min, max, value) => (value / max) * 100; // Returns percentage of value from range.
   const formulaGetIndexInArrayFromPercentValue = (min, max, percent) =>
-    Math.round(min + (percent / 100) * (max - min)); // Returns an Index in array from percentage..
+    Math.round((percent / 100) * max); // Returns an Index in array from percentage..
 
   const minValue = 0; // REPLACE WITH VALUE FROM DB.
   const maxValue = 300; // REPLACE WITH VALUE FROM DB.
