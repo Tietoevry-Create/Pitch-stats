@@ -14,11 +14,19 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  // ADD DATA FROM LOCAL DATASET -> SHOULD BE RETREIVED FROM DB TOGETHER WITH DATA.
+  const data = assembleMapData();
+
+  return { props: { data } };
+}
+
+// Create the list of dataobjects that will be added to the map.. incl, polygon color
+const assembleMapData = () => {
+  // REPLACE: LOAD DATA AND COORDINATES FROM DB INSTEAD.
   const datasetPostomrader = require('model/Postnummeromrader.json');
   const datasetKommuner = require('model/Kommuner.json');
   const datasetFylker = require('model/Fylker.json');
 
+  // REPLACE: CREATE DATAOBJECT FROM DATA AND COORDINATES BASED ON TS TYPE: MAPBOXCOLLECTION + MAPBOXFEATURE
   const borderFylker = datasetFylker['administrative_enheter.fylkesgrense'];
   const polygonFylker = datasetFylker['administrative_enheter.fylke'];
   const borderKommuner = datasetKommuner['administrative_enheter.kommunegrense'];
@@ -41,7 +49,7 @@ export async function getStaticProps() {
     }
   };
 
-  // ADD TEMPORARY RANDOM COLORS -> SHOULD BE BASED ON AVERAGE VALUES.
+  // ADD COLORS :::
   const formulaGetRandomValue = (max) => Math.floor(Math.random() * max);
   const formulaGetPercentOfValueInRange = (min, max, value) => (value / max - min) * 100; // Returns percentage of value from range.
   const formulaGetIndexInArrayFromPercentValue = (min, max, percent) =>
@@ -67,5 +75,5 @@ export async function getStaticProps() {
     });
   });
 
-  return { props: { data } };
-}
+  return data;
+};

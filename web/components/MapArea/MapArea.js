@@ -68,7 +68,7 @@ const MapArea = ({ data }) => {
       map.setLayoutProperty('fylkerPolygonLayer', 'visibility', 'visible');
     });
 
-    map.on('zoomend', async () => {
+    map.on('zoom', async () => {
       // HIDE ALL LAYERS
       layerIDs.forEach((id) => {
         map.setLayoutProperty(id, 'visibility', 'none');
